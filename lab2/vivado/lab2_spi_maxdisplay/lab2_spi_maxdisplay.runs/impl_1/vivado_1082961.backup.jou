@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Thu Sep 18 14:48:07 2025
+# Process ID         : 1082961
+# Current directory  : /home/cathyhu3/s965/pz2/lab2_spi_maxdisplay/lab2_spi_maxdisplay.runs/impl_1
+# Command line       : vivado -log spi_tx_w.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source spi_tx_w.tcl -notrace
+# Log file           : /home/cathyhu3/s965/pz2/lab2_spi_maxdisplay/lab2_spi_maxdisplay.runs/impl_1/spi_tx_w.vdi
+# Journal file       : /home/cathyhu3/s965/pz2/lab2_spi_maxdisplay/lab2_spi_maxdisplay.runs/impl_1/vivado.jou
+# Running On         : eecs-digital-40
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : AMD Ryzen 7 5825U with Radeon Graphics
+# CPU Frequency      : 3533.018 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 29342 MB
+# Swap memory        : 8589 MB
+# Total Virtual      : 37932 MB
+# Available Virtual  : 22048 MB
+#-----------------------------------------------------------
+source spi_tx_w.tcl -notrace
