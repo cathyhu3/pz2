@@ -10,7 +10,7 @@ module fir_15
 	);
     localparam NUM_COEFFS = 15;
     //your design here.
-    logic [NUM_COEFFS-1:0] sum_chain;
+    logic signed [NUM_COEFFS-1:0][31:0] sum_chain;
     logic [$clog2(NUM_COEFFS)-1:0] count_valid;
 
     always_ff @(posedge clk) begin
@@ -22,13 +22,15 @@ module fir_15
             data_out_valid <= 0;
         end else begin
             if (data_in_valid) begin
-                data_out <= sum_chain[NUM_COEFFS-1];
-
-                for (int i = 0; i < NUM_COEFFS-2; i++) begin
-                    sum_chain[i] <= data_in*coeffs[i] + sum_chain[i+1];
+                
+                // sum pipeline calculation
+                data_out <= sum_chain[0];
+                for (int i = 0; i < NUM_COEFFS-1; i++) begin
+                    sum_chain[i] <= sum_chain[i+1] + data_in*coeffs[i];
                 end
                 sum_chain[NUM_COEFFS-1] <= data_in*coeffs[NUM_COEFFS-1];
 
+                // valid data determination
                 if (count_valid < NUM_COEFFS-1) begin
                     count_valid <= count_valid + 1;
                     data_out_valid <= 0;
@@ -37,6 +39,7 @@ module fir_15
                 end
             end else begin
                 // do nothing
+                data_out_valid <= 0;
             end
         end
     end

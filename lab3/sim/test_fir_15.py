@@ -17,6 +17,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 coeffs = [-2,-3,-4,0,9,21,32,36,32,21,9,0,-4,-3,-2]
+# coeffs = [-3,14,-20,6,16,-5,-41,68,-41,-5,16,6,-20,14,-3]
 
 def generate_signed_8bit_sine_waves(sample_rate, duration,frequencies, amplitudes):
     """
@@ -48,14 +49,11 @@ t,si = generate_signed_8bit_sine_waves(
 
 model_output = lfilter(coeffs, [1.0], si)
 
-figure, axis = plt.subplots(2, 1)
+figure, axis = plt.subplots(3, 1)
 axis[0].plot(t, si)
 axis[0].set_title("input signal")
 axis[1].plot(t, model_output)
 axis[1].set_title("scipy lf output")
-
-plt.show()
-
 
 async def generate_clock(clock_wire):
 	while True: # repeat forever
@@ -73,11 +71,35 @@ async def reset(rst_wire, clk_wire):
 @cocotb.test()
 async def first_test(dut):
     """
-    
+    testing the efficacy of the output of 
     """
-
+    fir_15_output = []
     # start a clock running
     await cocotb.start(generate_clock(dut.clk))
+    await reset(dut.rst, dut.clk)
+    await FallingEdge(dut.clk)
+    for i in range(15):
+        for b in range(8):
+            dut.coeffs[b+8*i].value = (coeffs[i]>>b)&0x1
+    for data in si:
+        await FallingEdge(dut.clk)
+        dut.data_in.value = int(data)
+        dut.data_in_valid.value = 1
+        while True:
+            await RisingEdge(dut.clk)
+            await ReadOnly()
+            if (dut.data_out_valid.value):
+                 break
+        dut._log.info(dut.data_out.value.integer)
+        fir_15_output.append(dut.data_out.value.signed_integer)
+        await FallingEdge(dut.clk)
+        dut.data_in_valid.value = 0
+
+    await ClockCycles(dut.clk, 100)
+    normalized_output = [val/sum(fir_15_output) for val in fir_15_output]
+    axis[2].plot(t, normalized_output)
+    axis[2].set_title("fir_15 lf output")
+    plt.show()
     
 """the code below should largely remain unchanged in structure, though the specific files and things
 specified should get updated for different simulations.
