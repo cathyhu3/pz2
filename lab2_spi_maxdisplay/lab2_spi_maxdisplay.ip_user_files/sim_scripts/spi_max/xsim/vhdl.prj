@@ -1,0 +1,6 @@
+vhdl xil_defaultlib  \
+"../../../bd/spi_max/ip/spi_max_axi_smc_0/bd_0/ip/ip_1/sim/bd_e4dc_psr_aclk_0.vhd" \
+"../../../bd/spi_max/ip/spi_max_rst_ps7_0_100M_0/sim/spi_max_rst_ps7_0_100M_0.vhd" \
+
+# Do not sort compile order
+nosort

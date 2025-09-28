@@ -1,0 +1,7 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1758163881" />
+    <testcase name="first_test" classname="test_spi_tx" file="/Users/cathyhu/fall2025/s965/lab2/sim/test_spi_tx.py" lineno="108" time="0.07319188117980957" sim_time_ns="8575.001" ratio_time="117157.81671103525" />
+    <testcase name="second_test" classname="test_spi_tx" file="/Users/cathyhu/fall2025/s965/lab2/sim/test_spi_tx.py" lineno="136" time="0.37769222259521484" sim_time_ns="68425.00099999999" ratio_time="181166.03124585203" />
+  </testsuite>
+</testsuites>
