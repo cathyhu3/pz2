@@ -122,7 +122,11 @@ async def first_test(dut):
     # await the driving of a value onto data_in
     cocotb.start_soon(drive_data_in(dut, value))
     await ClockCycles(dut.clk, 5)
+<<<<<<< HEAD
     # await when the module is no longer busy, plus a few extra clock cycles to make sure the module is trully done.
+=======
+    # await when the module is no longer busy, plus a few extra clock cycles to make sure the module is truly done.
+>>>>>>> refs/remotes/origin/main
     while True:
         await RisingEdge(dut.dclk) # have to wait for dclk to actually finish
         await RisingEdge(dut.clk)

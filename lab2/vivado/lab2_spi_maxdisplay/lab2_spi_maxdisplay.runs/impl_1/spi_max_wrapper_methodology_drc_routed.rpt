@@ -1,0 +1,443 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
+| Date         : Thu Sep 18 15:24:01 2025
+| Host         : eecs-digital-40 running 64-bit Ubuntu 24.04.3 LTS
+| Command      : report_methodology -file spi_max_wrapper_methodology_drc_routed.rpt -pb spi_max_wrapper_methodology_drc_routed.pb -rpx spi_max_wrapper_methodology_drc_routed.rpx
+| Design       : spi_max_wrapper
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max checks: <unlimited>
+             Checks found: 81
++-----------+----------+--------------------------------+--------+
+| Rule      | Severity | Description                    | Checks |
++-----------+----------+--------------------------------+--------+
+| LUTAR-1   | Warning  | LUT drives async reset alert   | 3      |
+| TIMING-18 | Warning  | Missing input or output delay  | 11     |
+| TIMING-20 | Warning  | Non-clocked latch              | 66     |
+| LATCH-1   | Advisory | Existing latches in the design | 1      |
++-----------+----------+--------------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell spi_max_i/spi_tx_w_0/inst/mspi/data_clock/state_reg[0]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) spi_max_i/spi_tx_w_0/inst/mspi/state_reg[0]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#2 Warning
+LUT drives async reset alert  
+LUT cell spi_max_i/spi_tx_w_0/inst/mspi/data_clock/state_reg[1]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) spi_max_i/spi_tx_w_0/inst/mspi/state_reg[1]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#3 Warning
+LUT drives async reset alert  
+LUT cell spi_max_i/spi_tx_w_0/inst/mspi/state_reg[0]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) spi_max_i/spi_tx_w_0/inst/mspi/state_reg[0]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on btns[0] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on btns[1] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An input delay is missing on btns[2] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An input delay is missing on btns[3] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An output delay is missing on cs relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+Related violations: <none>
+
+TIMING-18#6 Warning
+Missing input or output delay  
+An output delay is missing on data relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+Related violations: <none>
+
+TIMING-18#7 Warning
+Missing input or output delay  
+An output delay is missing on dclk relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+Related violations: <none>
+
+TIMING-18#8 Warning
+Missing input or output delay  
+An output delay is missing on leds[0] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+Related violations: <none>
+
+TIMING-18#9 Warning
+Missing input or output delay  
+An output delay is missing on leds[1] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+Related violations: <none>
+
+TIMING-18#10 Warning
+Missing input or output delay  
+An output delay is missing on leds[2] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+Related violations: <none>
+
+TIMING-18#11 Warning
+Missing input or output delay  
+An output delay is missing on leds[3] relative to the rising and/or falling clock edge(s) of clk_fpga_0.
+Related violations: <none>
+
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[0] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#2 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[10] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[10]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#3 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[11] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[11]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#4 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[12] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[12]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#5 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[13] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[13]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#6 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[14] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[14]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#7 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[15] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[15]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#8 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[16] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[16]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#9 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[17] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[17]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#10 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[18] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[18]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#11 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[19] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[19]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#12 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[1] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#13 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[20] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[20]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#14 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[21] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[21]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#15 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[22] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[22]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#16 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[23] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[23]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#17 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[24] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[24]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#18 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[25] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[25]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#19 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[26] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[26]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#20 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[27] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[27]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#21 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[28] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[28]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#22 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[29] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[29]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#23 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[2] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#24 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[30] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[30]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#25 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[31] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[31]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#26 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[32] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[32]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#27 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[33] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[33]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#28 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[34] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[34]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#29 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[35] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[35]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#30 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[36] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[36]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#31 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[37] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[37]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#32 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[38] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[38]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#33 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[39] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[39]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#34 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[3] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#35 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[40] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[40]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#36 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[41] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[41]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#37 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[42] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[42]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#38 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[43] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[43]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#39 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[44] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[44]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#40 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[45] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[45]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#41 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[46] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[46]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#42 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[47] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[47]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#43 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[48] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[48]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#44 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[49] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[49]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#45 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[4] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#46 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[50] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[50]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#47 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[51] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[51]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#48 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[52] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[52]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#49 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[53] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[53]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#50 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[54] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[54]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#51 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[55] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[55]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#52 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[56] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[56]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#53 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[57] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[57]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#54 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[58] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[58]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#55 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[59] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[59]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#56 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[5] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#57 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[60] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[60]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#58 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[61] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[61]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#59 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[62] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[62]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#60 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[63] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[63]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#61 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[6] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#62 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[7] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#63 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[8] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#64 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[9] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/data_store_reg[9]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#65 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/state_reg[0]/L7 (in spi_max_i/spi_tx_w_0/inst/mspi/state_reg[0] macro) cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/state_reg[0]/L7/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#66 Warning
+Non-clocked latch  
+The latch spi_max_i/spi_tx_w_0/inst/mspi/state_reg[1] cannot be properly analyzed as its control pin spi_max_i/spi_tx_w_0/inst/mspi/state_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+LATCH-1#1 Advisory
+Existing latches in the design  
+There are 66 latches found in the design. Inferred latches are often the result of HDL coding mistakes, such as incomplete if or case statements.
+Related violations: <none>
+
+
