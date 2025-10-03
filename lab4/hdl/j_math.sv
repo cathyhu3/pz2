@@ -27,8 +27,13 @@ module j_math #
     assign m00_axis_tlast = m00_axis_tlast_reg;
     assign m00_axis_tdata = m00_axis_tdata_reg;
     assign m00_axis_tstrb = m00_axis_tstrb_reg;
-    assign s00_axis_tready = m00_axis_tready;
- 
+    // assign s00_axis_tready = m00_axis_tready; // doesn't work because the data might be valid and being read
+    //change...only if there is a slot for new data to go into:
+  //this should avoid deadlock.
+    // assign s00_axis_tready = (m00_axis_tready && m00_axis_tvalid)|| ~m00_axis_tvalid; // only set your tready to be high if the downstream tready is high (but shouldn't you also be valid), or there is currently data being sent out
+    
+    assign s00_axis_tready = (m00_axis_tready && m00_axis_tvalid)|| ~m00_axis_tvalid;
+
     always_ff @(posedge s00_axis_aclk)begin
         if (s00_axis_aresetn==0)begin
             m00_axis_tvalid_reg <= 0;
@@ -36,10 +41,15 @@ module j_math #
             m00_axis_tdata_reg <= 0;
             m00_axis_tstrb_reg <= 0;
         end else begin
-            m00_axis_tvalid_reg <= s00_axis_tvalid;
-            m00_axis_tlast_reg <= s00_axis_tlast;
-            m00_axis_tdata_reg <=3*s00_axis_tdata+10000;
-            m00_axis_tstrb_reg <= s00_axis_tstrb;
+            //only if there is room in either our registers...
+            //or downstream consumer/slave do we update.
+            // if (m00_axis_tready || ~m00_axis_tvalid)begin
+            if ((m00_axis_tready && m00_axis_tvalid) || ~m00_axis_tvalid) begin
+                m00_axis_tvalid_reg <= s00_axis_tvalid;
+                m00_axis_tlast_reg <= s00_axis_tlast;
+                m00_axis_tdata_reg <=3*s00_axis_tdata+10000;
+                m00_axis_tstrb_reg <= s00_axis_tstrb;
+            end
         end
     end
 endmodule

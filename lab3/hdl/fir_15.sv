@@ -26,9 +26,9 @@ module fir_15
                 // sum pipeline calculation
                 data_out <= sum_chain[0];
                 for (int i = 0; i < NUM_COEFFS-1; i++) begin
-                    sum_chain[i] <= sum_chain[i+1] + data_in*coeffs[i];
+                    sum_chain[i] <= sum_chain[i+1] + data_in*$signed(coeffs[i]);
                 end
-                sum_chain[NUM_COEFFS-1] <= data_in*coeffs[NUM_COEFFS-1];
+                sum_chain[NUM_COEFFS-1] <= data_in*$signed(coeffs[NUM_COEFFS-1]);
 
                 // valid data determination
                 if (count_valid < NUM_COEFFS-1) begin
