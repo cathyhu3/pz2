@@ -30,7 +30,7 @@ module axis_fir_15 #
     //to zero
     logic signed [31:0] sum_chain [NUM_COEFFS -1:0];
 
-    assign s00_axis_tready = m00_axis_tready;
+    assign s00_axis_tready = m00_axis_tready || ~m00_axis_tvalid;
 
     always_ff @(posedge s00_axis_aclk) begin
         if (!s00_axis_aresetn) begin
@@ -42,17 +42,20 @@ module axis_fir_15 #
             m00_axis_tdata <= 0;
             m00_axis_tstrb <= 0;
         end else begin
-            // if (m00_axis_tready || ~m00_axis_tvalid) begin
-            m00_axis_tvalid <= s00_axis_tvalid;
-            m00_axis_tlast <= s00_axis_tlast;
-            m00_axis_tstrb <= s00_axis_tstrb;
-            // sum pipeline calculation
-            m00_axis_tdata <= sum_chain[0];
-            for (int i = 0; i < NUM_COEFFS-1; i++) begin
-                sum_chain[i] <= sum_chain[i+1] + s00_axis_tdata*$signed(coeffs[i]);
+            // m00_axis_tvalid <= s00_axis_tvalid && m00_axis_tready;
+            if (s00_axis_tvalid && s00_axis_tready) begin
+                m00_axis_tvalid <= 1;
+                m00_axis_tlast <= s00_axis_tlast;
+                m00_axis_tstrb <= s00_axis_tstrb;
+                // sum pipeline calculation
+                m00_axis_tdata <= sum_chain[0];
+                for (int i = 0; i < NUM_COEFFS-1; i++) begin
+                    sum_chain[i] <= sum_chain[i+1] + $signed(s00_axis_tdata)*$signed(coeffs[i]);
+                end
+                sum_chain[NUM_COEFFS-1] <= $signed(s00_axis_tdata)*$signed(coeffs[NUM_COEFFS-1]);
+            end else begin
+                m00_axis_tvalid <= 0;
             end
-            sum_chain[NUM_COEFFS-1] <= s00_axis_tdata*$signed(coeffs[NUM_COEFFS-1]);
-            // end
         end
     end
 
