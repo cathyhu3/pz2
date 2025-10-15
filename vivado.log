@@ -3,23 +3,23 @@
 # SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Tue Sep 30 16:15:22 2025
-# Process ID         : 1514425
+# Start of session at: Wed Oct 15 18:39:59 2025
+# Process ID         : 3033115
 # Current directory  : /home/cathyhu3/pz2
 # Command line       : vivado
 # Log file           : /home/cathyhu3/pz2/vivado.log
 # Journal file       : /home/cathyhu3/pz2/vivado.jou
-# Running On         : eecs-digital-48
+# Running On         : eecs-digital-33
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.3 LTS
-# Processor Detail   : AMD Ryzen 7 5825U with Radeon Graphics
-# CPU Frequency      : 4455.186 MHz
-# CPU Physical cores : 8
-# CPU Logical cores  : 16
-# Host memory        : 29342 MB
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i7-13700
+# CPU Frequency      : 1606.092 MHz
+# CPU Physical cores : 16
+# CPU Logical cores  : 24
+# Host memory        : 33325 MB
 # Swap memory        : 8589 MB
-# Total Virtual      : 37932 MB
-# Available Virtual  : 13403 MB
+# Total Virtual      : 41915 MB
+# Available Virtual  : 30841 MB
 #-----------------------------------------------------------
 start_gui
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.0/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
@@ -58,16 +58,10 @@ WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.2 availab
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
-open_project /home/cathyhu3/lab3_fir/lab3_fir.xpr
-INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/cathyhu3/lab3_fir/lab3_fir.gen/sources_1'.
-WARNING: [filemgmt 56-3] IPUserFilesDir: Could not find the directory '/home/cathyhu3/lab3_fir/lab3_fir.ip_user_files'.
-CRITICAL WARNING: [Project 1-19] Could not find the file '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/design_1.bd'.
-CRITICAL WARNING: [Project 1-19] Could not find the file '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/imports/hdl/fir_15.sv'.
-CRITICAL WARNING: [Project 1-19] Could not find the file '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/imports/hdl/fir_wrapper.v'.
-CRITICAL WARNING: [Project 1-19] Could not find the file '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/imports/hdl/trisate.v'.
-CRITICAL WARNING: [Project 1-19] Could not find the file '/home/cathyhu3/lab3_fir/lab3_fir.srcs/constrs_1/imports/lab2_spi_maxdisplay/base.xdc'.
-CRITICAL WARNING: [Project 1-19] Could not find the file '/home/cathyhu3/lab3_fir/lab3_fir.srcs/utils_1/imports/synth_1/fir_wrapper.dcp'.
-WARNING: [Project 1-865] Could not find the file /home/cathyhu3/lab3_fir/lab3_fir.srcs/utils_1/imports/synth_1/fir_wrapper.dcp
+open_project /home/cathyhu3/pz2/lab3_fir/lab3_fir.xpr
+INFO: [Project 1-313] Project file moved from '/home/cathyhu3/lab3_fir' since last save.
+WARNING: [filemgmt 56-2] IP Repository Path: Could not find the directory '/home/cathyhu3/pz2/ip_repo/fir_interface_1_0', nor could it be found using path '/home/cathyhu3/ip_repo/fir_interface_1_0'.
+WARNING: [filemgmt 56-2] IP Repository Path: Could not find the directory '/home/cathyhu3/pz2/vivado-library', nor could it be found using path '/home/cathyhu3/vivado-library'.
 Scanning sources...
 Finished scanning sources
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.0/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
@@ -106,25 +100,78 @@ WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.2 availab
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
-WARNING: [Project 1-533] File '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xci' could not be found in the subdesign '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/design_1.bd', but fileset 'design_1_clk_wiz_0_0' still exists. The fileset and corresponding run(s) will be deleted the next time top-level synthesis is run.
-WARNING: [Project 1-533] File '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/ip/design_1_dvi2rgb_0_0/design_1_dvi2rgb_0_0.xci' could not be found in the subdesign '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/design_1.bd', but fileset 'design_1_dvi2rgb_0_0' still exists. The fileset and corresponding run(s) will be deleted the next time top-level synthesis is run.
-WARNING: [Project 1-533] File '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/ip/design_1_fir_interface_0_0/design_1_fir_interface_0_0.xci' could not be found in the subdesign '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/design_1.bd', but fileset 'design_1_fir_interface_0_0' still exists. The fileset and corresponding run(s) will be deleted the next time top-level synthesis is run.
-WARNING: [Project 1-533] File '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/ip/design_1_fir_wrapper_0_0/design_1_fir_wrapper_0_0.xci' could not be found in the subdesign '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/design_1.bd', but fileset 'design_1_fir_wrapper_0_0' still exists. The fileset and corresponding run(s) will be deleted the next time top-level synthesis is run.
-WARNING: [Project 1-533] File '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/ip/design_1_ila_0_1/design_1_ila_0_1.xci' could not be found in the subdesign '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/design_1.bd', but fileset 'design_1_ila_0_1' still exists. The fileset and corresponding run(s) will be deleted the next time top-level synthesis is run.
-WARNING: [Project 1-533] File '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1.xci' could not be found in the subdesign '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/design_1.bd', but fileset 'design_1_processing_system7_0_1' still exists. The fileset and corresponding run(s) will be deleted the next time top-level synthesis is run.
-WARNING: [Project 1-533] File '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/ip/design_1_rgb2dvi_0_0/design_1_rgb2dvi_0_0.xci' could not be found in the subdesign '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/design_1.bd', but fileset 'design_1_rgb2dvi_0_0' still exists. The fileset and corresponding run(s) will be deleted the next time top-level synthesis is run.
-WARNING: [Project 1-533] File '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0.xci' could not be found in the subdesign '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/design_1.bd', but fileset 'design_1_rst_ps7_0_100M_0' still exists. The fileset and corresponding run(s) will be deleted the next time top-level synthesis is run.
-WARNING: [Project 1-533] File '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/ip/design_1_tristate_0_0/design_1_tristate_0_0.xci' could not be found in the subdesign '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/design_1.bd', but fileset 'design_1_tristate_0_0' still exists. The fileset and corresponding run(s) will be deleted the next time top-level synthesis is run.
-WARNING: [Project 1-533] File '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/ip/design_1_tristate_0_1/design_1_tristate_0_1.xci' could not be found in the subdesign '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/design_1.bd', but fileset 'design_1_tristate_0_1' still exists. The fileset and corresponding run(s) will be deleted the next time top-level synthesis is run.
-WARNING: [Project 1-533] File '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/ip/design_1_xpm_cdc_gen_0_0/design_1_xpm_cdc_gen_0_0.xci' could not be found in the subdesign '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/design_1.bd', but fileset 'design_1_xpm_cdc_gen_0_0' still exists. The fileset and corresponding run(s) will be deleted the next time top-level synthesis is run.
-WARNING: [Project 1-533] File '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/ip/design_1_xpm_cdc_gen_0_1/design_1_xpm_cdc_gen_0_1.xci' could not be found in the subdesign '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/design_1.bd', but fileset 'design_1_xpm_cdc_gen_0_1' still exists. The fileset and corresponding run(s) will be deleted the next time top-level synthesis is run.
-WARNING: [Project 1-533] File '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/ip/design_1_xpm_cdc_gen_0_2/design_1_xpm_cdc_gen_0_2.xci' could not be found in the subdesign '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/design_1.bd', but fileset 'design_1_xpm_cdc_gen_0_2' still exists. The fileset and corresponding run(s) will be deleted the next time top-level synthesis is run.
-WARNING: [Project 1-533] File '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/ip/design_1_xpm_cdc_gen_0_3/design_1_xpm_cdc_gen_0_3.xci' could not be found in the subdesign '/home/cathyhu3/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/design_1.bd', but fileset 'design_1_xpm_cdc_gen_0_3' still exists. The fileset and corresponding run(s) will be deleted the next time top-level synthesis is run.
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/ip_repo/fir_interface_1_0'.
-INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/vivado-library'.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/cathyhu3/pz2/ip_repo/fir_interface_1_0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/cathyhu3/pz2/vivado-library'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/2025.1/Vivado/data/ip'.
+WARNING: [BD 41-1661] One or more IPs have been locked in the design 'design_1.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+List of locked IPs:
+design_1_fir_interface_0_0
+design_1_rgb2dvi_0_0
+design_1_dvi2rgb_0_0
+
+open_bd_design {/home/cathyhu3/pz2/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/design_1.bd}
+Reading block design file </home/cathyhu3/pz2/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/design_1.bd>...
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding component instance block -- digilentinc.com:ip:dvi2rgb:2.0 - dvi2rgb_0
+CRITICAL WARNING: [BD 41-51] Could not find bus definition for the interface: TMDS 
+CRITICAL WARNING: [BD 41-49] Could not find abstraction definition for the interface: TMDS 
+CRITICAL WARNING: [BD 41-49] Could not find abstraction definition for the interface: TMDS 
+Adding component instance block -- digilentinc.com:ip:rgb2dvi:1.4 - rgb2dvi_0
+CRITICAL WARNING: [BD 41-51] Could not find bus definition for the interface: TMDS 
+CRITICAL WARNING: [BD 41-49] Could not find abstraction definition for the interface: TMDS 
+CRITICAL WARNING: [BD 41-49] Could not find abstraction definition for the interface: TMDS 
+Adding component instance block -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_0
+Adding component instance block -- xilinx.com:module_ref:fir_wrapper:1.0 - fir_wrapper_0
+Adding component instance block -- xilinx.com:module_ref:tristate:1.0 - tristate_0
+Adding component instance block -- xilinx.com:module_ref:tristate:1.0 - tristate_1
+Adding component instance block -- xilinx.com:inline_hdl:ilconstant:1.0 - ilconstant_0
+Adding component instance block -- xilinx.com:inline_hdl:ilconstant:1.0 - ilconstant_1
+Adding component instance block -- xilinx.com:inline_hdl:ilconstant:1.0 - ilconstant_2
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_100M
+Adding component instance block -- user.org:user:fir_interface:1.0 - fir_interface_0
+Adding component instance block -- xilinx.com:ip:smartconnect:1.0 - axi_smc
+Adding component instance block -- xilinx.com:ip:xpm_cdc_gen:1.0 - xpm_cdc_gen_0
+Adding component instance block -- xilinx.com:ip:xpm_cdc_gen:1.0 - xpm_cdc_gen_1
+Adding component instance block -- xilinx.com:ip:xpm_cdc_gen:1.0 - xpm_cdc_gen_2
+Adding component instance block -- xilinx.com:ip:xpm_cdc_gen:1.0 - xpm_cdc_gen_3
+Adding component instance block -- xilinx.com:ip:ila:6.2 - ila_0
+INFO: [xilinx.com:ip:ila:6.2-6] /ila_0: AMD recommends using the System ILA IP in IP Integrator. The System ILA IP is functionally equivalent to an ILA and offers additional benefits in debugging interfaces both within IP Integrator and the Hardware Manager. Consult the Programming and Debug User Guide UG908 for further details.
+Successfully read diagram <design_1> from block design file </home/cathyhu3/pz2/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/design_1.bd>
 update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-exit
-INFO: [Common 17-206] Exiting Vivado at Tue Sep 30 16:17:50 2025...
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.051 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.006 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.051 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.006 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.051 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.006 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+startgroup
+set_property CONFIG.PCW_USE_S_AXI_HP0 {1} [get_bd_cells processing_system7_0]
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.051 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.006 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+endgroup
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.051 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.006 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
+startgroup
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_dma:7.1 axi_dma_0
+endgroup
+set_property -dict [list \
+  CONFIG.c_include_mm2s {0} \
+  CONFIG.c_include_sg {0} \
+] [get_bd_cells axi_dma_0]
