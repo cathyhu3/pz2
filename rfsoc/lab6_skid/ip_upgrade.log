@@ -1,0 +1,16 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
+| Date         : Thu Oct 16 18:41:21 2025
+| Host         : eecs-digital-33 running 64-bit Ubuntu 24.04.3 LTS
+| Command      : upgrade_ip
+| Device       : xczu48dr-ffvg1517-2-e
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_iq_packager_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_iq_packager_0_0 (user.org:user:iq_packager:1.0 (Rev. 2)) to current project options.
+

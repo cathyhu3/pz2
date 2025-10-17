@@ -1,0 +1,52 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Thu Oct 16 13:41:34 2025
+# Process ID         : 12818
+# Current directory  : /home/cathyhu3/pz2/lab3_fir/lab3_fir.runs/design_1_data_framer_w_0_0_synth_1
+# Command line       : vivado -log design_1_data_framer_w_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_data_framer_w_0_0.tcl
+# Log file           : /home/cathyhu3/pz2/lab3_fir/lab3_fir.runs/design_1_data_framer_w_0_0_synth_1/design_1_data_framer_w_0_0.vds
+# Journal file       : /home/cathyhu3/pz2/lab3_fir/lab3_fir.runs/design_1_data_framer_w_0_0_synth_1/vivado.jou
+# Running On         : eecs-digital-33
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i7-13700
+# CPU Frequency      : 2655.813 MHz
+# CPU Physical cores : 16
+# CPU Logical cores  : 24
+# Host memory        : 33325 MB
+# Swap memory        : 8589 MB
+# Total Virtual      : 41915 MB
+# Available Virtual  : 38363 MB
+#-----------------------------------------------------------
+source design_1_data_framer_w_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/pz2/ip_repo/fir_interface_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/pz2/vivado-library'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/2025.1/Vivado/data/ip'.
+Command: synth_design -top design_1_data_framer_w_0_0 -part xc7z020clg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+WARNING: [Vivado_Tcl 4-391] The following IPs are missing output products for Synthesis target. These output products could be required for synthesis, please generate the output products using the generate_target or synth_ip command before running synth_design.
+/home/cathyhu3/pz2/lab3_fir/lab3_fir.srcs/sources_1/bd/design_1/ip/design_1_data_framer_w_0_0/design_1_data_framer_w_0_0.xci
+
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 13251
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2167.844 ; gain = 440.797 ; free physical = 19620 ; free virtual = 30885
+---------------------------------------------------------------------------------
+ERROR: [Synth 8-439] module 'design_1_data_framer_w_0_0' not found
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2246.781 ; gain = 519.734 ; free physical = 19604 ; free virtual = 30870
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+10 Infos, 1 Warnings, 0 Critical Warnings and 2 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 16 13:41:41 2025...

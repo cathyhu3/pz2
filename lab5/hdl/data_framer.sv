@@ -32,7 +32,7 @@ module data_framer #
             framing <= 1; 
         end else if (framing) begin // 
             if (m00_axis_tready) begin
-                if (data_counter < 65,535) begin
+                if (data_counter < 65535) begin
                     m00_axis_tvalid <= 1;
                     data_counter <= data_counter + 1;
                     m00_axis_tdata <= {8'b0, pixel_data}; //i'll give this one to you

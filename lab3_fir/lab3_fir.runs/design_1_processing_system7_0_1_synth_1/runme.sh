@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/cathyhu3/lab3_fir/lab3_fir.runs/design_1_processing_system7_0_1_synth_1'
+HD_PWD='/home/cathyhu3/pz2/lab3_fir/lab3_fir.runs/design_1_processing_system7_0_1_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1759262252">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1760636493">
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="design_1_wrapper_postroute_physopted.rqs"/>
@@ -49,12 +49,12 @@
   <File Type="BITSTR-MSK" Name="design_1_wrapper.msk"/>
   <File Type="BG-BIN" Name="design_1_wrapper.bin"/>
   <File Type="BG-BIT" Name="design_1_wrapper.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="fir_15_bus_skew_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="fir_15_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="fir_15_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="fir_15_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="fir_15_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="fir_15_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="design_1_wrapper_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="design_1_wrapper_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="design_1_wrapper_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="design_1_wrapper_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="design_1_wrapper_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="design_1_wrapper_timing_summary_postroute_physopted.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="design_1_wrapper_postroute_physopt_bb.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="design_1_wrapper_postroute_physopt.dcp"/>
   <File Type="ROUTE-RQS-PB" Name="design_1_wrapper_rqs_routed.pb"/>
@@ -115,7 +115,7 @@
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/hdl/fir_15.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../pz2/lab3/hdl/fir_15.sv"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../lab3/hdl/fir_15.sv"/>
         <Attr Name="ImportTime" Val="1759091064"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -124,7 +124,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/hdl/fir_wrapper.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../pz2/lab3/hdl/fir_wrapper.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../lab3/hdl/fir_wrapper.v"/>
         <Attr Name="ImportTime" Val="1759091842"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -133,8 +133,22 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/hdl/trisate.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../pz2/lab3/hdl/trisate.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../lab3/hdl/trisate.v"/>
         <Attr Name="ImportTime" Val="1759091794"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../lab5/hdl/data_framer.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../lab5/hdl/data_framer_w.v">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -149,6 +163,38 @@
     </File>
     <File Path="$PGENDIR/sources_1/bd/design_1/hdl/design_1_wrapper.v">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../ip_repo/fir_interface_1_0/example_designs/bfm_design/fir_interface_tb.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../ip_repo/fir_interface_1_0/drivers/fir_interface_v1_0/src/fir_interface.h">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="IsVisible" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../ip_repo/fir_interface_1_0/hdl/fir_interface_slave_lite_v1_0_S00_AXI.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../ip_repo/fir_interface_1_0/hdl/fir_interface.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -201,9 +247,12 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axis_data_fifo_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_fir_wrapper_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_fir_interface_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_xpm_cdc_gen_0_3"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_data_framer_w_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_dma_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_xpm_cdc_gen_0_2"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_xpm_cdc_gen_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_xpm_cdc_gen_0_0"/>
