@@ -17,9 +17,9 @@ module cordic
         output logic [31:0] m00_axis_tstrb
     );
 
-    logic [15:0] x_in;
-    logic [15:0] y_in;
-    assign x_in = s00_axis_tdata[31:16];
+    logic [32:0] x_in;
+    logic [32:0] y_in;
+    assign x_in = (s00_axis_tdata[31:16]*39796) >> 16;
     assign y_in = s00_axis_tdata[15:0];
 
     logic [15:0] ALPHA_ANGLES [15:0];
@@ -66,9 +66,9 @@ endgenerate
 //////////////////////////
 
 // pipes
-logic signed [15:0] angle_pipe [15:0]; // angle pipeline [-pi, pi]
-logic signed [15:0] xi_pipe [15:0]; // the last one stores the magnitude
-logic signed [15:0] yi_pipe [15:0];
+logic signed [31:0] angle_pipe [15:0]; // angle pipeline [-pi, pi]
+logic signed [31:0] xi_pipe [15:0]; // the last one stores the magnitude
+logic signed [31:0] yi_pipe [15:0];
 logic [15:0] x_neg_pipe; // 0 if x is positive, 1 if x is negative
 logic [15:0] vls_pipe [2:0]; // [val, last, strobe]
 
@@ -87,15 +87,15 @@ logic [15:0] ang_out;
 // output calculation
 always_comb begin
     if (x_neg_pipe[15] == 1) begin // if we started in quadrants II or III
-        ang_out = (angle_pipe[15] + PI);
+        ang_im = angle_pipe[15] + PI;
+        ang_out = ang_im;
     end else if (angle_pipe[15][15]) begin // if our angle is in quadrant IV
         ang_im = angle_pipe[15] + TWO_PI;
         ang_out = ang_im;
     end else begin
         ang_out = ang_im;
     end
-    mag_im = (xi_pipe[15]*39796);
-    mag_out = mag_im >> 16;
+    mag_out = xi_pipe[15];
     m00_axis_tdata = {ang_out, mag_out};
 end
 

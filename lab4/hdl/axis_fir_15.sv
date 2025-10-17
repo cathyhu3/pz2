@@ -43,7 +43,7 @@ module axis_fir_15 #
             m00_axis_tstrb <= 0;
         end else begin
             // m00_axis_tvalid <= s00_axis_tvalid && m00_axis_tready;
-            if (s00_axis_tvalid && s00_axis_tready) begin
+            if (s00_axis_tvalid && s00_axis_tready) begin // if the data is valid, and downstream is ready, then you have valid data
                 m00_axis_tvalid <= 1;
                 m00_axis_tlast <= s00_axis_tlast;
                 m00_axis_tstrb <= s00_axis_tstrb;

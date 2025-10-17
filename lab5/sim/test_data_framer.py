@@ -1,0 +1,77 @@
+import cocotb
+import os
+import random
+import sys
+import logging
+from pathlib import Path
+from cocotb.triggers import Timer
+from cocotb.utils import get_sim_time as gst
+from cocotb.runner import get_runner
+from cocotb.triggers import Timer, ClockCycles, RisingEdge, FallingEdge, ReadOnly
+ 
+#cheap way to get the name of current file for runner:
+test_file = os.path.basename(__file__).replace(".py","")
+
+async def generate_clock(clock_wire):
+	while True: # repeat forever
+		clock_wire.value = 0
+		await Timer(5,units="ns")
+		clock_wire.value = 1
+		await Timer(5,units="ns")
+
+@cocotb.test()
+async def first_test(dut):
+    """
+    tests the fucntionality of the spi_tx module by sending one value
+    """
+    # start a clock running
+    await cocotb.start(generate_clock(dut.pixel_clk))
+    await ClockCycles(dut.pixel_clk, 1)
+    dut.trigger.value = 1
+    await ClockCycles(dut.pixel_clk, 1)
+    dut.trigger.value = 0
+    dut.m00_axis_tready = 1
+    for i in range(10):
+        await FallingEdge(dut.pixel_clk)
+        dut.pixel_data.value = i
+        await RisingEdge(dut.pixel_clk)
+    await ClockCycles(dut.pixel_clk, 50)
+
+
+    
+"""the code below should largely remain unchanged in structure, though the specific files and things
+specified should get updated for different simulations.
+"""
+def counter_runner(module_name, other_modules=[]):
+    hdl_toplevel_lang = os.getenv("HDL_TOPLEVEL_LANG", "verilog")
+    sim = os.getenv("SIM", "icarus")
+    proj_path = Path(__file__).resolve().parent.parent
+    sys.path.append(str(proj_path / "sim" / "model"))
+    sources = [proj_path / "hdl" / module_name] #grow/modify this as needed.
+    for module in other_modules:
+         sources += [proj_path / "hdl" / module]
+    hdl_toplevel = module_name[:-3] # removes the .py
+    build_test_args = ["-Wall"]#,"COCOTB_RESOLVE_X=ZEROS"]
+    parameters = {}
+    sys.path.append(str(proj_path / "sim"))
+    runner = get_runner(sim)
+    runner.build(
+        sources=sources,
+        hdl_toplevel=hdl_toplevel,
+        always=True,
+        build_args=build_test_args,
+        build_dir=str(proj_path / "sim_build"),
+        parameters=parameters,
+        timescale = ('1ns','1ps'),
+        waves=True
+    )
+    run_test_args = []
+    runner.test(
+        hdl_toplevel=hdl_toplevel,
+        test_module=test_file,
+        test_args=run_test_args,
+        waves=True
+    )
+ 
+if __name__ == "__main__":
+    counter_runner(module_name="data_framer.sv")
