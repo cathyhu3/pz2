@@ -7,7 +7,8 @@
       "name": "design_1",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2025.1"
+      "tool_version": "2025.1",
+      "validated": "true"
     },
     "design_tree": {
       "zynq_ultra_ps_e_0": "",
@@ -1033,6 +1034,9 @@
           },
           "c_include_sg": {
             "value": "0"
+          },
+          "c_sg_length_width": {
+            "value": "23"
           }
         },
         "interface_ports": {
@@ -1257,7 +1261,7 @@
       },
       "iq_packager_0": {
         "vlnv": "user.org:user:iq_packager:1.0",
-        "ip_revision": "2",
+        "ip_revision": "13",
         "xci_name": "design_1_iq_packager_0_0",
         "xci_path": "ip/design_1_iq_packager_0_0/design_1_iq_packager_0_0.xci",
         "inst_hier_path": "iq_packager_0",
@@ -1574,25 +1578,20 @@
           "led"
         ]
       },
-      "proc_sys_reset_0_mb_reset": {
-        "ports": [
-          "proc_sys_reset_0/mb_reset",
-          "axi_dma_0/axi_resetn",
-          "axis_data_fifo_0/s_axis_aresetn",
-          "usp_rf_data_converter_0/s_axi_aresetn"
-        ]
-      },
       "proc_sys_reset_0_peripheral_aresetn": {
         "ports": [
           "proc_sys_reset_0/peripheral_aresetn",
           "axi_smc/aresetn",
-          "axi_smc_1/aresetn"
+          "axi_smc_1/aresetn",
+          "axi_dma_0/axi_resetn",
+          "usp_rf_data_converter_0/s_axi_aresetn"
         ]
       },
-      "proc_sys_reset_1_mb_reset": {
+      "proc_sys_reset_1_peripheral_aresetn": {
         "ports": [
-          "proc_sys_reset_1/mb_reset",
+          "proc_sys_reset_1/peripheral_aresetn",
           "usp_rf_data_converter_0/m2_axis_aresetn",
+          "axis_data_fifo_0/s_axis_aresetn",
           "iq_packager_0/s00_axis_aresetn",
           "iq_packager_0/s01_axis_aresetn",
           "iq_packager_0/m00_axis_aresetn"
