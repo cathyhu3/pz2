@@ -1,0 +1,64 @@
+<top abs_name="top" size="48" coverage="6" cover_percentage="12.5">
+  <os size="48" coverage="6" cover_percentage="12.5" abs_name="top.os">
+    <s00_tvalid size="4" coverage="1" cover_percentage="25.0" abs_name="top.os.s00_tvalid" weight="1" at_least="1">
+      <bin0 bin="V:0-&gt;0" hits="501" abs_name="top.os.s00_tvalid.bin0" />
+      <bin1 bin="V:0-&gt;1" hits="0" abs_name="top.os.s00_tvalid.bin1" />
+      <bin2 bin="V:1-&gt;0" hits="0" abs_name="top.os.s00_tvalid.bin2" />
+      <bin3 bin="V:1-&gt;1" hits="0" abs_name="top.os.s00_tvalid.bin3" />
+    </s00_tvalid>
+    <s00_tready size="4" coverage="1" cover_percentage="25.0" abs_name="top.os.s00_tready" weight="1" at_least="1">
+      <bin0 bin="R:0-&gt;0" hits="0" abs_name="top.os.s00_tready.bin0" />
+      <bin1 bin="R:0-&gt;1" hits="0" abs_name="top.os.s00_tready.bin1" />
+      <bin2 bin="R:1-&gt;0" hits="0" abs_name="top.os.s00_tready.bin2" />
+      <bin3 bin="R:1-&gt;1" hits="501" abs_name="top.os.s00_tready.bin3" />
+    </s00_tready>
+    <m00_tvalid size="4" coverage="1" cover_percentage="25.0" abs_name="top.os.m00_tvalid" weight="1" at_least="1">
+      <bin0 bin="V:0-&gt;0" hits="501" abs_name="top.os.m00_tvalid.bin0" />
+      <bin1 bin="V:0-&gt;1" hits="0" abs_name="top.os.m00_tvalid.bin1" />
+      <bin2 bin="V:1-&gt;0" hits="0" abs_name="top.os.m00_tvalid.bin2" />
+      <bin3 bin="V:1-&gt;1" hits="0" abs_name="top.os.m00_tvalid.bin3" />
+    </m00_tvalid>
+    <m00_tready size="4" coverage="1" cover_percentage="25.0" abs_name="top.os.m00_tready" weight="1" at_least="1">
+      <bin0 bin="R:0-&gt;0" hits="501" abs_name="top.os.m00_tready.bin0" />
+      <bin1 bin="R:0-&gt;1" hits="0" abs_name="top.os.m00_tready.bin1" />
+      <bin2 bin="R:1-&gt;0" hits="0" abs_name="top.os.m00_tready.bin2" />
+      <bin3 bin="R:1-&gt;1" hits="0" abs_name="top.os.m00_tready.bin3" />
+    </m00_tready>
+    <s_cross size="16" coverage="1" cover_percentage="6.25" abs_name="top.os.s_cross" weight="1" at_least="1">
+      <bin0 bin="('V:0-&gt;0', 'R:0-&gt;0')" hits="0" abs_name="top.os.s_cross.bin0" />
+      <bin1 bin="('V:0-&gt;0', 'R:0-&gt;1')" hits="0" abs_name="top.os.s_cross.bin1" />
+      <bin2 bin="('V:0-&gt;0', 'R:1-&gt;0')" hits="0" abs_name="top.os.s_cross.bin2" />
+      <bin3 bin="('V:0-&gt;0', 'R:1-&gt;1')" hits="501" abs_name="top.os.s_cross.bin3" />
+      <bin4 bin="('V:0-&gt;1', 'R:0-&gt;0')" hits="0" abs_name="top.os.s_cross.bin4" />
+      <bin5 bin="('V:0-&gt;1', 'R:0-&gt;1')" hits="0" abs_name="top.os.s_cross.bin5" />
+      <bin6 bin="('V:0-&gt;1', 'R:1-&gt;0')" hits="0" abs_name="top.os.s_cross.bin6" />
+      <bin7 bin="('V:0-&gt;1', 'R:1-&gt;1')" hits="0" abs_name="top.os.s_cross.bin7" />
+      <bin8 bin="('V:1-&gt;0', 'R:0-&gt;0')" hits="0" abs_name="top.os.s_cross.bin8" />
+      <bin9 bin="('V:1-&gt;0', 'R:0-&gt;1')" hits="0" abs_name="top.os.s_cross.bin9" />
+      <bin10 bin="('V:1-&gt;0', 'R:1-&gt;0')" hits="0" abs_name="top.os.s_cross.bin10" />
+      <bin11 bin="('V:1-&gt;0', 'R:1-&gt;1')" hits="0" abs_name="top.os.s_cross.bin11" />
+      <bin12 bin="('V:1-&gt;1', 'R:0-&gt;0')" hits="0" abs_name="top.os.s_cross.bin12" />
+      <bin13 bin="('V:1-&gt;1', 'R:0-&gt;1')" hits="0" abs_name="top.os.s_cross.bin13" />
+      <bin14 bin="('V:1-&gt;1', 'R:1-&gt;0')" hits="0" abs_name="top.os.s_cross.bin14" />
+      <bin15 bin="('V:1-&gt;1', 'R:1-&gt;1')" hits="0" abs_name="top.os.s_cross.bin15" />
+    </s_cross>
+    <m_cross size="16" coverage="1" cover_percentage="6.25" abs_name="top.os.m_cross" weight="1" at_least="1">
+      <bin0 bin="('V:0-&gt;0', 'R:0-&gt;0')" hits="501" abs_name="top.os.m_cross.bin0" />
+      <bin1 bin="('V:0-&gt;0', 'R:0-&gt;1')" hits="0" abs_name="top.os.m_cross.bin1" />
+      <bin2 bin="('V:0-&gt;0', 'R:1-&gt;0')" hits="0" abs_name="top.os.m_cross.bin2" />
+      <bin3 bin="('V:0-&gt;0', 'R:1-&gt;1')" hits="0" abs_name="top.os.m_cross.bin3" />
+      <bin4 bin="('V:0-&gt;1', 'R:0-&gt;0')" hits="0" abs_name="top.os.m_cross.bin4" />
+      <bin5 bin="('V:0-&gt;1', 'R:0-&gt;1')" hits="0" abs_name="top.os.m_cross.bin5" />
+      <bin6 bin="('V:0-&gt;1', 'R:1-&gt;0')" hits="0" abs_name="top.os.m_cross.bin6" />
+      <bin7 bin="('V:0-&gt;1', 'R:1-&gt;1')" hits="0" abs_name="top.os.m_cross.bin7" />
+      <bin8 bin="('V:1-&gt;0', 'R:0-&gt;0')" hits="0" abs_name="top.os.m_cross.bin8" />
+      <bin9 bin="('V:1-&gt;0', 'R:0-&gt;1')" hits="0" abs_name="top.os.m_cross.bin9" />
+      <bin10 bin="('V:1-&gt;0', 'R:1-&gt;0')" hits="0" abs_name="top.os.m_cross.bin10" />
+      <bin11 bin="('V:1-&gt;0', 'R:1-&gt;1')" hits="0" abs_name="top.os.m_cross.bin11" />
+      <bin12 bin="('V:1-&gt;1', 'R:0-&gt;0')" hits="0" abs_name="top.os.m_cross.bin12" />
+      <bin13 bin="('V:1-&gt;1', 'R:0-&gt;1')" hits="0" abs_name="top.os.m_cross.bin13" />
+      <bin14 bin="('V:1-&gt;1', 'R:1-&gt;0')" hits="0" abs_name="top.os.m_cross.bin14" />
+      <bin15 bin="('V:1-&gt;1', 'R:1-&gt;1')" hits="0" abs_name="top.os.m_cross.bin15" />
+    </m_cross>
+  </os>
+</top>

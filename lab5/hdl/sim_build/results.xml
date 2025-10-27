@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1760746400" />
+    <testcase name="test_a" classname="test_skid_buffer2" file="/Users/cathyhu/fall2025/s965/pz2/lab6/sim/test_skid_buffer2.py" lineno="278" time="0.06840395927429199" sim_time_ns="5010.001" ratio_time="73241.3891410945" />
+  </testsuite>
+</testsuites>

@@ -1,6 +1,6 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1760730421" />
-    <testcase name="first_test" classname="test_tlast" file="/Users/cathyhu/fall2025/s965/pz2/lab6/sim/test_tlast.py" lineno="24" time="0.0047261714935302734" sim_time_ns="215.001" ratio_time="45491.57818211169" />
+    <property name="random_seed" value="1760751704" />
+    <testcase name="test_a" classname="test_skid_buffer" file="/Users/cathyhu/fall2025/s965/pz2/lab6/sim/test_skid_buffer.py" lineno="187" time="0.010129928588867188" sim_time_ns="810.001" ratio_time="79961.1757273583" />
   </testsuite>
 </testsuites>

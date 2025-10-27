@@ -120,16 +120,11 @@ class M_AXIS_Driver(AXIS_Driver):
         elif command == "write_burst":
             array = value.get("contents")["data"]
             index = 0
-            # await FallingEdge(self.clock)
-            # self.bus.axis_tvalid.value = 1
-            # self.bus.axis_tdata.value = int(array[index])
             while index < len(array):
-                self.dut._log.info("START of write loop")
                 await FallingEdge(self.clock)
                 self.bus.axis_tvalid.value = 1
                 self.bus.axis_tdata.value = int(array[index])
                 # determining when to set tlast
-                self.dut._log.info("M AXIS DRIVER")
                 if (index == len(array)-1):
                     self.bus.axis_tlast.value = 1
                 else:
@@ -141,15 +136,7 @@ class M_AXIS_Driver(AXIS_Driver):
                 else:
                     await RisingEdge(self.bus.axis_tready)
                 index += 1
-                await RisingEdge(self.clock)
-                self.dut._log.info("END of write loop")
-            # await FallingEdge(self.clock)
-            # self.bus.axis_tvalid.value = 0
-            # self.bus.axis_tdata.value = 0
-        # else:
-        #     await falling_edge
-        #     self.bus.axis_tvalid.value = 0
-        #     self.bus.axis_tlast.value = 0
+                # await RisingEdge(self.clock)
 
 class S_AXIS_Driver(BusDriver):
     def __init__(self, dut, name, clk):
@@ -164,23 +151,22 @@ class S_AXIS_Driver(BusDriver):
             await FallingEdge(self.clock)
             self.bus.axis_tready.value = 0 #set to 0 and be done.
             for i in range(value.get("duration",1)):
+                self.dut._log.info("PAUSEEEEEEE")
                 await RisingEdge(self.clock)
         elif value.get("type") == "read":
             # await FallingEdge(self.clock)
             # self.bus.axis_tready.value = 1
             for i in range(value.get("duration",1)): # counting number of transactions
-                self.dut._log.info("START of read loop")
                 await FallingEdge(self.clock)
                 self.bus.axis_tready.value = 1
-                self.dut._log.info("S AXIS DRIVER")
                 await ReadOnly()
-                await RisingEdge(self.bus.axis_tvalid)
                 if self.bus.axis_tvalid.value: # only signal ready when the data is valid
                     pass
                 else:
                     await RisingEdge(self.bus.axis_tvalid)
+                self.dut._log.info("READ")
                 await RisingEdge(self.clock)
-                self.dut._log.info("END of read loop")
+            self.dut._log.info("READ DONEEEEE")
 
 async def reset(clk,rst, cycles_held = 3,polarity=1):
     rst.value = polarity
@@ -202,8 +188,8 @@ def callback(value):
 async def test_a(dut):
     """cocotb test for AXIS skid buffer"""
 
-    inm = AXIS_Monitor(dut,'s00',dut.s00_axis_aclk,callback=callback)
-    outm = AXIS_Monitor(dut,'m00',dut.s00_axis_aclk,callback=lambda x: sig_out_act.append(x))
+    # inm = AXIS_Monitor(dut,'s00',dut.s00_axis_aclk,callback=callback)
+    # outm = AXIS_Monitor(dut,'m00',dut.s00_axis_aclk,callback=lambda x: sig_out_act.append(x))
     ind = M_AXIS_Driver(dut,'s00',dut.s00_axis_aclk) #M driver for S port
     outd = S_AXIS_Driver(dut,'m00',dut.s00_axis_aclk) #S driver for M port
 
@@ -212,8 +198,21 @@ async def test_a(dut):
     # scoreboard.add_interface(outm, sig_out_exp)
     cocotb.start_soon(Clock(dut.s00_axis_aclk, 10, units="ns").start())
     await reset(dut.s00_axis_aclk, dut.s00_axis_aresetn,2,0)
-    ind.append({'type':'write_burst', "contents": {"data": [i for i in range(15)]}})
-    outd.append({'type':'read', "duration":15}) # needs to be the same length as the number of test values
+    # TEST LOAD (0) AND FLOW (1) AND UNLOAD (4)
+    ind.append({'type':'write_burst', "contents": {"data": [i for i in range(8)]}})
+    ind.append({'type': 'pause', "duration": 2})
+    outd.append({'type':'read', "duration":8}) # needs to be the same length as the number of test values
+    outd.append({'type':'pause','duration':2}) #end with pause
+    # await ClockCycles(dut.s00_axis_aclk, 30)
+    # TEST FILL
+    ind.append({'type':'write_burst', "contents": {"data": [2 for i in range(5)]}})
+    ind.append({'type': 'pause', "duration": 2})
+    outd.append({'type':'read', "duration":2}) # only ready for 2 beats
+    outd.append({'type':'pause','duration':2})
+    await ClockCycles(dut.s00_axis_aclk, 10)
+    # TEST FLUSH and UNLOAD
+    outd.append({'type':'read', "duration":3})
+    outd.append({'type':'pause','duration':2})
     # for i in range(10):
     #     ind.append({'type':'write_single', "contents": {"data": i}})
     # ind.append({'type':'pause','duration':2}) #end with pause
