@@ -48,7 +48,7 @@
 
 
 // IP VLNV: user.org:user:iq_packager:1.0
-// IP Revision: 13
+// IP Revision: 14
 
 (* X_CORE_INFO = "iq_packager,Vivado 2025.1" *)
 (* CHECK_LICENSE_TYPE = "design_1_iq_packager_0_0,iq_packager,{}" *)

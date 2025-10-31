@@ -2,7 +2,7 @@
 -- Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
--- Date        : Fri Oct 17 16:48:37 2025
+-- Date        : Mon Oct 27 21:58:42 2025
 -- Host        : eecs-digital-40 running 64-bit Ubuntu 24.04.3 LTS
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/cathyhu3/s965/pz2/rfsoc/lab6_skid/lab6_skid.gen/sources_1/bd/design_1/ip/design_1_iq_packager_0_0/design_1_iq_packager_0_0_sim_netlist.vhdl
@@ -23,6 +23,7 @@ entity design_1_iq_packager_0_0_iq_packager is
     s00_axis_aresetn : in STD_LOGIC;
     m00_axis_tready : in STD_LOGIC;
     s00_axis_tvalid : in STD_LOGIC;
+    s01_axis_tvalid : in STD_LOGIC;
     control : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s00_axis_tdata : in STD_LOGIC_VECTOR ( 15 downto 0 );
     s01_axis_tdata : in STD_LOGIC_VECTOR ( 14 downto 0 )
@@ -36,10 +37,9 @@ architecture STRUCTURE of design_1_iq_packager_0_0_iq_packager is
   signal m00_axis_tlast_INST_0_i_2_n_0 : STD_LOGIC;
   signal m00_axis_tlast_INST_0_i_3_n_0 : STD_LOGIC;
   signal m00_axis_tlast_INST_0_i_4_n_0 : STD_LOGIC;
+  signal s_counter0 : STD_LOGIC;
   signal \s_counter[0]_i_1_n_0\ : STD_LOGIC;
-  signal \s_counter[0]_i_2_n_0\ : STD_LOGIC;
   signal \s_counter[0]_i_4_n_0\ : STD_LOGIC;
-  signal \s_counter[0]_i_5_n_0\ : STD_LOGIC;
   signal s_counter_reg : STD_LOGIC_VECTOR ( 17 downto 0 );
   signal \s_counter_reg[0]_i_3_n_0\ : STD_LOGIC;
   signal \s_counter_reg[0]_i_3_n_1\ : STD_LOGIC;
@@ -502,12 +502,12 @@ m00_axis_tlast_INST_0_i_1: unisim.vcomponents.LUT6
       INIT => X"7FFFFFFFFFFFFFFF"
     )
         port map (
-      I0 => s_counter_reg(6),
-      I1 => s_counter_reg(8),
-      I2 => s_counter_reg(7),
-      I3 => s_counter_reg(3),
-      I4 => s_counter_reg(0),
-      I5 => s_counter_reg(1),
+      I0 => s_counter_reg(1),
+      I1 => s_counter_reg(0),
+      I2 => s_counter_reg(6),
+      I3 => s_counter_reg(4),
+      I4 => s_counter_reg(3),
+      I5 => s_counter_reg(2),
       O => m00_axis_tlast_INST_0_i_1_n_0
     );
 m00_axis_tlast_INST_0_i_2: unisim.vcomponents.LUT4
@@ -515,10 +515,10 @@ m00_axis_tlast_INST_0_i_2: unisim.vcomponents.LUT4
       INIT => X"8000"
     )
         port map (
-      I0 => s_counter_reg(4),
-      I1 => s_counter_reg(5),
-      I2 => s_counter_reg(2),
-      I3 => s_counter_reg(9),
+      I0 => s_counter_reg(8),
+      I1 => s_counter_reg(9),
+      I2 => s_counter_reg(5),
+      I3 => s_counter_reg(7),
       O => m00_axis_tlast_INST_0_i_2_n_0
     );
 m00_axis_tlast_INST_0_i_3: unisim.vcomponents.LUT4
@@ -545,47 +545,39 @@ m00_axis_tlast_INST_0_i_4: unisim.vcomponents.LUT4
     );
 \s_counter[0]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"555555555555555D"
+      INIT => X"5555555D55555555"
     )
         port map (
       I0 => s00_axis_aresetn,
       I1 => m00_axis_tlast_INST_0_i_2_n_0,
       I2 => m00_axis_tlast_INST_0_i_1_n_0,
-      I3 => \s_counter[0]_i_4_n_0\,
-      I4 => m00_axis_tlast_INST_0_i_3_n_0,
-      I5 => m00_axis_tlast_INST_0_i_4_n_0,
+      I3 => m00_axis_tlast_INST_0_i_3_n_0,
+      I4 => m00_axis_tlast_INST_0_i_4_n_0,
+      I5 => s_counter0,
       O => \s_counter[0]_i_1_n_0\
     );
-\s_counter[0]_i_2\: unisim.vcomponents.LUT2
+\s_counter[0]_i_2\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"8"
+      INIT => X"80"
     )
         port map (
       I0 => m00_axis_tready,
       I1 => s00_axis_tvalid,
-      O => \s_counter[0]_i_2_n_0\
+      I2 => s01_axis_tvalid,
+      O => s_counter0
     );
-\s_counter[0]_i_4\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"7"
-    )
-        port map (
-      I0 => s00_axis_tvalid,
-      I1 => m00_axis_tready,
-      O => \s_counter[0]_i_4_n_0\
-    );
-\s_counter[0]_i_5\: unisim.vcomponents.LUT1
+\s_counter[0]_i_4\: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
         port map (
       I0 => s_counter_reg(0),
-      O => \s_counter[0]_i_5_n_0\
+      O => \s_counter[0]_i_4_n_0\
     );
 \s_counter_reg[0]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axis_aclk,
-      CE => \s_counter[0]_i_2_n_0\,
+      CE => s_counter0,
       D => \s_counter_reg[0]_i_3_n_15\,
       Q => s_counter_reg(0),
       R => \s_counter[0]_i_1_n_0\
@@ -612,12 +604,12 @@ m00_axis_tlast_INST_0_i_4: unisim.vcomponents.LUT4
       O(1) => \s_counter_reg[0]_i_3_n_14\,
       O(0) => \s_counter_reg[0]_i_3_n_15\,
       S(7 downto 1) => s_counter_reg(7 downto 1),
-      S(0) => \s_counter[0]_i_5_n_0\
+      S(0) => \s_counter[0]_i_4_n_0\
     );
 \s_counter_reg[10]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axis_aclk,
-      CE => \s_counter[0]_i_2_n_0\,
+      CE => s_counter0,
       D => \s_counter_reg[8]_i_1_n_13\,
       Q => s_counter_reg(10),
       R => \s_counter[0]_i_1_n_0\
@@ -625,7 +617,7 @@ m00_axis_tlast_INST_0_i_4: unisim.vcomponents.LUT4
 \s_counter_reg[11]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axis_aclk,
-      CE => \s_counter[0]_i_2_n_0\,
+      CE => s_counter0,
       D => \s_counter_reg[8]_i_1_n_12\,
       Q => s_counter_reg(11),
       R => \s_counter[0]_i_1_n_0\
@@ -633,7 +625,7 @@ m00_axis_tlast_INST_0_i_4: unisim.vcomponents.LUT4
 \s_counter_reg[12]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axis_aclk,
-      CE => \s_counter[0]_i_2_n_0\,
+      CE => s_counter0,
       D => \s_counter_reg[8]_i_1_n_11\,
       Q => s_counter_reg(12),
       R => \s_counter[0]_i_1_n_0\
@@ -641,7 +633,7 @@ m00_axis_tlast_INST_0_i_4: unisim.vcomponents.LUT4
 \s_counter_reg[13]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axis_aclk,
-      CE => \s_counter[0]_i_2_n_0\,
+      CE => s_counter0,
       D => \s_counter_reg[8]_i_1_n_10\,
       Q => s_counter_reg(13),
       R => \s_counter[0]_i_1_n_0\
@@ -649,7 +641,7 @@ m00_axis_tlast_INST_0_i_4: unisim.vcomponents.LUT4
 \s_counter_reg[14]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axis_aclk,
-      CE => \s_counter[0]_i_2_n_0\,
+      CE => s_counter0,
       D => \s_counter_reg[8]_i_1_n_9\,
       Q => s_counter_reg(14),
       R => \s_counter[0]_i_1_n_0\
@@ -657,7 +649,7 @@ m00_axis_tlast_INST_0_i_4: unisim.vcomponents.LUT4
 \s_counter_reg[15]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axis_aclk,
-      CE => \s_counter[0]_i_2_n_0\,
+      CE => s_counter0,
       D => \s_counter_reg[8]_i_1_n_8\,
       Q => s_counter_reg(15),
       R => \s_counter[0]_i_1_n_0\
@@ -665,7 +657,7 @@ m00_axis_tlast_INST_0_i_4: unisim.vcomponents.LUT4
 \s_counter_reg[16]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axis_aclk,
-      CE => \s_counter[0]_i_2_n_0\,
+      CE => s_counter0,
       D => \s_counter_reg[16]_i_1_n_15\,
       Q => s_counter_reg(16),
       R => \s_counter[0]_i_1_n_0\
@@ -686,7 +678,7 @@ m00_axis_tlast_INST_0_i_4: unisim.vcomponents.LUT4
 \s_counter_reg[17]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axis_aclk,
-      CE => \s_counter[0]_i_2_n_0\,
+      CE => s_counter0,
       D => \s_counter_reg[16]_i_1_n_14\,
       Q => s_counter_reg(17),
       R => \s_counter[0]_i_1_n_0\
@@ -694,7 +686,7 @@ m00_axis_tlast_INST_0_i_4: unisim.vcomponents.LUT4
 \s_counter_reg[1]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axis_aclk,
-      CE => \s_counter[0]_i_2_n_0\,
+      CE => s_counter0,
       D => \s_counter_reg[0]_i_3_n_14\,
       Q => s_counter_reg(1),
       R => \s_counter[0]_i_1_n_0\
@@ -702,7 +694,7 @@ m00_axis_tlast_INST_0_i_4: unisim.vcomponents.LUT4
 \s_counter_reg[2]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axis_aclk,
-      CE => \s_counter[0]_i_2_n_0\,
+      CE => s_counter0,
       D => \s_counter_reg[0]_i_3_n_13\,
       Q => s_counter_reg(2),
       R => \s_counter[0]_i_1_n_0\
@@ -710,7 +702,7 @@ m00_axis_tlast_INST_0_i_4: unisim.vcomponents.LUT4
 \s_counter_reg[3]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axis_aclk,
-      CE => \s_counter[0]_i_2_n_0\,
+      CE => s_counter0,
       D => \s_counter_reg[0]_i_3_n_12\,
       Q => s_counter_reg(3),
       R => \s_counter[0]_i_1_n_0\
@@ -718,7 +710,7 @@ m00_axis_tlast_INST_0_i_4: unisim.vcomponents.LUT4
 \s_counter_reg[4]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axis_aclk,
-      CE => \s_counter[0]_i_2_n_0\,
+      CE => s_counter0,
       D => \s_counter_reg[0]_i_3_n_11\,
       Q => s_counter_reg(4),
       R => \s_counter[0]_i_1_n_0\
@@ -726,7 +718,7 @@ m00_axis_tlast_INST_0_i_4: unisim.vcomponents.LUT4
 \s_counter_reg[5]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axis_aclk,
-      CE => \s_counter[0]_i_2_n_0\,
+      CE => s_counter0,
       D => \s_counter_reg[0]_i_3_n_10\,
       Q => s_counter_reg(5),
       R => \s_counter[0]_i_1_n_0\
@@ -734,7 +726,7 @@ m00_axis_tlast_INST_0_i_4: unisim.vcomponents.LUT4
 \s_counter_reg[6]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axis_aclk,
-      CE => \s_counter[0]_i_2_n_0\,
+      CE => s_counter0,
       D => \s_counter_reg[0]_i_3_n_9\,
       Q => s_counter_reg(6),
       R => \s_counter[0]_i_1_n_0\
@@ -742,7 +734,7 @@ m00_axis_tlast_INST_0_i_4: unisim.vcomponents.LUT4
 \s_counter_reg[7]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axis_aclk,
-      CE => \s_counter[0]_i_2_n_0\,
+      CE => s_counter0,
       D => \s_counter_reg[0]_i_3_n_8\,
       Q => s_counter_reg(7),
       R => \s_counter[0]_i_1_n_0\
@@ -750,7 +742,7 @@ m00_axis_tlast_INST_0_i_4: unisim.vcomponents.LUT4
 \s_counter_reg[8]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axis_aclk,
-      CE => \s_counter[0]_i_2_n_0\,
+      CE => s_counter0,
       D => \s_counter_reg[8]_i_1_n_15\,
       Q => s_counter_reg(8),
       R => \s_counter[0]_i_1_n_0\
@@ -781,7 +773,7 @@ m00_axis_tlast_INST_0_i_4: unisim.vcomponents.LUT4
 \s_counter_reg[9]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axis_aclk,
-      CE => \s_counter[0]_i_2_n_0\,
+      CE => s_counter0,
       D => \s_counter_reg[8]_i_1_n_14\,
       Q => s_counter_reg(9),
       R => \s_counter[0]_i_1_n_0\
@@ -831,7 +823,6 @@ architecture STRUCTURE of design_1_iq_packager_0_0 is
   signal \^control\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \^m00_axis_tready\ : STD_LOGIC;
   signal \^s00_axis_tstrb\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \^s00_axis_tvalid\ : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of m00_axis_aclk : signal is "xilinx.com:signal:clock:1.0 M00_AXIS_CLK CLK";
   attribute X_INTERFACE_MODE : string;
@@ -878,10 +869,8 @@ begin
   \^control\(3 downto 0) <= control(3 downto 0);
   \^m00_axis_tready\ <= m00_axis_tready;
   \^s00_axis_tstrb\(3 downto 0) <= s00_axis_tstrb(3 downto 0);
-  \^s00_axis_tvalid\ <= s00_axis_tvalid;
   leds(3 downto 0) <= \^control\(3 downto 0);
   m00_axis_tstrb(3 downto 0) <= \^s00_axis_tstrb\(3 downto 0);
-  m00_axis_tvalid <= \^s00_axis_tvalid\;
   s00_axis_tready <= \^m00_axis_tready\;
   s01_axis_tready <= \^m00_axis_tready\;
 inst: entity work.design_1_iq_packager_0_0_iq_packager
@@ -894,9 +883,10 @@ inst: entity work.design_1_iq_packager_0_0_iq_packager
       s00_axis_aclk => s00_axis_aclk,
       s00_axis_aresetn => s00_axis_aresetn,
       s00_axis_tdata(15 downto 0) => s00_axis_tdata(15 downto 0),
-      s00_axis_tvalid => \^s00_axis_tvalid\,
+      s00_axis_tvalid => s00_axis_tvalid,
       s01_axis_tdata(14 downto 2) => s01_axis_tdata(15 downto 3),
-      s01_axis_tdata(1 downto 0) => s01_axis_tdata(1 downto 0)
+      s01_axis_tdata(1 downto 0) => s01_axis_tdata(1 downto 0),
+      s01_axis_tvalid => s01_axis_tvalid
     );
 \m00_axis_tdata[18]_INST_0\: unisim.vcomponents.LUT5
     generic map(
@@ -909,5 +899,14 @@ inst: entity work.design_1_iq_packager_0_0_iq_packager
       I3 => \^control\(1),
       I4 => \^control\(3),
       O => m00_axis_tdata(18)
+    );
+m00_axis_tvalid_INST_0: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"8"
+    )
+        port map (
+      I0 => s00_axis_tvalid,
+      I1 => s01_axis_tvalid,
+      O => m00_axis_tvalid
     );
 end STRUCTURE;

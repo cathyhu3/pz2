@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-// Date        : Fri Oct 17 16:48:37 2025
+// Date        : Mon Oct 27 21:58:42 2025
 // Host        : eecs-digital-40 running 64-bit Ubuntu 24.04.3 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/cathyhu3/s965/pz2/rfsoc/lab6_skid/lab6_skid.gen/sources_1/bd/design_1/ip/design_1_iq_packager_0_0/design_1_iq_packager_0_0_sim_netlist.v
@@ -67,16 +67,17 @@ module design_1_iq_packager_0_0
   wire [31:0]m00_axis_tdata;
   wire m00_axis_tlast;
   wire m00_axis_tready;
+  wire m00_axis_tvalid;
   wire s00_axis_aclk;
   wire s00_axis_aresetn;
   wire [15:0]s00_axis_tdata;
   wire [3:0]s00_axis_tstrb;
   wire s00_axis_tvalid;
   wire [15:0]s01_axis_tdata;
+  wire s01_axis_tvalid;
 
   assign leds[3:0] = control;
   assign m00_axis_tstrb[3:0] = s00_axis_tstrb;
-  assign m00_axis_tvalid = s00_axis_tvalid;
   assign s00_axis_tready = m00_axis_tready;
   assign s01_axis_tready = m00_axis_tready;
   design_1_iq_packager_0_0_iq_packager inst
@@ -88,7 +89,8 @@ module design_1_iq_packager_0_0
         .s00_axis_aresetn(s00_axis_aresetn),
         .s00_axis_tdata(s00_axis_tdata),
         .s00_axis_tvalid(s00_axis_tvalid),
-        .s01_axis_tdata({s01_axis_tdata[15:3],s01_axis_tdata[1:0]}));
+        .s01_axis_tdata({s01_axis_tdata[15:3],s01_axis_tdata[1:0]}),
+        .s01_axis_tvalid(s01_axis_tvalid));
   LUT5 #(
     .INIT(32'hAAAA8AAA)) 
     \m00_axis_tdata[18]_INST_0 
@@ -98,6 +100,12 @@ module design_1_iq_packager_0_0
         .I3(control[1]),
         .I4(control[3]),
         .O(m00_axis_tdata[18]));
+  LUT2 #(
+    .INIT(4'h8)) 
+    m00_axis_tvalid_INST_0
+       (.I0(s00_axis_tvalid),
+        .I1(s01_axis_tvalid),
+        .O(m00_axis_tvalid));
 endmodule
 
 (* ORIG_REF_NAME = "iq_packager" *) 
@@ -108,6 +116,7 @@ module design_1_iq_packager_0_0_iq_packager
     s00_axis_aresetn,
     m00_axis_tready,
     s00_axis_tvalid,
+    s01_axis_tvalid,
     control,
     s00_axis_tdata,
     s01_axis_tdata);
@@ -117,6 +126,7 @@ module design_1_iq_packager_0_0_iq_packager
   input s00_axis_aresetn;
   input m00_axis_tready;
   input s00_axis_tvalid;
+  input s01_axis_tvalid;
   input [3:0]control;
   input [15:0]s00_axis_tdata;
   input [14:0]s01_axis_tdata;
@@ -134,10 +144,10 @@ module design_1_iq_packager_0_0_iq_packager
   wire [15:0]s00_axis_tdata;
   wire s00_axis_tvalid;
   wire [14:0]s01_axis_tdata;
+  wire s01_axis_tvalid;
+  wire s_counter0;
   wire \s_counter[0]_i_1_n_0 ;
-  wire \s_counter[0]_i_2_n_0 ;
   wire \s_counter[0]_i_4_n_0 ;
-  wire \s_counter[0]_i_5_n_0 ;
   wire [17:0]s_counter_reg;
   wire \s_counter_reg[0]_i_3_n_0 ;
   wire \s_counter_reg[0]_i_3_n_1 ;
@@ -498,20 +508,20 @@ module design_1_iq_packager_0_0_iq_packager
   LUT6 #(
     .INIT(64'h7FFFFFFFFFFFFFFF)) 
     m00_axis_tlast_INST_0_i_1
-       (.I0(s_counter_reg[6]),
-        .I1(s_counter_reg[8]),
-        .I2(s_counter_reg[7]),
-        .I3(s_counter_reg[3]),
-        .I4(s_counter_reg[0]),
-        .I5(s_counter_reg[1]),
+       (.I0(s_counter_reg[1]),
+        .I1(s_counter_reg[0]),
+        .I2(s_counter_reg[6]),
+        .I3(s_counter_reg[4]),
+        .I4(s_counter_reg[3]),
+        .I5(s_counter_reg[2]),
         .O(m00_axis_tlast_INST_0_i_1_n_0));
   LUT4 #(
     .INIT(16'h8000)) 
     m00_axis_tlast_INST_0_i_2
-       (.I0(s_counter_reg[4]),
-        .I1(s_counter_reg[5]),
-        .I2(s_counter_reg[2]),
-        .I3(s_counter_reg[9]),
+       (.I0(s_counter_reg[8]),
+        .I1(s_counter_reg[9]),
+        .I2(s_counter_reg[5]),
+        .I3(s_counter_reg[7]),
         .O(m00_axis_tlast_INST_0_i_2_n_0));
   LUT4 #(
     .INIT(16'h7FFF)) 
@@ -530,35 +540,30 @@ module design_1_iq_packager_0_0_iq_packager
         .I3(s_counter_reg[14]),
         .O(m00_axis_tlast_INST_0_i_4_n_0));
   LUT6 #(
-    .INIT(64'h555555555555555D)) 
+    .INIT(64'h5555555D55555555)) 
     \s_counter[0]_i_1 
        (.I0(s00_axis_aresetn),
         .I1(m00_axis_tlast_INST_0_i_2_n_0),
         .I2(m00_axis_tlast_INST_0_i_1_n_0),
-        .I3(\s_counter[0]_i_4_n_0 ),
-        .I4(m00_axis_tlast_INST_0_i_3_n_0),
-        .I5(m00_axis_tlast_INST_0_i_4_n_0),
+        .I3(m00_axis_tlast_INST_0_i_3_n_0),
+        .I4(m00_axis_tlast_INST_0_i_4_n_0),
+        .I5(s_counter0),
         .O(\s_counter[0]_i_1_n_0 ));
-  LUT2 #(
-    .INIT(4'h8)) 
+  LUT3 #(
+    .INIT(8'h80)) 
     \s_counter[0]_i_2 
        (.I0(m00_axis_tready),
         .I1(s00_axis_tvalid),
-        .O(\s_counter[0]_i_2_n_0 ));
-  LUT2 #(
-    .INIT(4'h7)) 
-    \s_counter[0]_i_4 
-       (.I0(s00_axis_tvalid),
-        .I1(m00_axis_tready),
-        .O(\s_counter[0]_i_4_n_0 ));
+        .I2(s01_axis_tvalid),
+        .O(s_counter0));
   LUT1 #(
     .INIT(2'h1)) 
-    \s_counter[0]_i_5 
+    \s_counter[0]_i_4 
        (.I0(s_counter_reg[0]),
-        .O(\s_counter[0]_i_5_n_0 ));
+        .O(\s_counter[0]_i_4_n_0 ));
   FDRE \s_counter_reg[0] 
        (.C(s00_axis_aclk),
-        .CE(\s_counter[0]_i_2_n_0 ),
+        .CE(s_counter0),
         .D(\s_counter_reg[0]_i_3_n_15 ),
         .Q(s_counter_reg[0]),
         .R(\s_counter[0]_i_1_n_0 ));
@@ -569,46 +574,46 @@ module design_1_iq_packager_0_0_iq_packager
         .CO({\s_counter_reg[0]_i_3_n_0 ,\s_counter_reg[0]_i_3_n_1 ,\s_counter_reg[0]_i_3_n_2 ,\s_counter_reg[0]_i_3_n_3 ,\s_counter_reg[0]_i_3_n_4 ,\s_counter_reg[0]_i_3_n_5 ,\s_counter_reg[0]_i_3_n_6 ,\s_counter_reg[0]_i_3_n_7 }),
         .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b1}),
         .O({\s_counter_reg[0]_i_3_n_8 ,\s_counter_reg[0]_i_3_n_9 ,\s_counter_reg[0]_i_3_n_10 ,\s_counter_reg[0]_i_3_n_11 ,\s_counter_reg[0]_i_3_n_12 ,\s_counter_reg[0]_i_3_n_13 ,\s_counter_reg[0]_i_3_n_14 ,\s_counter_reg[0]_i_3_n_15 }),
-        .S({s_counter_reg[7:1],\s_counter[0]_i_5_n_0 }));
+        .S({s_counter_reg[7:1],\s_counter[0]_i_4_n_0 }));
   FDRE \s_counter_reg[10] 
        (.C(s00_axis_aclk),
-        .CE(\s_counter[0]_i_2_n_0 ),
+        .CE(s_counter0),
         .D(\s_counter_reg[8]_i_1_n_13 ),
         .Q(s_counter_reg[10]),
         .R(\s_counter[0]_i_1_n_0 ));
   FDRE \s_counter_reg[11] 
        (.C(s00_axis_aclk),
-        .CE(\s_counter[0]_i_2_n_0 ),
+        .CE(s_counter0),
         .D(\s_counter_reg[8]_i_1_n_12 ),
         .Q(s_counter_reg[11]),
         .R(\s_counter[0]_i_1_n_0 ));
   FDRE \s_counter_reg[12] 
        (.C(s00_axis_aclk),
-        .CE(\s_counter[0]_i_2_n_0 ),
+        .CE(s_counter0),
         .D(\s_counter_reg[8]_i_1_n_11 ),
         .Q(s_counter_reg[12]),
         .R(\s_counter[0]_i_1_n_0 ));
   FDRE \s_counter_reg[13] 
        (.C(s00_axis_aclk),
-        .CE(\s_counter[0]_i_2_n_0 ),
+        .CE(s_counter0),
         .D(\s_counter_reg[8]_i_1_n_10 ),
         .Q(s_counter_reg[13]),
         .R(\s_counter[0]_i_1_n_0 ));
   FDRE \s_counter_reg[14] 
        (.C(s00_axis_aclk),
-        .CE(\s_counter[0]_i_2_n_0 ),
+        .CE(s_counter0),
         .D(\s_counter_reg[8]_i_1_n_9 ),
         .Q(s_counter_reg[14]),
         .R(\s_counter[0]_i_1_n_0 ));
   FDRE \s_counter_reg[15] 
        (.C(s00_axis_aclk),
-        .CE(\s_counter[0]_i_2_n_0 ),
+        .CE(s_counter0),
         .D(\s_counter_reg[8]_i_1_n_8 ),
         .Q(s_counter_reg[15]),
         .R(\s_counter[0]_i_1_n_0 ));
   FDRE \s_counter_reg[16] 
        (.C(s00_axis_aclk),
-        .CE(\s_counter[0]_i_2_n_0 ),
+        .CE(s_counter0),
         .D(\s_counter_reg[16]_i_1_n_15 ),
         .Q(s_counter_reg[16]),
         .R(\s_counter[0]_i_1_n_0 ));
@@ -622,55 +627,55 @@ module design_1_iq_packager_0_0_iq_packager
         .S({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,s_counter_reg[17:16]}));
   FDRE \s_counter_reg[17] 
        (.C(s00_axis_aclk),
-        .CE(\s_counter[0]_i_2_n_0 ),
+        .CE(s_counter0),
         .D(\s_counter_reg[16]_i_1_n_14 ),
         .Q(s_counter_reg[17]),
         .R(\s_counter[0]_i_1_n_0 ));
   FDRE \s_counter_reg[1] 
        (.C(s00_axis_aclk),
-        .CE(\s_counter[0]_i_2_n_0 ),
+        .CE(s_counter0),
         .D(\s_counter_reg[0]_i_3_n_14 ),
         .Q(s_counter_reg[1]),
         .R(\s_counter[0]_i_1_n_0 ));
   FDRE \s_counter_reg[2] 
        (.C(s00_axis_aclk),
-        .CE(\s_counter[0]_i_2_n_0 ),
+        .CE(s_counter0),
         .D(\s_counter_reg[0]_i_3_n_13 ),
         .Q(s_counter_reg[2]),
         .R(\s_counter[0]_i_1_n_0 ));
   FDRE \s_counter_reg[3] 
        (.C(s00_axis_aclk),
-        .CE(\s_counter[0]_i_2_n_0 ),
+        .CE(s_counter0),
         .D(\s_counter_reg[0]_i_3_n_12 ),
         .Q(s_counter_reg[3]),
         .R(\s_counter[0]_i_1_n_0 ));
   FDRE \s_counter_reg[4] 
        (.C(s00_axis_aclk),
-        .CE(\s_counter[0]_i_2_n_0 ),
+        .CE(s_counter0),
         .D(\s_counter_reg[0]_i_3_n_11 ),
         .Q(s_counter_reg[4]),
         .R(\s_counter[0]_i_1_n_0 ));
   FDRE \s_counter_reg[5] 
        (.C(s00_axis_aclk),
-        .CE(\s_counter[0]_i_2_n_0 ),
+        .CE(s_counter0),
         .D(\s_counter_reg[0]_i_3_n_10 ),
         .Q(s_counter_reg[5]),
         .R(\s_counter[0]_i_1_n_0 ));
   FDRE \s_counter_reg[6] 
        (.C(s00_axis_aclk),
-        .CE(\s_counter[0]_i_2_n_0 ),
+        .CE(s_counter0),
         .D(\s_counter_reg[0]_i_3_n_9 ),
         .Q(s_counter_reg[6]),
         .R(\s_counter[0]_i_1_n_0 ));
   FDRE \s_counter_reg[7] 
        (.C(s00_axis_aclk),
-        .CE(\s_counter[0]_i_2_n_0 ),
+        .CE(s_counter0),
         .D(\s_counter_reg[0]_i_3_n_8 ),
         .Q(s_counter_reg[7]),
         .R(\s_counter[0]_i_1_n_0 ));
   FDRE \s_counter_reg[8] 
        (.C(s00_axis_aclk),
-        .CE(\s_counter[0]_i_2_n_0 ),
+        .CE(s_counter0),
         .D(\s_counter_reg[8]_i_1_n_15 ),
         .Q(s_counter_reg[8]),
         .R(\s_counter[0]_i_1_n_0 ));
@@ -684,7 +689,7 @@ module design_1_iq_packager_0_0_iq_packager
         .S(s_counter_reg[15:8]));
   FDRE \s_counter_reg[9] 
        (.C(s00_axis_aclk),
-        .CE(\s_counter[0]_i_2_n_0 ),
+        .CE(s_counter0),
         .D(\s_counter_reg[8]_i_1_n_14 ),
         .Q(s_counter_reg[9]),
         .R(\s_counter[0]_i_1_n_0 ));

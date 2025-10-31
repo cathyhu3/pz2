@@ -63,3 +63,8 @@
     <Process Command="vivado" Owner="cathyhu3" Host="eecs-digital-40" Pid="832917" HostCore="16" HostMemory="28654756">
     </Process>
 </ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="cathyhu3" Host="eecs-digital-40" Pid="2788181" HostCore="16" HostMemory="28654756">
+    </Process>
+</ProcessHandle>

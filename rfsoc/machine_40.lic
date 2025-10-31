@@ -1,0 +1,43 @@
+# ----- REMOVE LINES ABOVE HERE --------------------------
+#
+# This license is valid from Thu Aug 28 13:32:24 UTC 2025.
+#
+# This is license NODELOCKED to HOSTID=7855360180c2;
+# there is no need to run lmgrd for this license.
+#
+#
+# This is a permanent license generated on Thu Aug 28 13:32:24 UTC 2025
+INCREMENT ISE_Embedded_Edition xilinxd 2026.08 permanent uncounted \
+ACD406C3324A \
+VENDOR_STRING=jodalyst@mit.edu,ISE_Embedded_Edition,software,permanent,_211094348_1777586888_210805887_823 \
+HOSTID=7855360180c2 ISSUER="Xilinx Inc" START=28-Aug-2025 \
+TS_OK
+#
+# This is a permanent license generated on Thu Aug 28 13:32:24 UTC 2025
+INCREMENT Vivado_ML_Enterprise_Edition xilinxd 2026.08 permanent \
+uncounted 6789E16AE78B \
+VENDOR_STRING=jodalyst@mit.edu,Vivado_ML_Enterprise_Edition,software,permanent,_211094348_1777586888_210805887_367 \
+HOSTID=7855360180c2 ISSUER="Xilinx Inc" START=28-Aug-2025 \
+TS_OK
+#
+#
+# ----------------------------------------------------------------------
+#  The following PACKAGE definition is a REQUIRED part of this license:
+#
+PACKAGE ISE_Embedded_Edition xilinxd 2026.08 8F50287AD04D \
+COMPONENTS="ChipScopePro_SIOTK ChipscopePro ISE XPS ISIM \
+PlanAhead SDK" OPTIONS=SUITE
+#
+# ------------------------------------------------------------------------------
+#
+#
+# ----------------------------------------------------------------------
+#  The following PACKAGE definition is a REQUIRED part of this license:
+#
+PACKAGE Vivado_ML_Enterprise_Edition xilinxd 2026.08 D8A77AC8A56D \
+COMPONENTS="Analyzer HLS Implementation PartialReconfiguration \
+SDK Simulation Synthesis" OPTIONS=SUITE
+#
+# ------------------------------------------------------------------------------
+#
+# ----- REMOVE LINES BELOW HERE --------------------------
