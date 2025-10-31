@@ -31,6 +31,7 @@ module adsb_decoder #
     assign m00_axis_tlast = 1'b1;
 
     localparam integer BIT_LENGTH = 32; // 0.5 microsecond bit is 32 samples at 64 MSps
+    localparam HALF_BIT_LEN = BIT_LENGTH >> 1;
     logic [$clog2(SQUITTER_LENGTH) - 1:0] bit_counter; // Count how many data bits of the squitter we have received (increments every 2 physical bits).
     logic [$clog2(BIT_LENGTH) - 1:0] sample_counter; // Count ADC data samples to determine when we should sample each physical bit.
     logic thresholded_data;
@@ -39,7 +40,19 @@ module adsb_decoder #
     
     assign thresholded_data_debug = thresholded_data;
 
-    // TODO: You fill in this FSM. Remember to sample in the middle of bits like we do for UART, not at the start or end. You can implement this however you want (feel free to delete my skeleton and comments). Make sure your counting is correct! If you are off by 1 every time, the error will compound over 224 bits such that you are completely misaligned by the end. For debugging/simulation purposes, you could add a "sampling" signal that goes high whenever you sample the thresholded data. That would let you quickly tell in GTKWave whether your sampling is aligned to the center of each bit correctly the whole time.
+    // cathy
+    logic first_bit;
+    logic [C_M00_AXIS_TDATA_WIDTH-1 : 0] adsb_packet;
+    assign m00_axis_tdata = adsb_packet;
+
+    /* TODO: You fill in this FSM. Remember to sample in the middle of bits like we do for UART, 
+        not at the start or end. You can implement this however you want (feel free to delete my skeleton and comments). 
+        Make sure your counting is correct! If you are off by 1 every time, the error will compound 
+        over 224 bits such that you are completely misaligned by the end. 
+        For debugging/simulation purposes, you could add a "sampling" signal that goes high 
+        whenever you sample the thresholded data. 
+        That would let you quickly tell in GTKWave whether your sampling is aligned to the 
+        center of each bit correctly the whole time.*/
     always_ff @(posedge s00_axis_aclk) begin
         if (~s00_axis_aresetn) begin
             state <= IDLE;
@@ -50,14 +63,69 @@ module adsb_decoder #
             case (state)
                 IDLE: begin
                     // This state waits for trigger to go high.
-                    // When trigger goes high, we start the sample counter at 3 (to deal with the slight delay from the local max detector) and reset the bit counter to 0 since we are starting a new squitter. Then we go to the COUNT_FIRST_BIT state. 
+                    m00_axis_tvalid <= 0;
+                    if (trigger) begin
+                        state <= COUNT_FIRST_BIT;
+                        sample_counter <= 3; // When trigger goes high, we start the sample counter at 3 (to account for 3 cycle delay of max detector)
+                        bit_counter <= 0; // reset the bit counter to 0 since we are starting a new squitter. 
+                    end else begin
+                    end
                 end
                 COUNT_FIRST_BIT: begin
-                    // This state uses sample_counter to count up to BIT_LENGTH - 1 (unless we are on the first bit, in which case we count up to BIT_LENGTH / 2). When we reach the sample count, we sample the thresholded data, then go to the COUNT_SECOND_BIT state.
+                    // This state uses sample_counter to count up to BIT_LENGTH - 1 
+                    // (unless we are on the first bit, in which case we count up to BIT_LENGTH / 2). 
+                    // When we reach the sample count, we sample the thresholded data, then go to the COUNT_SECOND_BIT state.
+                    if (s00_axis_tvalid) begin
+                        if (bit_counter == 0) begin
+                            if (sample_counter < HALF_BIT_LEN) begin
+                                sample_counter <= sample_counter + 1;
+                            end else begin
+                                first_bit <= thresholded_data;
+                                sample_counter <= 0;
+                                state <= COUNT_SECOND_BIT;
+                            end
+                        end else begin
+                            if (sample_counter < BIT_LENGTH) begin
+                                sample_counter <= sample_counter + 1;
+                            end else begin
+                                first_bit <= thresholded_data;
+                                sample_counter <= 0;
+                                state <= COUNT_SECOND_BIT;
+                            end
+                        end
+                    end
                 end
                 COUNT_SECOND_BIT: begin
-                    // This state uses sample_counter to count up to BIT_LENGTH - 1, at which point is samples the thresholded data. It then uses the saved first bit from COUNT_SECOND_BIT and the sampled thresholded data to decide what the data bit is ("10" -> "1", "01" -> "0" in Manchester coding).
-                    // If we have done SQUITTER_LENGTH data bits, then we set valid high and return to the IDLE state. Otherwise, we increment the bit_counter, reset the sample_counter, and go back to the COUNT_FIRST_BIT state.
+                    // This state uses sample_counter to count up to BIT_LENGTH - 1, 
+                    // at which point is samples the thresholded data. 
+                    // It then uses the saved first bit from COUNT_SECOND_BIT and the sampled 
+                    // thresholded data to decide what the data bit is ("10" -> "1", "01" -> "0" in Manchester coding).
+                    // If we have done SQUITTER_LENGTH data bits, then we set valid high and return to the IDLE state. 
+                    // Otherwise, we increment the bit_counter, reset the sample_counter, 
+                    // and go back to the COUNT_FIRST_BIT state.
+                    if (s00_axis_tvalid) begin
+                        if (bit_counter < SQUITTER_LENGTH) begin
+                            if (sample_counter < BIT_LENGTH) begin
+                                sample_counter <= sample_counter + 1;
+                            end else begin
+                                adsb_packet[SQUITTER_LENGTH - bit_counter - 1] <= (first_bit == 1 && thresholded_data == 0) ? 1 : 0;
+                                sample_counter <= 0;
+                                bit_counter <= bit_counter + 1;
+                                state <= COUNT_FIRST_BIT;
+                            end
+                        end else begin
+                            if (sample_counter < BIT_LENGTH) begin
+                                sample_counter <= sample_counter + 1;
+                            end else begin
+                                adsb_packet[0] <= (first_bit == 1 && thresholded_data == 0) ? 1 : 0;
+                                sample_counter <= 0;
+                                bit_counter <= 0;
+                                m00_axis_tvalid <= 1;
+                                state <= IDLE;
+                            end
+                        end
+                    end
+
                 end
             endcase
         end
