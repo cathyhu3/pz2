@@ -108,16 +108,16 @@ module adsb_decoder #
                             if (sample_counter < BIT_LENGTH) begin
                                 sample_counter <= sample_counter + 1;
                             end else begin
-                                adsb_packet[SQUITTER_LENGTH - bit_counter - 1] <= (first_bit == 1 && thresholded_data == 0) ? 1 : 0;
+                                adsb_packet[SQUITTER_LENGTH - bit_counter - 1] <= (first_bit == 1 && thresholded_data == 0);
                                 sample_counter <= 0;
                                 bit_counter <= bit_counter + 1;
                                 state <= COUNT_FIRST_BIT;
                             end
-                        end else begin
+                        end else begin // last bit
                             if (sample_counter < BIT_LENGTH) begin
                                 sample_counter <= sample_counter + 1;
                             end else begin
-                                adsb_packet[0] <= (first_bit == 1 && thresholded_data == 0) ? 1 : 0;
+                                adsb_packet[0] <= (first_bit == 1 && thresholded_data == 0);
                                 sample_counter <= 0;
                                 bit_counter <= 0;
                                 m00_axis_tvalid <= 1;
