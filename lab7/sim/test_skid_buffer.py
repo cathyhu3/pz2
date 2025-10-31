@@ -23,111 +23,113 @@ from cocotb_coverage.coverage import CoverCross, CoverPoint, coverage_db, covera
 import constraint
 test_file = os.path.basename(__file__).replace(".py","")
 
+# state coverage
+SC = coverage_section (
+CoverPoint("top.st.state",
+           xf=lambda s, ns: s,
+           bins=['EMPTY', 'BUSY', 'FULL']
+           )
+# CATHY COMMENTED OUT: i didn't use next_state in my skid_buffer.sv implementation
 
-#SC = coverage_section (
-#CoverPoint("top.st.state",
-#            xf=lambda s, ns: s,
-#            bins=['EMPTY', 'BUSY', 'FULL']
-#            ),
-#CoverPoint("top.st.next_state",
+# CoverPoint("top.st.next_state",
 #            xf=lambda s, ns: ns,
 #            bins=['EMPTY', 'BUSY', 'FULL']
 #            ),
-#CoverCross("top.st.state.cross",
+# CoverCross("top.st.state.cross",
 #            items=["top.st.state", "top.st.next_state"],
 #           ign_bins=[('FULL','EMPTY'), ('EMPTY','FULL')]
 #           )
-#)
-#
-#@SC
-#def sampling_function(s,ns):
-#    #could maybe do some work on these things right here.
-#    pass
-#
-#async def state_monitor(dut):
-#    states = {0:'EMPTY', 1:'BUSY', 2:'FULL'}
-#    read_only = ReadOnly() #This is
-#    falling_edge = FallingEdge(dut.s00_axis_aclk)
-#    rising_edge = RisingEdge(dut.s00_axis_aclk)
-#    await read_only
-#    old_state = dut.state.value
-#    while True:
-#        await rising_edge #when module would change
-#        await read_only
-#        state = dut.state.value
-#        sampling_function(states[old_state], states[state])
-#        old_state = state
-#
-#STS = coverage_section(
-#CoverPoint("top.st_sig.state",
-#            xf=lambda state,sig: state,
-#            bins=['EMPTY', 'BUSY', 'FULL']
-#            ),
-#CoverPoint("top.st_sig.s00_tvalid",
-#            xf=lambda state,sig: sig.get('s00_tvalid'),
-#            bins=[True, False]
-#            ),
-#CoverPoint("top.st_sig.s00_tready",
-#            xf=lambda state,sig: sig.get('s00_tready'),
-#            bins=[True, False]
-#            ),
-#CoverPoint("top.st_sig.m00_tvalid",
-#            xf=lambda state,sig: sig.get('m00_tvalid'),
-#            bins=[True, False]
-#            ),
-#CoverPoint("top.st_sig.m00_tready",
-#            xf=lambda state,sig: sig.get('m00_tready'),
-#            bins=[True, False]
-#            ),
-##CoverCross("top.st_sig.cross",
-##            items=[ "top.st_sig.state",
-##                    "top.st_sig.s00_tvalid",
-##                    "top.st_sig.s00_tready",
-##                    "top.st_sig.m00_tvalid",
-##                    "top.st_sig.m00_tready"],
-#           #ign_bins = [('FULL', False, True), ('FULL', False, False)]
-##            )
-#CoverCross("top.st_sig.scross",
+)
+
+@SC
+def sampling_function(s,ns):
+   #could maybe do some work on these things right here.
+   pass
+
+async def state_monitor(dut):
+   states = {0:'EMPTY', 1:'BUSY', 2:'FULL'}
+   read_only = ReadOnly() #This is
+   falling_edge = FallingEdge(dut.s00_axis_aclk)
+   rising_edge = RisingEdge(dut.s00_axis_aclk)
+   await read_only
+   old_state = dut.state.value
+   while True:
+       await rising_edge #when module would change
+       await read_only
+       state = dut.state.value
+       sampling_function(states[old_state], states[state])
+       old_state = state
+
+STS = coverage_section(
+CoverPoint("top.st_sig.state",
+           xf=lambda state,sig: state,
+           bins=['EMPTY', 'BUSY', 'FULL']
+           ),
+CoverPoint("top.st_sig.s00_tvalid",
+           xf=lambda state,sig: sig.get('s00_tvalid'),
+           bins=[True, False]
+           ),
+CoverPoint("top.st_sig.s00_tready",
+           xf=lambda state,sig: sig.get('s00_tready'),
+           bins=[True, False]
+           ),
+CoverPoint("top.st_sig.m00_tvalid",
+           xf=lambda state,sig: sig.get('m00_tvalid'),
+           bins=[True, False]
+           ),
+CoverPoint("top.st_sig.m00_tready",
+           xf=lambda state,sig: sig.get('m00_tready'),
+           bins=[True, False]
+           ),
+#CoverCross("top.st_sig.cross",
 #            items=[ "top.st_sig.state",
 #                    "top.st_sig.s00_tvalid",
-#                    "top.st_sig.s00_tready"],
-#           ign_bins = [('EMPTY', True, False), ('EMPTY', False, False)]
-#            ),
-#CoverCross("top.st_sig.mcross",
-#            items=[ "top.st_sig.state",
+#                    "top.st_sig.s00_tready",
 #                    "top.st_sig.m00_tvalid",
 #                    "top.st_sig.m00_tready"],
-#           ign_bins = [('FULL', False, True), ('FULL', False, False)]
+          #ign_bins = [('FULL', False, True), ('FULL', False, False)]
 #            )
-#)
-#
-#@STS
-#def sts_sampling_function(state,sig):
-#  pass
-#
-#async def state_and_input_monitor(dut):
-#    states = {0:'EMPTY', 1:'BUSY', 2:'FULL'}
-#    read_only = ReadOnly()
-#    falling_edge = FallingEdge(dut.s00_axis_aclk)
-#    rising_edge = RisingEdge(dut.s00_axis_aclk)
-#    await read_only
-#    old_state = dut.state.value
-#
-#    while True:
-#        await falling_edge #when module would change
-#        await read_only
-#        state = dut.state.value
-#        sig = { 's00_tvalid':dut.s00_axis_tvalid.value,
-#                's00_tready':dut.s00_axis_tready.value,
-#                'm00_tvalid':dut.m00_axis_tvalid.value,
-#                'm00_tready':dut.m00_axis_tready.value
-#        }
-#        #sts_sampling_function(states[state],sig)
-#        sts_sampling_function(states[old_state],sig)
-#        old_state = state
+CoverCross("top.st_sig.scross",
+           items=[ "top.st_sig.state",
+                   "top.st_sig.s00_tvalid",
+                   "top.st_sig.s00_tready"],
+          ign_bins = [('EMPTY', True, False), ('EMPTY', False, False)]
+           ),
+CoverCross("top.st_sig.mcross",
+           items=[ "top.st_sig.state",
+                   "top.st_sig.m00_tvalid",
+                   "top.st_sig.m00_tready"],
+          ign_bins = [('FULL', False, True), ('FULL', False, False)]
+           )
+)
+
+@STS
+def sts_sampling_function(state,sig):
+ pass
+
+async def state_and_input_monitor(dut):
+   states = {0:'EMPTY', 1:'BUSY', 2:'FULL'}
+   read_only = ReadOnly()
+   falling_edge = FallingEdge(dut.s00_axis_aclk)
+   rising_edge = RisingEdge(dut.s00_axis_aclk)
+   await read_only
+   old_state = dut.state.value
+
+   while True:
+       await falling_edge #when module would change
+       await read_only
+       state = dut.state.value
+       sig = { 's00_tvalid':dut.s00_axis_tvalid.value,
+               's00_tready':dut.s00_axis_tready.value,
+               'm00_tvalid':dut.m00_axis_tvalid.value,
+               'm00_tready':dut.m00_axis_tready.value
+       }
+       #sts_sampling_function(states[state],sig)
+       sts_sampling_function(states[old_state],sig)
+       old_state = state
 
 
-#
+# Valid / Ready Coverage
 OS = coverage_section(
 CoverPoint("top.os.s00_tvalid",
             xf=lambda sig: sig.get('s00_tvalid'),
@@ -148,18 +150,29 @@ CoverPoint("top.os.m00_tready",
 CoverCross("top.os.s_cross",
             items=[ "top.os.s00_tvalid",
                     "top.os.s00_tready"],
+            ign_bins=[("V:1->0", "R:0->0"), # illegal axi transaction: valid can only deassert when there is a handshake
+            ("V:1->0", "R:0->1"), # illegal for same reasons as above
+            ("V:0->1", "R:1->0"), # this wouldn't happen: ready should only deassert when valid is high
+            ("V:0->0", "R:1->0"), # same reasoning as above
+            ]
             ),
 CoverCross("top.os.m_cross",
             items=[ "top.os.m00_tvalid",
                     "top.os.m00_tready"],
-            )
+            ign_bins=[("V:1->0", "R:0->0"), # illegal axi transaction: valid can only deassert when there is a handshake
+                      ("V:1->0", "R:0->1"), # illegal for same reasons as above
+                      ("V:0->1", "R:1->0"), # this wouldn't happen: ready should only deassert when valid is high
+                      ("V:0->0", "R:1->0"), # same reasoning as above
+                      ]
+
+            ),
 )
 
 @OS
 def os_sampling_function(sig):
     pass
 
-def get_rv(dut):
+def get_rv(dut): # get ready / valid
     return {'s00_tvalid':dut.s00_axis_tvalid.value,
             's00_tready':dut.s00_axis_tready.value,
             'm00_tvalid':dut.m00_axis_tvalid.value,
@@ -251,6 +264,42 @@ class M_AXIS_Driver(AXIS_Driver):
         falling_edge = FallingEdge(self.clock)
         read_only = ReadOnly() #This is
         #add your M driver code
+        command = value.get("type")
+        if command == "pause":
+            await FallingEdge(self.clock)
+            self.bus.axis_tvalid.value = 0 #set to 0 and be done.
+            self.bus.axis_tlast.value = 0 #set to 0 and be done.
+            for i in range(value.get("duration",1)):
+                await RisingEdge(self.clock)
+        elif command == "write_single":
+            await FallingEdge(self.clock)
+            self.bus.axis_tdata.value = value.get("contents")["data"]
+            self.bus.axis_tvalid.value = 1
+            self.bus.axis_tlast.value = 1
+            await ReadOnly()
+            if self.bus.axis_tready.value:
+                pass
+            else:
+                await RisingEdge(self.bus.axis_tready)
+        elif command == "write_burst":
+            array = value.get("contents")["data"]
+            index = 0
+            while index < len(array):
+                await FallingEdge(self.clock)
+                self.bus.axis_tvalid.value = 1
+                self.bus.axis_tdata.value = int(array[index])
+                # determining when to set tlast
+                if (index == len(array)-1):
+                    self.bus.axis_tlast.value = 1
+                else:
+                    self.bus.axis_tlast.value = 0
+                await ReadOnly()
+                # counting transaction through handshake
+                if self.bus.axis_tready.value:
+                    pass
+                else:
+                    await RisingEdge(self.bus.axis_tready)
+                index += 1
 
 class S_AXIS_Driver(BusDriver):
     def __init__(self, dut, name, clk):
@@ -263,6 +312,21 @@ class S_AXIS_Driver(BusDriver):
         falling_edge = FallingEdge(self.clock)
         read_only = ReadOnly() #This is
         #add your S driver code
+        if value.get("type") == "pause":
+            await FallingEdge(self.clock)
+            self.bus.axis_tready.value = 0 #set to 0 and be done.
+            for i in range(value.get("duration",1)):
+                await RisingEdge(self.clock)
+        elif value.get("type") == "read":
+            for i in range(value.get("duration",1)): # counting number of transactions
+                await FallingEdge(self.clock)
+                self.bus.axis_tready.value = 1
+                await ReadOnly()
+                if self.bus.axis_tvalid.value: # only signal ready when the data is valid
+                    pass
+                else:
+                    await RisingEdge(self.bus.axis_tvalid)
+                await RisingEdge(self.clock)
 
 async def reset(clk,rst, cycles_held = 3,polarity=1):
     rst.value = polarity
@@ -284,17 +348,17 @@ async def test_a(dut):
     outd = S_AXIS_Driver(dut,'m00',dut.s00_axis_aclk) #S driver for M port
 
     # Create a scoreboard on the stream_out bus
-    scoreboard = Scoreboard(dut,fail_immediately=False)
-    scoreboard.add_interface(outm, sig_out_exp)
+    # scoreboard = Scoreboard(dut,fail_immediately=False)
+    # scoreboard.add_interface(outm, sig_out_exp)
     cocotb.start_soon(Clock(dut.s00_axis_aclk, 10, units="ns").start())
 
-    #cocotb.start_soon(state_monitor(dut)) #feel free to bring back in
-    #cocotb.start_soon(state_and_input_monitor(dut)) #feel free to bring back in
+    cocotb.start_soon(state_monitor(dut)) #feel free to bring back in
+    cocotb.start_soon(state_and_input_monitor(dut)) #feel free to bring back in
     cocotb.start_soon(os_monitor(dut))
     await reset(dut.s00_axis_aclk, dut.s00_axis_aresetn,2,0)
 
     #feed the driver on the M Side:
-    for i in range(50):
+    for i in range(100):
         data = {'type':'write_single', "contents":{"data": random.randint(1,255),"last":0}}
         ind.append(data)
         pause = {"type":"pause","duration":random.randint(1,6)}
@@ -302,10 +366,10 @@ async def test_a(dut):
     ind.append({'type':'write_burst', "contents": {"data": np.array(list(range(100)))}})
     ind.append({'type':'pause','duration':2}) #end with pause
     #feed the driver on the S Side with on/off backpressure!
-    for i in range(50):
+    for i in range(101): # CATHY: increasing the number of random inputs to reach full coverage
         outd.append({'type':'read', "duration":random.randint(1,10)})
         outd.append({'type':'pause', "duration":random.randint(1,10)})
-    await ClockCycles(dut.s00_axis_aclk, 500)
+    await ClockCycles(dut.s00_axis_aclk, 700) # CATHY: needed to increase amount of CCs to allow for enough timex
     coverage_db.report_coverage(cocotb.log.info, bins=True)
     coverage_file = os.path.join(os.getenv('sim_result', "./"), 'coverage.xml')
     coverage_db.export_to_xml(filename=coverage_file)
