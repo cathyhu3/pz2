@@ -33,7 +33,7 @@ module adsb_decoder #
     localparam integer BIT_LENGTH = 32; // 0.5 microsecond bit is 32 samples at 64 MSps
     localparam HALF_BIT_LEN = BIT_LENGTH >> 1;
     logic [$clog2(SQUITTER_LENGTH) - 1:0] bit_counter; // Count how many data bits of the squitter we have received (increments every 2 physical bits).
-    logic [$clog2(BIT_LENGTH) - 1:0] sample_counter; // Count ADC data samples to determine when we should sample each physical bit.
+    logic [$clog2(BIT_LENGTH):0] sample_counter; // Count ADC data samples to determine when we should sample each physical bit.
     logic thresholded_data;
     assign thresholded_data = (s00_axis_tdata > decoder_threshold);
     enum {IDLE, COUNT_FIRST_BIT, COUNT_SECOND_BIT} state; // IDLE state is for waiting for trigger. COUNT_FIRST_BIT state is for getting the 1st of each 2-physical-bit sequence that corresponds to 1 data bit. COUNT_SECOND_BIT is for getting the 2nd bit of each 2-physical-bit sequence and decoding a data bit.
@@ -42,8 +42,10 @@ module adsb_decoder #
 
     // cathy
     logic first_bit;
+    enum {FIRST, SECOND} substate;
     logic [C_M00_AXIS_TDATA_WIDTH-1 : 0] adsb_packet;
     assign m00_axis_tdata = adsb_packet;
+    logic manchest;
 
     /* TODO: You fill in this FSM. Remember to sample in the middle of bits like we do for UART, 
         not at the start or end. You can implement this however you want (feel free to delete my skeleton and comments). 
@@ -58,6 +60,8 @@ module adsb_decoder #
             state <= IDLE;
             sample_counter <= 0;
             bit_counter <= 0;
+            m00_axis_tvalid <= 0;
+            adsb_packet <= 0;
         end
         else begin
             case (state)
@@ -77,7 +81,7 @@ module adsb_decoder #
                     // When we reach the sample count, we sample the thresholded data, then go to the COUNT_SECOND_BIT state.
                     if (s00_axis_tvalid) begin
                         if (bit_counter == 0) begin
-                            if (sample_counter < HALF_BIT_LEN) begin
+                            if (sample_counter < HALF_BIT_LEN-1) begin
                                 sample_counter <= sample_counter + 1;
                             end else begin
                                 first_bit <= thresholded_data;
@@ -85,7 +89,7 @@ module adsb_decoder #
                                 state <= COUNT_SECOND_BIT;
                             end
                         end else begin
-                            if (sample_counter < BIT_LENGTH) begin
+                            if (sample_counter < BIT_LENGTH-1) begin
                                 sample_counter <= sample_counter + 1;
                             end else begin
                                 first_bit <= thresholded_data;
@@ -104,20 +108,27 @@ module adsb_decoder #
                     // Otherwise, we increment the bit_counter, reset the sample_counter, 
                     // and go back to the COUNT_FIRST_BIT state.
                     if (s00_axis_tvalid) begin
-                        if (bit_counter < SQUITTER_LENGTH) begin
-                            if (sample_counter < BIT_LENGTH) begin
+                        if (bit_counter < SQUITTER_LENGTH-1) begin
+                            if (sample_counter < BIT_LENGTH-1) begin
                                 sample_counter <= sample_counter + 1;
+                                substate <= FIRST;
                             end else begin
-                                adsb_packet[SQUITTER_LENGTH - bit_counter - 1] <= (first_bit == 1 && thresholded_data == 0);
+                                adsb_packet[SQUITTER_LENGTH - bit_counter - 1] <= (first_bit == 1 && thresholded_data == 0) ? 1 : (first_bit == 0 && thresholded_data == 1) ? 0 : 0;
+                                manchest <= (first_bit == 1 && thresholded_data == 0) ? 1 :
+                                            (first_bit == 0 && thresholded_data == 1) ? 0 : 0;
                                 sample_counter <= 0;
                                 bit_counter <= bit_counter + 1;
                                 state <= COUNT_FIRST_BIT;
+                                substate <= SECOND;
                             end
                         end else begin // last bit
-                            if (sample_counter < BIT_LENGTH) begin
+
+                            if (sample_counter < BIT_LENGTH-1) begin
                                 sample_counter <= sample_counter + 1;
                             end else begin
-                                adsb_packet[0] <= (first_bit == 1 && thresholded_data == 0);
+                                adsb_packet[0] <= (first_bit == 1 && thresholded_data == 0) ? 1 : (first_bit == 0 && thresholded_data == 1) ? 0 : 0;
+                                manchest <= (first_bit == 1 && thresholded_data == 0) ? 1 :
+                                            (first_bit == 0 && thresholded_data == 1) ? 0 : 0;
                                 sample_counter <= 0;
                                 bit_counter <= 0;
                                 m00_axis_tvalid <= 1;
