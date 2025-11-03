@@ -3,23 +3,23 @@
 # SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Thu Oct 16 18:26:29 2025
-# Process ID         : 67839
-# Current directory  : /home/cathyhu3/pz2
+# Start of session at: Mon Nov  3 16:05:27 2025
+# Process ID         : 3672887
+# Current directory  : /home/cathyhu3/s965/pz2
 # Command line       : vivado
-# Log file           : /home/cathyhu3/pz2/vivado.log
-# Journal file       : /home/cathyhu3/pz2/vivado.jou
-# Running On         : eecs-digital-33
+# Log file           : /home/cathyhu3/s965/pz2/vivado.log
+# Journal file       : /home/cathyhu3/s965/pz2/vivado.jou
+# Running On         : eecs-digital-40
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.3 LTS
-# Processor Detail   : 13th Gen Intel(R) Core(TM) i7-13700
-# CPU Frequency      : 2013.689 MHz
-# CPU Physical cores : 16
-# CPU Logical cores  : 24
-# Host memory        : 33325 MB
+# Processor Detail   : AMD Ryzen 7 5825U with Radeon Graphics
+# CPU Frequency      : 4026.546 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 29342 MB
 # Swap memory        : 8589 MB
-# Total Virtual      : 41915 MB
-# Available Virtual  : 40096 MB
+# Total Virtual      : 37932 MB
+# Available Virtual  : 27081 MB
 #-----------------------------------------------------------
 start_gui
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.0/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
@@ -58,7 +58,7 @@ WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.2 availab
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
-open_project /home/cathyhu3/pz2/rfsoc/lab6_skid/lab6_skid.xpr
+open_project /home/cathyhu3/s965/pz2/rfsoc/lab8/lab8.xpr
 Scanning sources...
 Finished scanning sources
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.0/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
@@ -98,42 +98,254 @@ WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 avail
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/pz2/rfsoc/ip_repo/iq_packager_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/ip_repo'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/2025.1/Vivado/data/ip'.
 update_compile_order -fileset sources_1
-open_bd_design {/home/cathyhu3/pz2/rfsoc/lab6_skid/lab6_skid.srcs/sources_1/bd/design_1/design_1.bd}
-Reading block design file </home/cathyhu3/pz2/rfsoc/lab6_skid/lab6_skid.srcs/sources_1/bd/design_1/design_1.bd>...
+ipx::open_ipxact_file /home/cathyhu3/s965/pz2/ip_repo/component.xml
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/cathyhu3/s965/pz2/rfsoc/lab8/lab8.srcs/sources_1/bd/design_1/design_1.bd'.
+WARNING: [IP_Flow 19-3898] File Group 'xilinx_anylanguagesynthesis (Synthesis)': File '/home/cathyhu3/s965/pz2/ip_repo/src/base.xdc' is not found in the project sources. It will be removed from the packaged IP when the sources are merged. If still required, please add this file to the project and re-package.
+WARNING: [IP_Flow 19-3898] File Group 'xilinx_anylanguagesynthesis (Synthesis)': File '/home/cathyhu3/s965/pz2/ip_repo/src/adsb_decoder.sv' is not found in the project sources. It will be removed from the packaged IP when the sources are merged. If still required, please add this file to the project and re-package.
+WARNING: [IP_Flow 19-3898] File Group 'xilinx_anylanguagesynthesis (Synthesis)': File '/home/cathyhu3/s965/pz2/ip_repo/src/axis_fir.sv' is not found in the project sources. It will be removed from the packaged IP when the sources are merged. If still required, please add this file to the project and re-package.
+WARNING: [IP_Flow 19-3898] File Group 'xilinx_anylanguagesynthesis (Synthesis)': File '/home/cathyhu3/s965/pz2/ip_repo/src/cordic.sv' is not found in the project sources. It will be removed from the packaged IP when the sources are merged. If still required, please add this file to the project and re-package.
+WARNING: [IP_Flow 19-3898] File Group 'xilinx_anylanguagesynthesis (Synthesis)': File '/home/cathyhu3/s965/pz2/ip_repo/src/preamble_detector.sv' is not found in the project sources. It will be removed from the packaged IP when the sources are merged. If still required, please add this file to the project and re-package.
+WARNING: [IP_Flow 19-3898] File Group 'xilinx_anylanguagesynthesis (Synthesis)': File '/home/cathyhu3/s965/pz2/ip_repo/src/top.sv' is not found in the project sources. It will be removed from the packaged IP when the sources are merged. If still required, please add this file to the project and re-package.
+WARNING: [IP_Flow 19-3898] File Group 'xilinx_anylanguagesynthesis (Synthesis)': File '/home/cathyhu3/s965/pz2/ip_repo/src/adsb_decoder_wrapper.v' is not found in the project sources. It will be removed from the packaged IP when the sources are merged. If still required, please add this file to the project and re-package.
+WARNING: [IP_Flow 19-3898] File Group 'xilinx_anylanguagebehavioralsimulation (Simulation)': File '/home/cathyhu3/s965/pz2/ip_repo/src/adsb_decoder.sv' is not found in the project sources. It will be removed from the packaged IP when the sources are merged. If still required, please add this file to the project and re-package.
+WARNING: [IP_Flow 19-3898] File Group 'xilinx_anylanguagebehavioralsimulation (Simulation)': File '/home/cathyhu3/s965/pz2/ip_repo/src/axis_fir.sv' is not found in the project sources. It will be removed from the packaged IP when the sources are merged. If still required, please add this file to the project and re-package.
+WARNING: [IP_Flow 19-3898] File Group 'xilinx_anylanguagebehavioralsimulation (Simulation)': File '/home/cathyhu3/s965/pz2/ip_repo/src/cordic.sv' is not found in the project sources. It will be removed from the packaged IP when the sources are merged. If still required, please add this file to the project and re-package.
+WARNING: [IP_Flow 19-3898] File Group 'xilinx_anylanguagebehavioralsimulation (Simulation)': File '/home/cathyhu3/s965/pz2/ip_repo/src/preamble_detector.sv' is not found in the project sources. It will be removed from the packaged IP when the sources are merged. If still required, please add this file to the project and re-package.
+WARNING: [IP_Flow 19-3898] File Group 'xilinx_anylanguagebehavioralsimulation (Simulation)': File '/home/cathyhu3/s965/pz2/ip_repo/src/top.sv' is not found in the project sources. It will be removed from the packaged IP when the sources are merged. If still required, please add this file to the project and re-package.
+WARNING: [IP_Flow 19-3898] File Group 'xilinx_anylanguagebehavioralsimulation (Simulation)': File '/home/cathyhu3/s965/pz2/ip_repo/src/adsb_decoder_wrapper.v' is not found in the project sources. It will be removed from the packaged IP when the sources are merged. If still required, please add this file to the project and re-package.
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+WARNING: [IP_Flow 19-3833] Unreferenced file from the top module is not packaged: '/home/cathyhu3/s965/pz2/rfsoc/lab8/lab8.srcs/sources_1/bd/design_1/design_1.bd'.
+set_property core_revision 3 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+WARNING: [IP_Flow 19-11888] Component Definition 'user.org:user:adsb_decoder_wrapper:1.0 (adsb_decoder_wrapper_v1_0)': IP description "adsb_decoder_wrapper_v1_0" is not meaningful: same as name or display name
+WARNING: [IP_Flow 19-5905] All packaged files should be located below the IP definition file (xml)
+WARNING: [IP_Flow 19-5905] All packaged files should be located below the IP definition file (xml)
+WARNING: [IP_Flow 19-5905] All packaged files should be located below the IP definition file (xml)
+WARNING: [IP_Flow 19-5905] All packaged files should be located below the IP definition file (xml)
+WARNING: [IP_Flow 19-5905] All packaged files should be located below the IP definition file (xml)
+WARNING: [IP_Flow 19-5905] All packaged files should be located below the IP definition file (xml)
+WARNING: [IP_Flow 19-5905] All packaged files should be located below the IP definition file (xml)
+WARNING: [IP_Flow 19-5905] All packaged files should be located below the IP definition file (xml)
+WARNING: [IP_Flow 19-5905] All packaged files should be located below the IP definition file (xml)
+WARNING: [IP_Flow 19-5905] All packaged files should be located below the IP definition file (xml)
+WARNING: [IP_Flow 19-5905] All packaged files should be located below the IP definition file (xml)
+WARNING: [IP_Flow 19-5905] All packaged files should be located below the IP definition file (xml)
+WARNING: [IP_Flow 19-5905] All packaged files should be located below the IP definition file (xml)
+WARNING: [IP_Flow 19-11770] Clock interface 'm00_axis_aclk' has no FREQ_HZ parameter.
+WARNING: [IP_Flow 19-11770] Clock interface 's00_axis_aclk' has no FREQ_HZ parameter.
+INFO: [IP_Flow 19-2181] Payment is not required for this core.
+WARNING: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed.
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path /home/cathyhu3/s965/pz2/ip_repo
+INFO: [IP_Flow 19-725] Reloaded user IP repository '/home/cathyhu3/s965/pz2/ip_repo'
+remove_files  /home/cathyhu3/s965/pz2/rfsoc/lab8/lab8.srcs/sources_1/bd/design_1/design_1.bd
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/lab8_adsb/hdl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder.sv:]
+ipx::package_project -root_dir /home/cathyhu3/s965/pz2/ip_repo -vendor user.org -library user -taxonomy /UserIP -import_files -set_current false -force
+INFO: [IP_Flow 19-5654] Module 'adsb_decoder_wrapper' uses SystemVerilog sources with a Verilog top file. These SystemVerilog files will not be analysed by the packager.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'm00_axis' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axis' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'm00_axis_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axis_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'm00_axis_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axis_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'm00_axis_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axis_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-4728] Bus Interface 'm00_axis_aclk': Added interface parameter 'ASSOCIATED_BUSIF' with value 'm00_axis'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axis_aclk': Added interface parameter 'ASSOCIATED_BUSIF' with value 's00_axis'.
+INFO: [IP_Flow 19-4728] Bus Interface 'm00_axis_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 'm00_axis_aresetn'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axis_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 's00_axis_aresetn'.
+WARNING: [IP_Flow 19-11888] Component Definition 'user.org:user:adsb_decoder_wrapper:1.0 (adsb_decoder_wrapper_v1_0)': IP description "adsb_decoder_wrapper_v1_0" is not meaningful: same as name or display name
+WARNING: [IP_Flow 19-11770] Clock interface 'm00_axis_aclk' has no FREQ_HZ parameter.
+WARNING: [IP_Flow 19-11770] Clock interface 's00_axis_aclk' has no FREQ_HZ parameter.
+INFO: [IP_Flow 19-2181] Payment is not required for this core.
+WARNING: [IP_Flow 19-2187] The Product Guide file is missing.
+ipx::unload_core /home/cathyhu3/s965/pz2/ip_repo/component.xml
+ipx::edit_ip_in_project -upgrade true -name tmp_edit_project -directory /home/cathyhu3/s965/pz2/ip_repo /home/cathyhu3/s965/pz2/ip_repo/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/2025.1/Vivado/data/ip'.
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.0/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.1/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:v80:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/v80/1.0/board.xml as part xcv80-lsva4737-2mhp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.3 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.3/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.4 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.4/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.3 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.3/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.2/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek385:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek385/1.0/board.xml as part xc2ve3858-ssva2112-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.2/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.3 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.3/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.1/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.1/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.2/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/lab8_adsb/hdl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder.sv:]
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/ip_repo'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/lab8_adsb/hdl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder.sv:]
+set_property widget {comboBox} [ipgui::get_guiparamspec -name "C_M00_AXIS_TDATA_WIDTH" -component [ipx::current_core] ]
+set_property enablement_value false [ipx::get_user_parameters C_M00_AXIS_TDATA_WIDTH -of_objects [ipx::current_core]]
+set_property value_validation_type list [ipx::get_user_parameters C_M00_AXIS_TDATA_WIDTH -of_objects [ipx::current_core]]
+set_property value_validation_list {32 128} [ipx::get_user_parameters C_M00_AXIS_TDATA_WIDTH -of_objects [ipx::current_core]]
+set_property core_revision 2 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+WARNING: [IP_Flow 19-11888] Component Definition 'user.org:user:adsb_decoder_wrapper:1.0 (adsb_decoder_wrapper_v1_0)': IP description "adsb_decoder_wrapper_v1_0" is not meaningful: same as name or display name
+WARNING: [IP_Flow 19-11770] Clock interface 'm00_axis_aclk' has no FREQ_HZ parameter.
+WARNING: [IP_Flow 19-11770] Clock interface 's00_axis_aclk' has no FREQ_HZ parameter.
+INFO: [IP_Flow 19-2181] Payment is not required for this core.
+WARNING: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed.
+ipx::save_core [ipx::current_core]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/lab8_adsb/hdl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/lab8_adsb/hdl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder.sv:]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path /home/cathyhu3/s965/pz2/ip_repo
+INFO: [IP_Flow 19-725] Reloaded user IP repository '/home/cathyhu3/s965/pz2/ip_repo'
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/lab8_adsb/hdl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/lab8_adsb/hdl/top.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/lab8_adsb/hdl/top.sv:]
+close_project
+open_project /home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.xpr
+INFO: [Project 1-313] Project file moved from '/home/cathyhu3/s965/pz2/rfsoc/lab7' since last save.
+Scanning sources...
+Finished scanning sources
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.0/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.1/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:v80:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/v80/1.0/board.xml as part xcv80-lsva4737-2mhp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.3 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.3/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.4 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.4/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.3 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.3/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.2/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek385:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek385/1.0/board.xml as part xc2ve3858-ssva2112-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.2/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.3 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.3/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.1/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.1/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.2/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/iq_packager_1_0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/2025.1/Vivado/data/ip'.
+update_compile_order -fileset sources_1
+open_bd_design {/home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.srcs/sources_1/bd/design_1/design_1.bd}
+Reading block design file </home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.srcs/sources_1/bd/design_1/design_1.bd>...
 Adding component instance block -- xilinx.com:ip:zynq_ultra_ps_e:3.5 - zynq_ultra_ps_e_0
 Adding component instance block -- xilinx.com:ip:axi_dma:7.1 - axi_dma_0
 Adding component instance block -- xilinx.com:ip:usp_rf_data_converter:2.6 - usp_rf_data_converter_0
-INFO: Ultrascale+ RF Data Converter instance: Clock port 'adc2_clk' frequency is set to 11520000
-Adding component instance block -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_0
+INFO: Ultrascale+ RF Data Converter instance: Clock port 'adc2_clk' frequency is set to 64000000
 Adding component instance block -- xilinx.com:ip:axis_data_fifo:2.0 - axis_data_fifo_0
 Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - proc_sys_reset_0
 Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - proc_sys_reset_1
 Adding component instance block -- user.org:user:iq_packager:1.0 - iq_packager_0
-Successfully read diagram <design_1> from block design file </home/cathyhu3/pz2/rfsoc/lab6_skid/lab6_skid.srcs/sources_1/bd/design_1/design_1.bd>
-connect_bd_net [get_bd_pins proc_sys_reset_1/mb_reset] [get_bd_pins usp_rf_data_converter_0/s_axi_aresetn]
-connect_bd_net [get_bd_pins usp_rf_data_converter_0/m2_axis_aresetn] [get_bd_pins proc_sys_reset_1/mb_reset]
-connect_bd_net [get_bd_pins iq_packager_0/s00_axis_aresetn] [get_bd_pins proc_sys_reset_1/mb_reset]
-connect_bd_net [get_bd_pins iq_packager_0/s01_axis_aresetn] [get_bd_pins proc_sys_reset_1/mb_reset]
-connect_bd_net [get_bd_pins iq_packager_0/m00_axis_aresetn] [get_bd_pins proc_sys_reset_1/mb_reset]
-connect_bd_net [get_bd_pins proc_sys_reset_0/mb_reset] [get_bd_pins axi_dma_0/axi_resetn]
-connect_bd_net [get_bd_pins axis_data_fifo_0/s_axis_aresetn] [get_bd_pins proc_sys_reset_0/mb_reset]
-delete_bd_objs [get_bd_nets proc_sys_reset_1_mb_reset]
-connect_bd_net [get_bd_pins usp_rf_data_converter_0/m2_axis_aresetn] [get_bd_pins proc_sys_reset_1/mb_reset]
-connect_bd_net [get_bd_pins usp_rf_data_converter_0/s_axi_aresetn] [get_bd_pins proc_sys_reset_0/mb_reset]
-create_bd_port -dir I -from 3 -to 0 sw
-connect_bd_net [get_bd_ports sw] [get_bd_pins iq_packager_0/control]
-connect_bd_net [get_bd_pins iq_packager_0/s00_axis_aresetn] [get_bd_pins proc_sys_reset_1/mb_reset]
-connect_bd_net [get_bd_pins iq_packager_0/s01_axis_aresetn] [get_bd_pins proc_sys_reset_1/mb_reset]
-connect_bd_net [get_bd_pins iq_packager_0/m00_axis_aresetn] [get_bd_pins proc_sys_reset_1/mb_reset]
-connect_bd_net [get_bd_pins axis_data_fifo_0/s_axis_aclk] [get_bd_pins clk_wiz_0/clk_out1]
-connect_bd_intf_net [get_bd_intf_pins usp_rf_data_converter_0/m20_axis] [get_bd_intf_pins iq_packager_0/S00_AXIS]
-connect_bd_intf_net [get_bd_intf_pins iq_packager_0/S01_AXIS] [get_bd_intf_pins usp_rf_data_converter_0/m21_axis]
-connect_bd_intf_net [get_bd_intf_pins iq_packager_0/M00_AXIS] [get_bd_intf_pins axis_data_fifo_0/S_AXIS]
-connect_bd_intf_net [get_bd_intf_pins axis_data_fifo_0/M_AXIS] [get_bd_intf_pins axi_dma_0/S_AXIS_S2MM]
-ipx::edit_ip_in_project -upgrade true -name iq_packager_v1_0_project -directory /home/cathyhu3/pz2/rfsoc/lab6_skid/lab6_skid.tmp/iq_packager_v1_0_project /home/cathyhu3/pz2/rfsoc/ip_repo/iq_packager_1_0/component.xml
+Adding component instance block -- xilinx.com:ip:smartconnect:1.0 - axi_smc
+Adding component instance block -- xilinx.com:ip:smartconnect:1.0 - axi_smc_1
+Adding component instance block -- xilinx.com:ip:cic_compiler:4.0 - cic_compiler_0
+Adding component instance block -- xilinx.com:ip:cic_compiler:4.0 - cic_compiler_1
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_HIGH from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Successfully read diagram <design_1> from block design file </home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.srcs/sources_1/bd/design_1/design_1.bd>
+delete_bd_objs [get_bd_intf_nets usp_rf_data_converter_0_m20_axis] [get_bd_intf_nets cic_compiler_0_M_AXIS_DATA] [get_bd_cells cic_compiler_0]
+delete_bd_objs [get_bd_intf_nets usp_rf_data_converter_0_m21_axis] [get_bd_intf_nets cic_compiler_1_M_AXIS_DATA] [get_bd_cells cic_compiler_1]
+delete_bd_objs [get_bd_intf_nets iq_packager_0_M00_AXIS]
+update_ip_catalog -rebuild
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/iq_packager_1_0'.
+update_ip_catalog -rebuild
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/iq_packager_1_0'.
+update_ip_catalog -rebuild
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/iq_packager_1_0'.
+update_ip_catalog -rebuild
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/iq_packager_1_0'.
+update_ip_catalog -rebuild
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/iq_packager_1_0'.
+update_ip_catalog -rebuild
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/iq_packager_1_0'.
+set_property  ip_repo_paths  {/home/cathyhu3/s965/pz2/rfsoc/ip_repo/iq_packager_1_0 /home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_decoder_1_0} [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/iq_packager_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_decoder_1_0'.
+startgroup
+create_bd_cell -type ip -vlnv user.org:user:adsb_decoder:1.0 adsb_decoder_0
+endgroup
+set_property location {6 2339 -60} [get_bd_cells adsb_decoder_0]
+ipx::edit_ip_in_project -upgrade true -name adsb_decoder_v1_0_project -directory /home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.tmp/adsb_decoder_v1_0_project /home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_decoder_1_0/component.xml
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/2025.1/Vivado/data/ip'.
@@ -174,144 +386,363 @@ WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 avail
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/pz2/rfsoc/ip_repo/iq_packager_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/iq_packager_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_decoder_1_0'.
 INFO: [IP_Flow 19-795] Syncing license key meta-data
 update_compile_order -fileset sources_1
+add_files -norecurse {/home/cathyhu3/s965/pz2/lab8_adsb/hdl/axis_fir.sv /home/cathyhu3/s965/pz2/lab8_adsb/hdl/cordic.sv /home/cathyhu3/s965/pz2/lab8_adsb/hdl/top.sv /home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder.sv /home/cathyhu3/s965/pz2/lab8_adsb/hdl/preamble_detector.sv}
+update_compile_order -fileset sources_1
 close_project
-create_bd_port -dir O -from 3 -to 0 led
-startgroup
-connect_bd_net [get_bd_ports led] [get_bd_pins iq_packager_0/leds]
-endgroup
-save_bd_design
-Wrote  : </home/cathyhu3/pz2/rfsoc/lab6_skid/lab6_skid.srcs/sources_1/bd/design_1/design_1.bd> 
-Wrote  : </home/cathyhu3/pz2/rfsoc/lab6_skid/lab6_skid.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+delete_bd_objs [get_bd_cells adsb_decoder_0]
+WARNING: [IP_Flow 19-4318] IP-XACT file does not exist: /home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_decoder_1_0/component.xml. It will be created.
 update_ip_catalog -rebuild -scan_changes
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/pz2/rfsoc/ip_repo/iq_packager_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/iq_packager_1_0'.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_decoder_1_0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
 report_ip_status -name ip_status
-upgrade_ip -vlnv user.org:user:iq_packager:1.0 [get_ips  design_1_iq_packager_0_0] -log ip_upgrade.log
-Upgrading '/home/cathyhu3/pz2/rfsoc/lab6_skid/lab6_skid.srcs/sources_1/bd/design_1/design_1.bd'
-INFO: [IP_Flow 19-3420] Updated design_1_iq_packager_0_0 to use current project options
-Wrote  : </home/cathyhu3/pz2/rfsoc/lab6_skid/lab6_skid.srcs/sources_1/bd/design_1/design_1.bd> 
-Wrote  : </home/cathyhu3/pz2/rfsoc/lab6_skid/lab6_skid.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
-INFO: [Coretcl 2-1525] Wrote upgrade log to '/home/cathyhu3/pz2/rfsoc/lab6_skid/ip_upgrade.log'.
-export_ip_user_files -of_objects [get_ips design_1_iq_packager_0_0] -no_script -sync -force -quiet
-generate_target all [get_files  /home/cathyhu3/pz2/rfsoc/lab6_skid/lab6_skid.srcs/sources_1/bd/design_1/design_1.bd]
-WARNING: [BD 41-2670] Found an incomplete address path from address space '/axi_dma_0/Data_S2MM' to master interface '/axi_dma_0/M_AXI_S2MM'. Please either complete or remove this path to resolve.
-WARNING: [BD 41-2670] Found an incomplete address path from address space '/zynq_ultra_ps_e_0/Data' to master interface '/zynq_ultra_ps_e_0/M_AXI_HPM0_FPD'. Please either complete or remove this path to resolve.
-WARNING: [BD 41-2670] Found an incomplete address path from address space '/zynq_ultra_ps_e_0/Data' to master interface '/zynq_ultra_ps_e_0/M_AXI_HPM1_FPD'. Please either complete or remove this path to resolve.
-ERROR: [BD 41-758] The following clock pins are not connected to a valid clock source: 
-/usp_rf_data_converter_0/adc2_clk
-
-ERROR: [BD 41-1031] Hdl Generation failed for the IP Integrator design /home/cathyhu3/pz2/rfsoc/lab6_skid/lab6_skid.srcs/sources_1/bd/design_1/design_1.bd 
-ERROR: [Common 17-39] 'generate_target' failed due to earlier errors.
+create_peripheral user.org user adsb 1.0 -dir /home/cathyhu3/s965/pz2/rfsoc/ip_repo
+add_peripheral_interface S00_AXIS -interface_mode slave -axi_type stream [ipx::find_open_core user.org:user:adsb:1.0]
+add_peripheral_interface M00_AXIS -interface_mode master -axi_type stream [ipx::find_open_core user.org:user:adsb:1.0]
+generate_peripheral [ipx::find_open_core user.org:user:adsb:1.0]
+write_peripheral [ipx::find_open_core user.org:user:adsb:1.0]
+set_property  ip_repo_paths  {/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0 /home/cathyhu3/s965/pz2/rfsoc/ip_repo/iq_packager_1_0 /home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_decoder_1_0} [current_project]
+update_ip_catalog -rebuild
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/iq_packager_1_0'.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_decoder_1_0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+ipx::edit_ip_in_project -upgrade true -name edit_adsb_v1_0 -directory /home/cathyhu3/s965/pz2/rfsoc/ip_repo /home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/2025.1/Vivado/data/ip'.
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.0/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.1/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:v80:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/v80/1.0/board.xml as part xcv80-lsva4737-2mhp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.3 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.3/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.4 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.4/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.3 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.3/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.2/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek385:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek385/1.0/board.xml as part xc2ve3858-ssva2112-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.2/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.3 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.3/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.1/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.1/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.2/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/iq_packager_1_0'.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_decoder_1_0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+ERROR: [BD 5-104] A block design must be open to run this command. Please create/open a block design.
+ERROR: [Common 17-39] 'get_bd_cells' failed due to earlier errors.
+ERROR: [BD 41-1273] Error running can_apply_rule TCL procedure: ERROR: [Common 17-39] 'get_bd_cells' failed due to earlier errors.
+    ::xilinx.com_bd_rule_zynq_ultra_ps_e::can_apply_rule Line 14
+ERROR: [BD 5-104] A block design must be open to run this command. Please create/open a block design.
+ERROR: [Common 17-39] 'get_bd_cells' failed due to earlier errors.
+ERROR: [BD 41-1273] Error running can_apply_rule TCL procedure: ERROR: [Common 17-39] 'get_bd_cells' failed due to earlier errors.
+    ::xilinx.com_bd_rule_rf_converter_usp::can_apply_rule Line 7
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb_slave_stream_v1_0_S00_AXIS.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb.v:]
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb_slave_stream_v1_0_S00_AXIS.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb.v:]
+add_files -norecurse {/home/cathyhu3/s965/pz2/lab8_adsb/hdl/axis_fir.sv /home/cathyhu3/s965/pz2/lab8_adsb/hdl/cordic.sv /home/cathyhu3/s965/pz2/lab8_adsb/hdl/top.sv /home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder.sv /home/cathyhu3/s965/pz2/lab8_adsb/hdl/preamble_detector.sv}
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb_slave_stream_v1_0_S00_AXIS.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb_slave_stream_v1_0_S00_AXIS.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb_slave_stream_v1_0_S00_AXIS.v:]
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb_slave_stream_v1_0_S00_AXIS.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb.v:]
+remove_files  /home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb_master_stream_v1_0_M00_AXIS.v
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb_slave_stream_v1_0_S00_AXIS.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb.v:]
+remove_files  /home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb_slave_stream_v1_0_S00_AXIS.v
+ipx::merge_project_changes files [ipx::current_core]
+WARNING: [IP_Flow 19-5109] File Group 'xilinx_verilogsynthesis (Verilog Synthesis)': File '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb_slave_stream_v1_0_S00_AXIS.v' does not exist in the project sources. It has been removed from the packaged IP. If still required, please add this file to the project, merge sources and re-package.
+WARNING: [IP_Flow 19-5109] File Group 'xilinx_verilogsynthesis (Verilog Synthesis)': File '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb_master_stream_v1_0_M00_AXIS.v' does not exist in the project sources. It has been removed from the packaged IP. If still required, please add this file to the project, merge sources and re-package.
+WARNING: [IP_Flow 19-5109] File Group 'xilinx_verilogbehavioralsimulation (Verilog Simulation)': File '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb_slave_stream_v1_0_S00_AXIS.v' does not exist in the project sources. It has been removed from the packaged IP. If still required, please add this file to the project, merge sources and re-package.
+WARNING: [IP_Flow 19-5109] File Group 'xilinx_verilogbehavioralsimulation (Verilog Simulation)': File '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/hdl/adsb_master_stream_v1_0_M00_AXIS.v' does not exist in the project sources. It has been removed from the packaged IP. If still required, please add this file to the project, merge sources and re-package.
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+INFO: [IP_Flow 19-5654] Module 'adsb' uses SystemVerilog sources with a Verilog top file. These SystemVerilog files will not be analysed by the packager.
+WARNING: [IP_Flow 19-4300] HDL parameter 'C_M00_AXIS_TDATA_WIDTH' has its value changed from '32' to '128'.
+ERROR: [IP_Flow 19-3461] Value '128' is out of the range for parameter 'C M00 AXIS TDATA WIDTH(C_M00_AXIS_TDATA_WIDTH)' for IP 'adsb_0' . Valid values are - 32
+CRITICAL WARNING: [IP_Flow 19-5622] Failed to create IP instance 'adsb_0'. Failed to customize IP instance 'adsb_0'. Failed to load customization data
+set_property value_validation_list {32 128} [ipx::get_user_parameters C_M00_AXIS_TDATA_WIDTH -of_objects [ipx::current_core]]
+set_property core_revision 2 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+WARNING: [IP_Flow 19-11889] HDL Parameter 'C_M00_AXIS_TDATA_WIDTH (C M00 AXIS TDATA WIDTH)': Order is obsolete with XGUI version >= 2.0
+WARNING: [IP_Flow 19-11889] HDL Parameter 'C_M00_AXIS_START_COUNT (C M00 AXIS START COUNT)': Order is obsolete with XGUI version >= 2.0
+WARNING: [IP_Flow 19-11889] HDL Parameter 'C_S00_AXIS_TDATA_WIDTH (C S00 AXIS TDATA WIDTH)': Order is obsolete with XGUI version >= 2.0
+WARNING: [IP_Flow 19-5905] All packaged files should be located below the IP definition file (xml)
+WARNING: [IP_Flow 19-5905] All packaged files should be located below the IP definition file (xml)
+WARNING: [IP_Flow 19-5905] All packaged files should be located below the IP definition file (xml)
+WARNING: [IP_Flow 19-5905] All packaged files should be located below the IP definition file (xml)
+WARNING: [IP_Flow 19-5905] All packaged files should be located below the IP definition file (xml)
+WARNING: [IP_Flow 19-5905] All packaged files should be located below the IP definition file (xml)
+WARNING: [IP_Flow 19-5905] All packaged files should be located below the IP definition file (xml)
+WARNING: [IP_Flow 19-5905] All packaged files should be located below the IP definition file (xml)
+WARNING: [IP_Flow 19-5905] All packaged files should be located below the IP definition file (xml)
+WARNING: [IP_Flow 19-5905] All packaged files should be located below the IP definition file (xml)
+WARNING: [IP_Flow 19-11770] Clock interface 'M00_AXIS_CLK' has no FREQ_HZ parameter.
+WARNING: [IP_Flow 19-11770] Clock interface 'S00_AXIS_CLK' has no FREQ_HZ parameter.
+INFO: [IP_Flow 19-2181] Payment is not required for this core.
+WARNING: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed.
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path /home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0
+INFO: [IP_Flow 19-725] Reloaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0'
+set_property  ip_repo_paths  {/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0 /home/cathyhu3/s965/pz2/rfsoc/ip_repo/iq_packager_1_0} [current_project]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/iq_packager_1_0'.
 startgroup
-apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/zynq_ultra_ps_e_0/pl_clk0 (149 MHz)} Clk_slave {/zynq_ultra_ps_e_0/pl_clk0 (149 MHz)} Clk_xbar {/zynq_ultra_ps_e_0/pl_clk0 (149 MHz)} Master {/zynq_ultra_ps_e_0/M_AXI_HPM0_FPD} Slave {/axi_dma_0/S_AXI_LITE} ddr_seg {Auto} intc_ip {New AXI SmartConnect} master_apm {0}}  [get_bd_intf_pins axi_dma_0/S_AXI_LITE]
-Slave segment '/axi_dma_0/S_AXI_LITE/Reg' is being assigned into address space '/zynq_ultra_ps_e_0/Data' at <0xA000_0000 [ 64K ]>.
-apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/zynq_ultra_ps_e_0/pl_clk0 (149 MHz)} Clk_slave {/zynq_ultra_ps_e_0/pl_clk0 (149 MHz)} Clk_xbar {/zynq_ultra_ps_e_0/pl_clk0 (149 MHz)} Master {/zynq_ultra_ps_e_0/M_AXI_HPM0_FPD} Slave {/usp_rf_data_converter_0/s_axi} ddr_seg {Auto} intc_ip {New AXI SmartConnect} master_apm {0}}  [get_bd_intf_pins usp_rf_data_converter_0/s_axi]
-Slave segment '/usp_rf_data_converter_0/s_axi/Reg' is being assigned into address space '/zynq_ultra_ps_e_0/Data' at <0xA004_0000 [ 256K ]>.
-apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/zynq_ultra_ps_e_0/pl_clk0 (149 MHz)} Clk_slave {/zynq_ultra_ps_e_0/pl_clk0 (149 MHz)} Clk_xbar {/zynq_ultra_ps_e_0/pl_clk0 (149 MHz)} Master {/axi_dma_0/M_AXI_S2MM} Slave {/zynq_ultra_ps_e_0/S_AXI_HP0_FPD} ddr_seg {Auto} intc_ip {New AXI SmartConnect} master_apm {0}}  [get_bd_intf_pins zynq_ultra_ps_e_0/S_AXI_HP0_FPD]
-Slave segment '/zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_LOW' is being assigned into address space '/axi_dma_0/Data_S2MM' at <0x0000_0000 [ 2G ]>.
-Slave segment '/zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM' is being assigned into address space '/axi_dma_0/Data_S2MM' at <0xFF00_0000 [ 16M ]>.
-WARNING: [BD 41-1051] Slave segment '/zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM' with 'register' usage does not match address space '/axi_dma_0/Data_S2MM' with 'memory' usage so will be excluded from this address space. Please use the 'include_bd_addr_seg' command to override this precaution if required.
-Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+create_bd_cell -type ip -vlnv user.org:user:adsb:1.0 adsb_0
 endgroup
-apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/zynq_ultra_ps_e_0/pl_clk0 (149 MHz)} Clk_slave {/zynq_ultra_ps_e_0/pl_clk0 (149 MHz)} Clk_xbar {/zynq_ultra_ps_e_0/pl_clk0 (149 MHz)} Master {/zynq_ultra_ps_e_0/M_AXI_HPM1_FPD} Slave {/axi_dma_0/S_AXI_LITE} ddr_seg {Auto} intc_ip {/axi_smc} master_apm {0}}  [get_bd_intf_pins zynq_ultra_ps_e_0/M_AXI_HPM1_FPD]
-WARNING: [xilinx.com:ip:zynq_ultra_ps_e:3.5-1] /zynq_ultra_ps_e_0</axi_smc_1/M00_AXI> of </axi_smc_1> is connected to </zynq_ultra_ps_e_0>. To avoid loops, any interface from </zynq_ultra_ps_e_0> should not be connected to </zynq_ultra_ps_e_0> using </axi_smc_1>
-INFO: [BD 41-3093] Triggering Legacy Auto Assign Algorithm
+set_property location {6 2208 -55} [get_bd_cells adsb_0]
+connect_bd_intf_net [get_bd_intf_pins iq_packager_0/M00_AXIS] [get_bd_intf_pins adsb_0/S00_AXIS]
+connect_bd_intf_net [get_bd_intf_pins adsb_0/M00_AXIS] [get_bd_intf_pins axis_data_fifo_0/S_AXIS]
 startgroup
-apply_bd_automation -rule xilinx.com:bd_rule:rf_converter_usp -config {ADC2_AXIS_SOURCE "Custom" }  [get_bd_cells usp_rf_data_converter_0]
-apply_bd_automation -rule xilinx.com:bd_rule:zynq_ultra_ps_e -config {apply_board_preset "1" }  [get_bd_cells zynq_ultra_ps_e_0]
-INFO: [PSU-1]  DP_AUDIO clock source: RPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_AUDIO PLL source to support runtime audio change 
-WARNING: [PSU-2]  DP_VIDEO clock source: DPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_VIDEO PLL source to support runtime resolution change 
-CRITICAL WARNING: [PSU-3]  Setting of DDR Row Address Count (Parameter PSU__DDRC__ROW_ADDR_COUNT) to 17 is not valid when the value of Device Capacity (Parameter PSU__DDRC__DEVICE_CAPACITY) is set to 8192. The valid value for Row Address Count (Parameter PSU__DDRC__ROW_ADDR_COUNT) is 16. 
+set_property CONFIG.TDATA_NUM_BYTES {16} [get_bd_cells axis_data_fifo_0]
 endgroup
-INFO: [PSU-1]  DP_AUDIO clock source: RPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_AUDIO PLL source to support runtime audio change 
-WARNING: [PSU-2]  DP_VIDEO clock source: DPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_VIDEO PLL source to support runtime resolution change 
-CRITICAL WARNING: [PSU-3]  Setting of DDR Row Address Count (Parameter PSU__DDRC__ROW_ADDR_COUNT) to 17 is not valid when the value of Device Capacity (Parameter PSU__DDRC__DEVICE_CAPACITY) is set to 8192. The valid value for Row Address Count (Parameter PSU__DDRC__ROW_ADDR_COUNT) is 16. 
-WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
-INFO: [PSU-1]  DP_AUDIO clock source: RPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_AUDIO PLL source to support runtime audio change 
-WARNING: [PSU-2]  DP_VIDEO clock source: DPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_VIDEO PLL source to support runtime resolution change 
-CRITICAL WARNING: [PSU-3]  Setting of DDR Row Address Count (Parameter PSU__DDRC__ROW_ADDR_COUNT) to 17 is not valid when the value of Device Capacity (Parameter PSU__DDRC__DEVICE_CAPACITY) is set to 8192. The valid value for Row Address Count (Parameter PSU__DDRC__ROW_ADDR_COUNT) is 16. 
-INFO: [PSU-1]  DP_AUDIO clock source: RPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_AUDIO PLL source to support runtime audio change 
-WARNING: [PSU-2]  DP_VIDEO clock source: DPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_VIDEO PLL source to support runtime resolution change 
-CRITICAL WARNING: [PSU-3]  Setting of DDR Row Address Count (Parameter PSU__DDRC__ROW_ADDR_COUNT) to 17 is not valid when the value of Device Capacity (Parameter PSU__DDRC__DEVICE_CAPACITY) is set to 8192. The valid value for Row Address Count (Parameter PSU__DDRC__ROW_ADDR_COUNT) is 16. 
-INFO: [PSU-1]  DP_AUDIO clock source: RPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_AUDIO PLL source to support runtime audio change 
-WARNING: [PSU-2]  DP_VIDEO clock source: DPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_VIDEO PLL source to support runtime resolution change 
-CRITICAL WARNING: [PSU-3]  Setting of DDR Row Address Count (Parameter PSU__DDRC__ROW_ADDR_COUNT) to 17 is not valid when the value of Device Capacity (Parameter PSU__DDRC__DEVICE_CAPACITY) is set to 8192. The valid value for Row Address Count (Parameter PSU__DDRC__ROW_ADDR_COUNT) is 16. 
-INFO: [PSU-1]  DP_AUDIO clock source: RPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_AUDIO PLL source to support runtime audio change 
-WARNING: [PSU-2]  DP_VIDEO clock source: DPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_VIDEO PLL source to support runtime resolution change 
-CRITICAL WARNING: [PSU-3]  Setting of DDR Row Address Count (Parameter PSU__DDRC__ROW_ADDR_COUNT) to 17 is not valid when the value of Device Capacity (Parameter PSU__DDRC__DEVICE_CAPACITY) is set to 8192. The valid value for Row Address Count (Parameter PSU__DDRC__ROW_ADDR_COUNT) is 16. 
-INFO: [PSU-1]  DP_AUDIO clock source: RPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_AUDIO PLL source to support runtime audio change 
-WARNING: [PSU-2]  DP_VIDEO clock source: DPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_VIDEO PLL source to support runtime resolution change 
-CRITICAL WARNING: [PSU-3]  Setting of DDR Row Address Count (Parameter PSU__DDRC__ROW_ADDR_COUNT) to 17 is not valid when the value of Device Capacity (Parameter PSU__DDRC__DEVICE_CAPACITY) is set to 8192. The valid value for Row Address Count (Parameter PSU__DDRC__ROW_ADDR_COUNT) is 16. 
 startgroup
-set_property -dict [list \
-  CONFIG.PSU__CRL_APB__PL0_REF_CTRL__FREQMHZ {150} \
-  CONFIG.PSU__GPIO0_MIO__PERIPHERAL__ENABLE {0} \
-  CONFIG.PSU__GPIO1_MIO__PERIPHERAL__ENABLE {0} \
-  CONFIG.PSU__GPIO2_MIO__PERIPHERAL__ENABLE {0} \
-  CONFIG.PSU__GPIO_EMIO__PERIPHERAL__ENABLE {0} \
-] [get_bd_cells zynq_ultra_ps_e_0]
-INFO: [PSU-1]  DP_AUDIO clock source: RPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_AUDIO PLL source to support runtime audio change 
-WARNING: [PSU-2]  DP_VIDEO clock source: DPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_VIDEO PLL source to support runtime resolution change 
-CRITICAL WARNING: [PSU-3]  Setting of DDR Row Address Count (Parameter PSU__DDRC__ROW_ADDR_COUNT) to 17 is not valid when the value of Device Capacity (Parameter PSU__DDRC__DEVICE_CAPACITY) is set to 8192. The valid value for Row Address Count (Parameter PSU__DDRC__ROW_ADDR_COUNT) is 16. 
 endgroup
+startgroup
+set_property -dict [list CONFIG.c_m_axi_s2mm_data_width.VALUE_SRC PROPAGATED CONFIG.c_s_axis_s2mm_tdata_width.VALUE_SRC USER] [get_bd_cells axi_dma_0]
+set_property CONFIG.c_s_axis_s2mm_tdata_width {128} [get_bd_cells axi_dma_0]
+endgroup
+connect_bd_intf_net [get_bd_intf_pins usp_rf_data_converter_0/m20_axis] [get_bd_intf_pins iq_packager_0/S00_AXIS]
+connect_bd_intf_net [get_bd_intf_pins usp_rf_data_converter_0/m21_axis] [get_bd_intf_pins iq_packager_0/S01_AXIS]
+connect_bd_net [get_bd_pins adsb_0/s00_axis_aclk] [get_bd_pins usp_rf_data_converter_0/clk_adc2]
+connect_bd_net [get_bd_pins adsb_0/m00_axis_aclk] [get_bd_pins zynq_ultra_ps_e_0/pl_clk0]
+connect_bd_net [get_bd_pins adsb_0/s00_axis_aresetn] [get_bd_pins proc_sys_reset_1/peripheral_aresetn]
+connect_bd_net [get_bd_pins adsb_0/m00_axis_aresetn] [get_bd_pins proc_sys_reset_1/peripheral_aresetn]
 save_bd_design
-Wrote  : </home/cathyhu3/pz2/rfsoc/lab6_skid/lab6_skid.srcs/sources_1/bd/design_1/design_1.bd> 
-Wrote  : </home/cathyhu3/pz2/rfsoc/lab6_skid/lab6_skid.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
-regenerate_bd_layout -routing
-report_ip_status -name ip_status 
-launch_runs impl_1 -to_step write_bitstream -jobs 12
-CRITICAL WARNING: [filemgmt 20-730] Could not find a top module in the fileset sources_1.
-Resolution: With the gui up, review the source files in the Sources window. Use Add Sources to add any needed sources. If the files are disabled, enable them. You can also select the file and choose Set Used In from the pop-up menu. Review if they are being used at the proper points of the flow.
+Wrote  : </home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.srcs/utils_1/imports/synth_1/design_1_wrapper.dcp with file /home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.runs/synth_1/design_1_wrapper.dcp
+reset_run design_1_axis_data_fifo_0_0_synth_1
+reset_run design_1_axi_dma_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
 WARNING: [BD 41-1629] Slave segment </zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM> is excluded from all addressing paths.
+WARNING: [BD 41-1629] Slave segment </zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_HIGH> is excluded from all addressing paths.
 WARNING: [BD 41-3281] Instance '/zynq_ultra_ps_e_0' is connected on both sides by SmartConnects and cannot automatically configure itself to match the endpoints. Please manually configure its AXI interfaces as required for the design.
 WARNING: [BD 41-3281] Instance '/axi_dma_0' is connected on both sides by SmartConnects and cannot automatically configure itself to match the endpoints. Please manually configure its AXI interfaces as required for the design.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_HIGH from address space /axi_dma_0/Data_S2MM.
 Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_HIGH from address space /axi_dma_0/Data_S2MM.
 Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_HIGH from address space /axi_dma_0/Data_S2MM.
 Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_HIGH from address space /axi_dma_0/Data_S2MM.
 Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
-Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
-INFO: [PSU-1]  DP_AUDIO clock source: RPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_AUDIO PLL source to support runtime audio change 
-WARNING: [PSU-2]  DP_VIDEO clock source: DPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_VIDEO PLL source to support runtime resolution change 
-CRITICAL WARNING: [PSU-3]  Setting of DDR Row Address Count (Parameter PSU__DDRC__ROW_ADDR_COUNT) to 17 is not valid when the value of Device Capacity (Parameter PSU__DDRC__DEVICE_CAPACITY) is set to 8192. The valid value for Row Address Count (Parameter PSU__DDRC__ROW_ADDR_COUNT) is 16. 
-INFO: [PSU-1]  DP_AUDIO clock source: RPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_AUDIO PLL source to support runtime audio change 
-WARNING: [PSU-2]  DP_VIDEO clock source: DPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_VIDEO PLL source to support runtime resolution change 
-CRITICAL WARNING: [PSU-3]  Setting of DDR Row Address Count (Parameter PSU__DDRC__ROW_ADDR_COUNT) to 17 is not valid when the value of Device Capacity (Parameter PSU__DDRC__DEVICE_CAPACITY) is set to 8192. The valid value for Row Address Count (Parameter PSU__DDRC__ROW_ADDR_COUNT) is 16. 
-INFO: [PSU-1]  DP_AUDIO clock source: RPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_AUDIO PLL source to support runtime audio change 
-WARNING: [PSU-2]  DP_VIDEO clock source: DPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_VIDEO PLL source to support runtime resolution change 
-CRITICAL WARNING: [PSU-3]  Setting of DDR Row Address Count (Parameter PSU__DDRC__ROW_ADDR_COUNT) to 17 is not valid when the value of Device Capacity (Parameter PSU__DDRC__DEVICE_CAPACITY) is set to 8192. The valid value for Row Address Count (Parameter PSU__DDRC__ROW_ADDR_COUNT) is 16. 
-INFO: [PSU-1]  DP_AUDIO clock source: RPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_AUDIO PLL source to support runtime audio change 
-WARNING: [PSU-2]  DP_VIDEO clock source: DPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_VIDEO PLL source to support runtime resolution change 
-CRITICAL WARNING: [PSU-3]  Setting of DDR Row Address Count (Parameter PSU__DDRC__ROW_ADDR_COUNT) to 17 is not valid when the value of Device Capacity (Parameter PSU__DDRC__DEVICE_CAPACITY) is set to 8192. The valid value for Row Address Count (Parameter PSU__DDRC__ROW_ADDR_COUNT) is 16. 
 INFO: [BD 5-943] Reserving offset range <0xA000_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M00_AXI'. This will be used by smartconnect on path for routing.
 INFO: [BD 5-943] Reserving offset range <0xA004_0000 [ 256K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M01_AXI'. This will be used by smartconnect on path for routing.
 INFO: [xilinx.com:ip:smartconnect:1.0-1] design_1_axi_smc_0: SmartConnect design_1_axi_smc_0 is in Low-Area Mode.
 INFO: [BD 5-943] Reserving offset range <0x0000_0000 [ 2G ]> from slave interface '/axi_smc_1/S00_AXI' to master interface '/axi_smc_1/M00_AXI'. This will be used by smartconnect on path for routing.
 INFO: [xilinx.com:ip:smartconnect:1.0-1] design_1_axi_smc_1_0: SmartConnect design_1_axi_smc_1_0 is in High-performance Mode.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_HIGH from address space /axi_dma_0/Data_S2MM.
 Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_HIGH from address space /axi_dma_0/Data_S2MM.
 Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_HIGH from address space /axi_dma_0/Data_S2MM.
 Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
-Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
-CRITICAL WARNING: [BD 41-1344] Reset pin /axis_data_fifo_0/s_axis_aresetn (associated clock /axis_data_fifo_0/s_axis_aclk) is connected to reset source /proc_sys_reset_0/mb_reset (synchronous to clock source /zynq_ultra_ps_e_0/pl_clk0).
-This may prevent design from meeting timing. Instead it should be connected to reset source /proc_sys_reset_1/interconnect_aresetn.
-INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
-ERROR: [BD 41-238] Port/Pin property POLARITY does not match between /axi_dma_0/axi_resetn(ACTIVE_LOW) and /proc_sys_reset_0/mb_reset(ACTIVE_HIGH)
-ERROR: [BD 41-238] Port/Pin property POLARITY does not match between /axis_data_fifo_0/s_axis_aresetn(ACTIVE_LOW) and /proc_sys_reset_0/mb_reset(ACTIVE_HIGH)
-ERROR: [BD 41-238] Port/Pin property POLARITY does not match between /usp_rf_data_converter_0/s_axi_aresetn(ACTIVE_LOW) and /proc_sys_reset_0/mb_reset(ACTIVE_HIGH)
-ERROR: [BD 41-238] Port/Pin property POLARITY does not match between /usp_rf_data_converter_0/m2_axis_aresetn(ACTIVE_LOW) and /proc_sys_reset_1/mb_reset(ACTIVE_HIGH)
-ERROR: [BD 41-238] Port/Pin property POLARITY does not match between /iq_packager_0/s00_axis_aresetn(ACTIVE_LOW) and /proc_sys_reset_1/mb_reset(ACTIVE_HIGH)
-ERROR: [BD 41-238] Port/Pin property POLARITY does not match between /iq_packager_0/s01_axis_aresetn(ACTIVE_LOW) and /proc_sys_reset_1/mb_reset(ACTIVE_HIGH)
-ERROR: [BD 41-238] Port/Pin property POLARITY does not match between /iq_packager_0/m00_axis_aresetn(ACTIVE_LOW) and /proc_sys_reset_1/mb_reset(ACTIVE_HIGH)
+CRITICAL WARNING: [BD 41-1344] Reset pin /adsb_0/m00_axis_aresetn (associated clock /adsb_0/m00_axis_aclk) is connected to reset source /proc_sys_reset_1/peripheral_aresetn (synchronous to clock source /usp_rf_data_converter_0/clk_adc2).
+This may prevent design from meeting timing. Instead it should be connected to reset source /proc_sys_reset_0/peripheral_aresetn.
+ERROR: [BD 41-237] Bus Interface property FREQ_HZ does not match between /axis_data_fifo_0/S_AXIS(64000000) and /adsb_0/M00_AXIS(149999969)
+ERROR: [BD 41-237] Bus Interface property CLK_DOMAIN does not match between /axis_data_fifo_0/S_AXIS(design_1_usp_rf_data_converter_0_0_clk_adc2) and /adsb_0/M00_AXIS(design_1_zynq_ultra_ps_e_0_0_pl_clk0)
 WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /zynq_ultra_ps_e_0/S_AXI_HP0_FPD(1) and /axi_smc_1/M00_AXI(0)
 WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /zynq_ultra_ps_e_0/S_AXI_HP0_FPD(1) and /axi_smc_1/M00_AXI(0)
-ERROR: [BD 41-1031] Hdl Generation failed for the IP Integrator design /home/cathyhu3/pz2/rfsoc/lab6_skid/lab6_skid.srcs/sources_1/bd/design_1/design_1.bd 
-ERROR: [Vivado 12-4756] Launch of runs aborted due to earlier errors while preparing sub-designs for run execution.
-save_bd_design
+ERROR: [BD 41-1031] Hdl Generation failed for the IP Integrator design /home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.srcs/sources_1/bd/design_1/design_1.bd 
 WARNING: [BD 41-2671] The dangling interface net <m00_aw_node_M_AXIS_ARB> will not be written out to the BD file.
 WARNING: [BD 41-2671] The dangling interface net <m01_aw_node_M_AXIS_ARB> will not be written out to the BD file.
-Wrote  : </home/cathyhu3/pz2/rfsoc/lab6_skid/lab6_skid.srcs/sources_1/bd/design_1/design_1.bd> 
-Wrote  : </home/cathyhu3/pz2/rfsoc/lab6_skid/lab6_skid.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
-exit
-INFO: [Common 17-206] Exiting Vivado at Thu Oct 16 19:21:55 2025...
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_axi_smc_0, cache-ID = bb136323144d6483; cache size = 59.668 MB.
+ERROR: [Vivado 12-4756] Launch of runs aborted due to earlier errors while preparing sub-designs for run execution.
+ipx::edit_ip_in_project -upgrade true -name adsb_v1_0_project -directory /home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.tmp/adsb_v1_0_project /home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/2025.1/Vivado/data/ip'.
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.0/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:emb-plus-vpr-4616:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/emb-plus-vpr-4616/1.1/board.xml as part xcve2302-sfva784-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:v80:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/v80/1.0/board.xml as part xcv80-lsva4737-2mhp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.3 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.3/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.4 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.4/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.3 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.3/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.2/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek385:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek385/1.0/board.xml as part xc2ve3858-ssva2112-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.2/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.3 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.3/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.1/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.1/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.2 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.2/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /tools/Xilinx/2025.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/iq_packager_1_0'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+update_compile_order -fileset sources_1
+close_project
+delete_bd_objs [get_bd_nets zynq_ultra_ps_e_0_pl_clk0]
+undo
+INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_nets zynq_ultra_ps_e_0_pl_clk0]'
+disconnect_bd_net /zynq_ultra_ps_e_0_pl_clk0 [get_bd_pins adsb_0/m00_axis_aclk]
+connect_bd_net [get_bd_pins adsb_0/m00_axis_aclk] [get_bd_pins usp_rf_data_converter_0/clk_adc2]
+save_bd_design
+Wrote  : </home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.srcs/sources_1/bd/design_1/design_1.bd> 
+Wrote  : </home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+WARNING: [BD 41-1629] Slave segment </zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM> is excluded from all addressing paths.
+WARNING: [BD 41-1629] Slave segment </zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_HIGH> is excluded from all addressing paths.
+WARNING: [BD 41-3281] Instance '/zynq_ultra_ps_e_0' is connected on both sides by SmartConnects and cannot automatically configure itself to match the endpoints. Please manually configure its AXI interfaces as required for the design.
+WARNING: [BD 41-3281] Instance '/axi_dma_0' is connected on both sides by SmartConnects and cannot automatically configure itself to match the endpoints. Please manually configure its AXI interfaces as required for the design.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_HIGH from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_HIGH from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_HIGH from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_HIGH from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+INFO: [BD 5-943] Reserving offset range <0xA000_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [BD 5-943] Reserving offset range <0xA004_0000 [ 256K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M01_AXI'. This will be used by smartconnect on path for routing.
+INFO: [xilinx.com:ip:smartconnect:1.0-1] design_1_axi_smc_0: SmartConnect design_1_axi_smc_0 is in Low-Area Mode.
+INFO: [BD 5-943] Reserving offset range <0x0000_0000 [ 2G ]> from slave interface '/axi_smc_1/S00_AXI' to master interface '/axi_smc_1/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [xilinx.com:ip:smartconnect:1.0-1] design_1_axi_smc_1_0: SmartConnect design_1_axi_smc_1_0 is in High-performance Mode.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_HIGH from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_DDR_HIGH from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP2/HP0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /zynq_ultra_ps_e_0/S_AXI_HP0_FPD(1) and /axi_smc_1/M00_AXI(0)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /zynq_ultra_ps_e_0/S_AXI_HP0_FPD(1) and /axi_smc_1/M00_AXI(0)
+WARNING: [BD 41-2671] The dangling interface net <m00_aw_node_M_AXIS_ARB> will not be written out to the BD file.
+WARNING: [BD 41-2671] The dangling interface net <m01_aw_node_M_AXIS_ARB> will not be written out to the BD file.
+Wrote  : </home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.srcs/sources_1/bd/design_1/design_1.bd> 
+Verilog Output written to : /home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.gen/sources_1/bd/design_1/synth/design_1.v
+Verilog Output written to : /home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.gen/sources_1/bd/design_1/sim/design_1.v
+Verilog Output written to : /home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI_HPM0_FPD'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI_HPM1_FPD'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI_HP0_FPD'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zynq_ultra_ps_e_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axis_data_fifo_0 .
+Exporting to file /home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0.hwh
+Generated Hardware Definition File /home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/synth/design_1_axi_smc_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc .
+Exporting to file /home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.gen/sources_1/bd/design_1/ip/design_1_axi_smc_1_0/bd_0/hw_handoff/design_1_axi_smc_1_0.hwh
+Generated Hardware Definition File /home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.gen/sources_1/bd/design_1/ip/design_1_axi_smc_1_0/bd_0/synth/design_1_axi_smc_1_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block adsb_0 .
+Exporting to file /home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Hardware Definition File /home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.gen/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_axi_smc_0, cache-ID = bb136323144d6483; cache size = 59.668 MB.
+[Mon Nov  3 17:31:41 2025] Launched design_1_axis_data_fifo_0_0_synth_1, design_1_axi_dma_0_0_synth_1, design_1_axi_smc_1_0_synth_1, design_1_adsb_0_0_synth_1, synth_1...
+Run output will be captured here:
+design_1_axis_data_fifo_0_0_synth_1: /home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.runs/design_1_axis_data_fifo_0_0_synth_1/runme.log
+design_1_axi_dma_0_0_synth_1: /home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.runs/design_1_axi_dma_0_0_synth_1/runme.log
+design_1_axi_smc_1_0_synth_1: /home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.runs/design_1_axi_smc_1_0_synth_1/runme.log
+design_1_adsb_0_0_synth_1: /home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.runs/design_1_adsb_0_0_synth_1/runme.log
+synth_1: /home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.runs/synth_1/runme.log
+[Mon Nov  3 17:31:41 2025] Launched impl_1...
+Run output will be captured here: /home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 11742.414 ; gain = 324.574 ; free physical = 10279 ; free virtual = 23243
+open_run impl_1
+INFO: [Device 21-403] Loading part xczu48dr-ffvg1517-2-e
+Netlist sorting complete. Time (s): cpu = 00:00:00.47 ; elapsed = 00:00:00.45 . Memory (MB): peak = 12423.852 ; gain = 0.000 ; free physical = 15523 ; free virtual = 23000
+INFO: [Netlist 29-17] Analyzing 4499 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 6 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.15 . Memory (MB): peak = 12905.438 ; gain = 27.594 ; free physical = 15037 ; free virtual = 22515
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.16 . Memory (MB): peak = 14226.402 ; gain = 0.000 ; free physical = 13853 ; free virtual = 21331
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 14226.402 ; gain = 0.000 ; free physical = 13853 ; free virtual = 21331
+Read PlaceDB: Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 14344.004 ; gain = 117.602 ; free physical = 13741 ; free virtual = 21219
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 14344.004 ; gain = 0.000 ; free physical = 13741 ; free virtual = 21219
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 14670.457 ; gain = 326.453 ; free physical = 13416 ; free virtual = 20894
+Read Physdb Files: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 14670.457 ; gain = 444.055 ; free physical = 13416 ; free virtual = 20894
+Restored from archive | CPU: 9.760000 secs | Memory: 458.327881 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 14670.457 ; gain = 444.055 ; free physical = 13416 ; free virtual = 20894
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 14670.457 ; gain = 0.000 ; free physical = 13416 ; free virtual = 20895
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1355 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 1327 instances
+  DSP48E2 => DSP48E2 (inverted pins: ALUMODE[0], CARRYIN) (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 1 instance 
+  IBUF => IBUF (IBUFCTRL, INBUF): 4 instances
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 2 instances
+  RAM32M16 => RAM32M16 (RAMD32(x14), RAMS32(x2)): 21 instances
+
+open_run: Time (s): cpu = 00:01:14 ; elapsed = 00:00:47 . Memory (MB): peak = 15150.535 ; gain = 3408.121 ; free physical = 12735 ; free virtual = 20253
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+open_bd_design {/home/cathyhu3/s965/pz2/rfsoc/lab8_adsb/lab6_skid.srcs/sources_1/bd/design_1/design_1.bd}

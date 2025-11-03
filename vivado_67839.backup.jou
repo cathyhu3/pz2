@@ -1,0 +1,84 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Thu Oct 16 18:26:29 2025
+# Process ID         : 67839
+# Current directory  : /home/cathyhu3/pz2
+# Command line       : vivado
+# Log file           : /home/cathyhu3/pz2/vivado.log
+# Journal file       : /home/cathyhu3/pz2/vivado.jou
+# Running On         : eecs-digital-33
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i7-13700
+# CPU Frequency      : 2013.689 MHz
+# CPU Physical cores : 16
+# CPU Logical cores  : 24
+# Host memory        : 33325 MB
+# Swap memory        : 8589 MB
+# Total Virtual      : 41915 MB
+# Available Virtual  : 40096 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/cathyhu3/pz2/rfsoc/lab6_skid/lab6_skid.xpr
+update_compile_order -fileset sources_1
+open_bd_design {/home/cathyhu3/pz2/rfsoc/lab6_skid/lab6_skid.srcs/sources_1/bd/design_1/design_1.bd}
+connect_bd_net [get_bd_pins proc_sys_reset_1/mb_reset] [get_bd_pins usp_rf_data_converter_0/s_axi_aresetn]
+connect_bd_net [get_bd_pins usp_rf_data_converter_0/m2_axis_aresetn] [get_bd_pins proc_sys_reset_1/mb_reset]
+connect_bd_net [get_bd_pins iq_packager_0/s00_axis_aresetn] [get_bd_pins proc_sys_reset_1/mb_reset]
+connect_bd_net [get_bd_pins iq_packager_0/s01_axis_aresetn] [get_bd_pins proc_sys_reset_1/mb_reset]
+connect_bd_net [get_bd_pins iq_packager_0/m00_axis_aresetn] [get_bd_pins proc_sys_reset_1/mb_reset]
+connect_bd_net [get_bd_pins proc_sys_reset_0/mb_reset] [get_bd_pins axi_dma_0/axi_resetn]
+connect_bd_net [get_bd_pins axis_data_fifo_0/s_axis_aresetn] [get_bd_pins proc_sys_reset_0/mb_reset]
+delete_bd_objs [get_bd_nets proc_sys_reset_1_mb_reset]
+connect_bd_net [get_bd_pins usp_rf_data_converter_0/m2_axis_aresetn] [get_bd_pins proc_sys_reset_1/mb_reset]
+connect_bd_net [get_bd_pins usp_rf_data_converter_0/s_axi_aresetn] [get_bd_pins proc_sys_reset_0/mb_reset]
+create_bd_port -dir I -from 3 -to 0 sw
+connect_bd_net [get_bd_ports sw] [get_bd_pins iq_packager_0/control]
+connect_bd_net [get_bd_pins iq_packager_0/s00_axis_aresetn] [get_bd_pins proc_sys_reset_1/mb_reset]
+connect_bd_net [get_bd_pins iq_packager_0/s01_axis_aresetn] [get_bd_pins proc_sys_reset_1/mb_reset]
+connect_bd_net [get_bd_pins iq_packager_0/m00_axis_aresetn] [get_bd_pins proc_sys_reset_1/mb_reset]
+connect_bd_net [get_bd_pins axis_data_fifo_0/s_axis_aclk] [get_bd_pins clk_wiz_0/clk_out1]
+connect_bd_intf_net [get_bd_intf_pins usp_rf_data_converter_0/m20_axis] [get_bd_intf_pins iq_packager_0/S00_AXIS]
+connect_bd_intf_net [get_bd_intf_pins iq_packager_0/S01_AXIS] [get_bd_intf_pins usp_rf_data_converter_0/m21_axis]
+connect_bd_intf_net [get_bd_intf_pins iq_packager_0/M00_AXIS] [get_bd_intf_pins axis_data_fifo_0/S_AXIS]
+connect_bd_intf_net [get_bd_intf_pins axis_data_fifo_0/M_AXIS] [get_bd_intf_pins axi_dma_0/S_AXIS_S2MM]
+ipx::edit_ip_in_project -upgrade true -name iq_packager_v1_0_project -directory /home/cathyhu3/pz2/rfsoc/lab6_skid/lab6_skid.tmp/iq_packager_v1_0_project /home/cathyhu3/pz2/rfsoc/ip_repo/iq_packager_1_0/component.xml
+update_compile_order -fileset sources_1
+close_project
+create_bd_port -dir O -from 3 -to 0 led
+startgroup
+connect_bd_net [get_bd_ports led] [get_bd_pins iq_packager_0/leds]
+endgroup
+save_bd_design
+update_ip_catalog -rebuild -scan_changes
+report_ip_status -name ip_status
+upgrade_ip -vlnv user.org:user:iq_packager:1.0 [get_ips  design_1_iq_packager_0_0] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips design_1_iq_packager_0_0] -no_script -sync -force -quiet
+generate_target all [get_files  /home/cathyhu3/pz2/rfsoc/lab6_skid/lab6_skid.srcs/sources_1/bd/design_1/design_1.bd]
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/zynq_ultra_ps_e_0/pl_clk0 (149 MHz)} Clk_slave {/zynq_ultra_ps_e_0/pl_clk0 (149 MHz)} Clk_xbar {/zynq_ultra_ps_e_0/pl_clk0 (149 MHz)} Master {/zynq_ultra_ps_e_0/M_AXI_HPM0_FPD} Slave {/axi_dma_0/S_AXI_LITE} ddr_seg {Auto} intc_ip {New AXI SmartConnect} master_apm {0}}  [get_bd_intf_pins axi_dma_0/S_AXI_LITE]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/zynq_ultra_ps_e_0/pl_clk0 (149 MHz)} Clk_slave {/zynq_ultra_ps_e_0/pl_clk0 (149 MHz)} Clk_xbar {/zynq_ultra_ps_e_0/pl_clk0 (149 MHz)} Master {/zynq_ultra_ps_e_0/M_AXI_HPM0_FPD} Slave {/usp_rf_data_converter_0/s_axi} ddr_seg {Auto} intc_ip {New AXI SmartConnect} master_apm {0}}  [get_bd_intf_pins usp_rf_data_converter_0/s_axi]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/zynq_ultra_ps_e_0/pl_clk0 (149 MHz)} Clk_slave {/zynq_ultra_ps_e_0/pl_clk0 (149 MHz)} Clk_xbar {/zynq_ultra_ps_e_0/pl_clk0 (149 MHz)} Master {/axi_dma_0/M_AXI_S2MM} Slave {/zynq_ultra_ps_e_0/S_AXI_HP0_FPD} ddr_seg {Auto} intc_ip {New AXI SmartConnect} master_apm {0}}  [get_bd_intf_pins zynq_ultra_ps_e_0/S_AXI_HP0_FPD]
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/zynq_ultra_ps_e_0/pl_clk0 (149 MHz)} Clk_slave {/zynq_ultra_ps_e_0/pl_clk0 (149 MHz)} Clk_xbar {/zynq_ultra_ps_e_0/pl_clk0 (149 MHz)} Master {/zynq_ultra_ps_e_0/M_AXI_HPM1_FPD} Slave {/axi_dma_0/S_AXI_LITE} ddr_seg {Auto} intc_ip {/axi_smc} master_apm {0}}  [get_bd_intf_pins zynq_ultra_ps_e_0/M_AXI_HPM1_FPD]
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:rf_converter_usp -config {ADC2_AXIS_SOURCE "Custom" }  [get_bd_cells usp_rf_data_converter_0]
+apply_bd_automation -rule xilinx.com:bd_rule:zynq_ultra_ps_e -config {apply_board_preset "1" }  [get_bd_cells zynq_ultra_ps_e_0]
+endgroup
+startgroup
+set_property -dict [list \
+  CONFIG.PSU__CRL_APB__PL0_REF_CTRL__FREQMHZ {150} \
+  CONFIG.PSU__GPIO0_MIO__PERIPHERAL__ENABLE {0} \
+  CONFIG.PSU__GPIO1_MIO__PERIPHERAL__ENABLE {0} \
+  CONFIG.PSU__GPIO2_MIO__PERIPHERAL__ENABLE {0} \
+  CONFIG.PSU__GPIO_EMIO__PERIPHERAL__ENABLE {0} \
+] [get_bd_cells zynq_ultra_ps_e_0]
+endgroup
+save_bd_design
+regenerate_bd_layout -routing
+report_ip_status -name ip_status 
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+save_bd_design

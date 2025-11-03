@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1762202959" />
+    <testcase name="test_a" classname="test_adsb_decode" file="/home/cathyhu3/s965/pz2/lab8_adsb/sim/test_adsb_decode.py" lineno="149" time="46.6570725440979" sim_time_ns="1033644.274001" ratio_time="22154.07477663867" />
+  </testsuite>
+</testsuites>

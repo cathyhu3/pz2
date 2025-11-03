@@ -1,0 +1,559 @@
+/*
+
+AMD Vivado v2025.1 (64-bit) [Major: 2025, Minor: 1]
+SW Build: 6140274 on Wed May 21 22:58:25 MDT 2025
+IP Build: 6138677 on Thu May 22 03:10:11 MDT 2025
+IP Build: 6138677 on Thu May 22 03:10:11 MDT 2025
+
+Process ID (PID): 3738930
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Mon Nov 03 17:07:43 EST 2025
+Time zone: 	Eastern Standard Time (America/New_York)
+
+OS: Ubuntu
+OS Version: 6.14.0-33-generic
+OS Architecture: amd64
+Available processors (cores): 16
+LSB Release Description: DISTRIB_ID=Ubuntu
+
+Display: 1
+Screen size: 1920x1080
+Local screen bounds: x = 66, y = 32, width = 1854, height = 1048
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+OS font scaling: 100%
+Anti-Alias Enabled: false
+
+Java version: 	21.0.1 64-bit
+
+Java home: 	/tools/Xilinx/2025.1/tps/lnx64/jre21.0.1_12
+Java executable: 	/tools/Xilinx/2025.1/tps/lnx64/jre21.0.1_12/bin/java
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Dsun.java2d.uiScale.enabled=false, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, -XX:+UseStringDeduplication, -XX:MaxGCPauseMillis=200, -XX:ParallelGCThreads=4, -XX:+ParallelRefProcEnabled, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, -XX:NewSize=80m, -XX:MaxNewSize=80m, -Xms812m, -Xmx6144m, -Xss10m, -Xrs]
+Java initial memory (-Xms): 	812 MB
+Java maximum memory (-Xmx):	 6 GB
+
+User name: 	cathyhu3
+User home directory: /home/cathyhu3
+User working directory: /home/cathyhu3/s965/pz2/rfsoc
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /tools/Xilinx/2025.1
+HDI_APPROOT: /tools/Xilinx/2025.1/Vivado
+RDI_DATADIR: /tools/Xilinx/2025.1/data
+RDI_BINDIR: /tools/Xilinx/2025.1/Vivado/bin
+
+Vivado preferences file: /home/cathyhu3/.Xilinx/Vivado/2025.1/vivado.xml
+Vivado preferences directory: /home/cathyhu3/.Xilinx/Vivado/2025.1/
+Vivado layouts directory: /home/cathyhu3/.Xilinx/Vivado/2025.1/data/layouts
+PlanAhead jar file: 	/tools/Xilinx/2025.1/Vivado/lib/classes/planAhead.jar
+Vivado log file: 	/home/cathyhu3/s965/pz2/rfsoc/vivado.log
+Vivado journal file: 	/home/cathyhu3/s965/pz2/rfsoc/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-3738930-eecs-digital-40
+Non-Default Parameters:	[]
+
+Xilinx & AMD Environment Variables
+--------------------------------------------------------------------------------------------
+GNOME_SHELL_SESSION_MODE: ubuntu
+RDI_APPROOT: /tools/Xilinx/2025.1/Vivado
+RDI_BASEROOT: /tools/Xilinx/2025.1
+RDI_BINROOT: /tools/Xilinx/2025.1/Vivado/bin
+RDI_BUILD: yes
+RDI_DATADIR: /tools/Xilinx/2025.1/Vivado/data
+RDI_INSTALLROOT: /tools/Xilinx
+RDI_INSTALLVER: Vivado
+RDI_JAVA_PLATFORM: 
+RDI_JAVA_VERSION: 21.0.1_12
+RDI_LIBDIR: /tools/Xilinx/2025.1/Vivado/lib/lnx64.o/Ubuntu/24:/tools/Xilinx/2025.1/Vivado/lib/lnx64.o/Ubuntu:/tools/Xilinx/2025.1/Vivado/lib/lnx64.o
+RDI_OPT_EXT: .o
+RDI_PATCHROOT: 
+RDI_PLATFORM: lnx64
+RDI_PREPEND_PATH: /tools/Xilinx/2025.1/Vitis/bin:/tools/Xilinx/2025.1/Vivado/ids_lite/ISE/bin/lin64
+RDI_PROG: /tools/Xilinx/2025.1/Vivado/bin/unwrapped/lnx64.o/vivado
+RDI_SESSION_INFO: /home/cathyhu3/s965/pz2/rfsoc:eecs-digital-40_1762207650_3738841
+RDI_SHARED_DATA: /tools/Xilinx/SharedData/Vivado/data
+RDI_TPS_ROOT: /tools/Xilinx/2025.1/Vivado/tps/lnx64
+RDI_USE_JDK21: True
+SHELL: /bin/bash
+XILINX: /tools/Xilinx/2025.1/Vivado/ids_lite/ISE
+XILINX_DSP: /tools/Xilinx/2025.1/Vivado/ids_lite/ISE
+XILINX_HLS: /tools/Xilinx/2025.1/Vitis
+XILINX_PLANAHEAD: /tools/Xilinx/2025.1/Vivado
+XILINX_SDK: /tools/Xilinx/2025.1/Vitis
+XILINX_VITIS: /tools/Xilinx/2025.1/Vitis
+XILINX_VIVADO: /tools/Xilinx/2025.1/Vivado
+
+
+GUI allocated memory:	812 MB
+GUI max memory:		6,144 MB
+Engine allocated memory: 2,083 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+selectList(PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS, "/home/cathyhu3/s965/pz2/rfsoc/lab8/lab8.xpr", 0); // b.c (PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS)
+// [GUI Memory]: 127 MB (+130506kb) [00:00:08]
+// [Engine Memory]: 1,866 MB (+1805376kb) [00:00:08]
+// Opening Vivado Project: /home/cathyhu3/s965/pz2/rfsoc/lab8/lab8.xpr. Version: Vivado v2025.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 2,044 MB (+88536kb) [00:00:10]
+// WARNING: HEventQueue.dispatchEvent() is taking  1734 ms.
+// Tcl Message: open_project /home/cathyhu3/s965/pz2/rfsoc/lab8/lab8.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_decoder_1_0'. INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/ip_repo'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/2025.1/Vivado/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,098 MB. GUI used memory: 80 MB. Current time: 11/3/25, 5:07:44 PM EST
+// [GUI Memory]: 139 MB (+6448kb) [00:00:11]
+// Project name: lab8; location: /home/cathyhu3/s965/pz2/rfsoc/lab8; part: xczu48dr-ffvg1517-2-e
+dismissDialog("Open Project"); // bk (Open Project Progress)
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK", "Critical Messages"); // f (PAResourceAtoD.CmdMsgDialog_OK)
+dismissDialog("Critical Messages"); // a (dialog0)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder_wrapper (adsb_decoder_wrapper.v)]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder_wrapper (adsb_decoder_wrapper.v), my_top : top (top.sv)]", 2); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, IP-XACT]", 9); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, IP-XACT, component.xml]", 10, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, IP-XACT, component.xml]", 10, false, false, false, false, true, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_OPEN_FILE_WITH, "Open With"); // am (PAResourceCommand.PACommandNames_OPEN_FILE_WITH, Open With)
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ap (RDIResourceCommand.RDICommands_DELETE, global_delete_menu)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+selectButton(RDIResource.BaseDialog_OK, "OK", "Remove Sources"); // f (RDIResource.BaseDialog_OK)
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Remove Sources"); // V (dialog1)
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  /home/cathyhu3/s965/pz2/ip_repo/component.xml 
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_GENERATED
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ah (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+selectMenuItem(PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD, "Create and Package New IP..."); // ap (PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD, ip_packager_wizard_menu)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ah (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD
+selectButton("NEXT", "Next", "Create and Package New IP"); // JButton (NEXT)
+selectRadioButton(PAResourceItoN.NewIpWizard_CREATE_NEW_AXI4_IP_CREATE_AXI4, "Create a new AXI4 peripheral. Create an AXI4 IP, driver, software test application, IP Integrator AXI4 VIP simulation and debug demonstration design."); // b (PAResourceItoN.NewIpWizard_CREATE_NEW_AXI4_IP_CREATE_AXI4)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,139 MB. GUI used memory: 86 MB. Current time: 11/3/25, 5:08:03 PM EST
+selectButton("NEXT", "Next", "Create and Package New IP"); // JButton (NEXT)
+setText(PAResourceItoN.NewIpWizard_NAME_MYIP, "adsb_decoder"); // ad (PAResourceItoN.NewIpWizard_NAME_MYIP)
+// HOptionPane Error: 'The IP already exists. Change either IP name or version to create a new IP (Error)'
+selectButton("NEXT", "Next", "Create and Package New IP"); // JButton (NEXT)
+selectButton("OptionPane.button", "OK", "Error"); // JButton (OptionPane.button)
+selectButton("NEXT", "Next", "Create and Package New IP"); // JButton (NEXT)
+selectComboBox(PAResourceItoN.NewIpWizard_INTERFACE_TYPE, "Stream", 2); // d (PAResourceItoN.NewIpWizard_INTERFACE_TYPE)
+selectButton(PAResourceItoN.NewIpWizard_ADD_NEW_INTERFACE, (String) null, "Create and Package New IP"); // k (PAResourceItoN.NewIpWizard_ADD_NEW_INTERFACE)
+selectComboBox(PAResourceItoN.NewIpWizard_INTERFACE_TYPE, "Stream", 2); // d (PAResourceItoN.NewIpWizard_INTERFACE_TYPE)
+selectComboBox(PAResourceItoN.NewIpWizard_INTERFACE_MODE, "Slave", 1); // d (PAResourceItoN.NewIpWizard_INTERFACE_MODE)
+selectComboBox(PAResourceItoN.NewIpWizard_INTERFACE_MODE, "Master", 0); // d (PAResourceItoN.NewIpWizard_INTERFACE_MODE)
+selectButton("NEXT", "Next", "Create and Package New IP"); // JButton (NEXT)
+selectRadioButton(PAResourceItoN.NewIpWizard_EDIT_IP, "Edit IP"); // a (PAResourceItoN.NewIpWizard_EDIT_IP)
+selectButton("FINISH", "Finish", "Create and Package New IP"); // JButton (FINISH)
+// 'n' command handler elapsed time: 37 seconds
+dismissDialog("Create and Package New IP"); // x (dialog2)
+// TclEventType: LOAD_FEATURE
+// Tcl Message: create_peripheral user.org user adsb_decoder 1.0 -dir /home/cathyhu3/s965/pz2/rfsoc/ip_repo 
+// Tcl Message: add_peripheral_interface S00_AXIS -interface_mode slave -axi_type stream [ipx::find_open_core user.org:user:adsb_decoder:1.0] 
+// Tcl Message: add_peripheral_interface M00_AXIS -interface_mode master -axi_type stream [ipx::find_open_core user.org:user:adsb_decoder:1.0] 
+// TclEventType: PACKAGER_OBJECT_ADD
+// Tcl Message: generate_peripheral [ipx::find_open_core user.org:user:adsb_decoder:1.0] 
+// Tcl Message: write_peripheral [ipx::find_open_core user.org:user:adsb_decoder:1.0] 
+// TclEventType: PROJECT_CHANGE
+// Tcl Message: set_property  ip_repo_paths  {/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_decoder_1_0 /home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_decoder_1_0 /home/cathyhu3/s965/pz2/ip_repo} [current_project] 
+// TclEventType: CREATE_IP_CATALOG
+// [GUI Memory]: 149 MB (+2460kb) [00:01:05]
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: update_ip_catalog -rebuild 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_decoder_1_0'. 
+// Tcl Message: INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_decoder_1_0'. INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/ip_repo'. 
+// Tcl Message: ipx::edit_ip_in_project -upgrade true -name edit_adsb_decoder_v1_0 -directory /home/cathyhu3/s965/pz2/rfsoc/ip_repo /home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_decoder_1_0/component.xml 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 2,152 MB (+6098kb) [00:01:06]
+// WARNING: HEventQueue.dispatchEvent() is taking  1086 ms.
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/2025.1/Vivado/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [GUI Memory]: 167 MB (+11817kb) [00:01:07]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LOAD_FEATURE
+// TclEventType: PACKAGER_CURRENT_CORE
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_decoder_1_0'. 
+// Tcl Message: INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_decoder_1_0'. INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/cathyhu3/s965/pz2/ip_repo'. INFO: [IP_Flow 19-795] Syncing license key meta-data 
+// [Engine Memory]: 2,290 MB (+32353kb) [00:01:08]
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+dismissDialog("Create Peripheral IP"); // bk (Create Peripheral IP Progress)
+// TclEventType: DG_GRAPH_GENERATED
+// HMemoryUtils.trashcanNow. Engine heap size: 2,310 MB. GUI used memory: 97 MB. Current time: 11/3/25, 5:08:43 PM EST
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_GRAPH_GENERATED
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Compatibility", 1); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "File Groups", 2); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+selectButton(PAResourceItoN.MessageBanner_CHANGES_DETECTED_IN_VIVADO_PROJECT_THAT, "Merge changes from File Groups Wizard"); // h (PAResourceItoN.MessageBanner_CHANGES_DETECTED_IN_VIVADO_PROJECT_THAT)
+// TclEventType: PACKAGER_COMPONENT_RESET
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// [GUI Memory]: 177 MB (+1261kb) [00:01:16]
+// Tcl Message: ipx::merge_project_changes files [ipx::current_core] 
+expandTreeTable(PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, "Verilog Synthesis ;  ;  ; false ;  ; adsb_decoder", 2); // w (PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE)
+selectTreeTable(PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, "hdl/adsb_decoder.v ;  ; verilogSource ; false ; xilinx_verilogsynthesis ; ", 5, "hdl/adsb_decoder.v", 0, false); // w (PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE)
+collapseTreeTable(PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, "Verilog Synthesis ;  ;  ; false ;  ; adsb_decoder", 2); // w (PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE)
+expandTreeTable(PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, "Block Diagram ;  ;  ; false ;  ; ", 5); // w (PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE)
+collapseTreeTable(PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, "Block Diagram ;  ;  ; false ;  ; ", 5); // w (PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Customization Parameters", 3); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Ports and Interfaces", 4); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Addressing and Memory", 5); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Customization GUI", 6); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+selectTree(PAResourceEtoH.GUICustomizationTreePanel_TREE, "[root, Window, Page 0, C M00 AXIS START COUNT]", 4, false); // q (PAResourceEtoH.GUICustomizationTreePanel_TREE)
+selectTree(PAResourceEtoH.GUICustomizationTreePanel_TREE, "[root, Window, Page 0, C M00 AXIS START COUNT]", 4, false, false, false, false, false, true); // q (PAResourceEtoH.GUICustomizationTreePanel_TREE) - Double Click
+dismissDialog("Edit IP Parameter"); // Q (dialog3)
+selectTree(PAResourceEtoH.GUICustomizationTreePanel_TREE, "[root, Window, Page 0, C M00 AXIS TDATA WIDTH]", 3, false); // q (PAResourceEtoH.GUICustomizationTreePanel_TREE)
+selectTree(PAResourceEtoH.GUICustomizationTreePanel_TREE, "[root, Window, Page 0, C M00 AXIS TDATA WIDTH]", 3, false, false, false, false, false, true); // q (PAResourceEtoH.GUICustomizationTreePanel_TREE) - Double Click
+selectButton(RDIResource.AbstractCombinedPanel_ADD_ELEMENT, "Add", "Edit IP Parameter"); // C (RDIResource.AbstractCombinedPanel_ADD_ELEMENT, Add)
+selectComboBox(PAResourceEtoH.EditParameterDialog_DEFAULT_VALUE, "Combo Box", "128", 1); // d (PAResourceEtoH.EditParameterDialog_DEFAULT_VALUE, Combo Box)
+selectButton(RDIResource.BaseDialog_OK, "OK", "Edit IP Parameter"); // f (RDIResource.BaseDialog_OK)
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: set_property value 128 [ipx::get_user_parameters C_M00_AXIS_TDATA_WIDTH -of_objects [ipx::current_core]] 
+// Tcl Message: set_property value 128 [ipx::get_hdl_parameters C_M00_AXIS_TDATA_WIDTH -of_objects [ipx::current_core]] 
+// Tcl Message: set_property value_validation_list {32 128} [ipx::get_user_parameters C_M00_AXIS_TDATA_WIDTH -of_objects [ipx::current_core]] 
+dismissDialog("Edit IP Parameter"); // Q (dialog4)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,495 MB. GUI used memory: 107 MB. Current time: 11/3/25, 5:09:28 PM EST
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Review and Package", 7); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "File Groups", 2); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+expandTreeTable(PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, "Verilog Synthesis ;  ;  ; false ;  ; adsb_decoder", 2); // w (PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE)
+selectTreeTable(PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, "hdl/adsb_decoder_slave_stream_v1_0_S00_AXIS.v ;  ; verilogSource ; false ; xilinx_verilogsynthesis ; ", 3, "hdl/adsb_decoder_slave_stream_v1_0_S00_AXIS.v", 0, false); // w (PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE)
+selectTreeTable(PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, "hdl/adsb_decoder_master_stream_v1_0_M00_AXIS.v ;  ; verilogSource ; false ; xilinx_verilogsynthesis ; ", 4, "hdl/adsb_decoder_master_stream_v1_0_M00_AXIS.v", 0, false); // w (PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE)
+selectTreeTable(PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, "hdl/adsb_decoder_slave_stream_v1_0_S00_AXIS.v ;  ; verilogSource ; false ; xilinx_verilogsynthesis ; ", 3, "hdl/adsb_decoder_slave_stream_v1_0_S00_AXIS.v", 0, false); // w (PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE)
+selectTreeTable(PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, "hdl/adsb_decoder_slave_stream_v1_0_S00_AXIS.v ;  ; verilogSource ; false ; xilinx_verilogsynthesis ; ", 3, "hdl/adsb_decoder_slave_stream_v1_0_S00_AXIS.v", 0, false); // w (PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE)
+selectTreeTable(PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, "hdl/adsb_decoder.v ;  ; verilogSource ; false ; xilinx_verilogsynthesis ; ", 5, "hdl/adsb_decoder.v", 0, false); // w (PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE)
+selectTreeTable(PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, "hdl/adsb_decoder.v ;  ; verilogSource ; false ; xilinx_verilogsynthesis ; ", 5, "hdl/adsb_decoder.v", 0, false); // w (PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE)
+expandTreeTable(PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, "hdl/adsb_decoder.v ;  ; verilogSource ; false ; xilinx_verilogsynthesis ; ", 5); // w (PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE)
+selectTreeTable(PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, "hdl/adsb_decoder.v ;  ; verilogSource ; false ; xilinx_verilogsynthesis ; ", 5, "hdl/adsb_decoder.v", 0, false, false, false, false, false, true); // w (PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE) - Double Click
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // J (PAResourceOtoP.PAViews_CODE, PlanAheadTabCode)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Compatibility", 1); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Identification", 0); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Compatibility", 1); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "File Groups", 2); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+selectButton(PAResourceCommand.PACommandNames_PACKAGER_ADD_FILE_GROUP, "Package IP_packager_add_file_group"); // C (PAResourceCommand.PACommandNames_PACKAGER_ADD_FILE_GROUP, Package IP_packager_add_file_group)
+// Run Command: PAResourceCommand.PACommandNames_PACKAGER_ADD_FILE_GROUP
+// 'b' command handler elapsed time: 6 seconds
+dismissDialog("Add File Group"); // a (dialog5)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Package IP - adsb_decoder", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// [GUI Memory]: 186 MB (+520kb) [00:02:40]
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Identification", 0); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Compatibility", 1); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "File Groups", 2); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+selectTreeTable(PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, "hdl/adsb_decoder_slave_stream_v1_0_S00_AXIS.v ;  ; verilogSource ; false ; xilinx_verilogsynthesis ; ", 3, "hdl/adsb_decoder_slave_stream_v1_0_S00_AXIS.v", 0, false); // w (PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE)
+selectTreeTable(PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, "hdl/adsb_decoder_master_stream_v1_0_M00_AXIS.v ;  ; verilogSource ; false ; xilinx_verilogsynthesis ; ", 4, "hdl/adsb_decoder_master_stream_v1_0_M00_AXIS.v", 0, false); // w (PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE)
+selectTreeTable(PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, "hdl/adsb_decoder.v ;  ; verilogSource ; false ; xilinx_verilogsynthesis ; ", 5, "hdl/adsb_decoder.v", 0, false); // w (PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE)
+selectTreeTable(PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, "hdl/adsb_decoder.v ;  ; verilogSource ; false ; xilinx_verilogsynthesis ; ", 5, "hdl/adsb_decoder.v", 0, false, false, false, false, false, true); // w (PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE) - Double Click
+selectCodeEditor("adsb_decoder.v", 242, 304); // ae (adsb_decoder.v)
+// Elapsed time: 23 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Package IP - adsb_decoder", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder (adsb_decoder.v)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Review and Package", 7); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "adsb_decoder.v", 2); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed time: 16 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder (adsb_decoder.v)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder (adsb_decoder.v)]", 1, true, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder_wrapper (adsb_decoder_wrapper.v)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+// Tcl Message: current_project lab8 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder_wrapper (adsb_decoder_wrapper.v)]", 1, true, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click - Node
+// [Engine Memory]: 2,418 MB (+14034kb) [00:04:05]
+// Elapsed time: 35 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // C (PAResourceCommand.PACommandNames_ADD_SOURCES, Sources_add_sources)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectButton("NEXT", "Next", "Add Sources"); // JButton (NEXT)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_OR_CREATE_SOURCE_FILE, "Add", "Add Sources"); // C (PAResourceQtoS.SrcChooserPanel_ADD_OR_CREATE_SOURCE_FILE, Add)
+selectMenuItem(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files..."); // ap (PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, Add Files...)
+// Elapsed time: 13 seconds
+String[] filenames31467 = {"/home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder.sv", "/home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder_wrapper.v", "/home/cathyhu3/s965/pz2/lab8_adsb/hdl/axis_fir.sv", "/home/cathyhu3/s965/pz2/lab8_adsb/hdl/cordic.sv", "/home/cathyhu3/s965/pz2/lab8_adsb/hdl/preamble_detector.sv", "/home/cathyhu3/s965/pz2/lab8_adsb/hdl/top.sv"};
+setFileChooser(filenames31467);
+selectCheckBox(PAResourceQtoS.SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_SOURCES_INTO, "Copy sources into IP Directory", false); // f (PAResourceQtoS.SrcChooserPanel_MAKE_LOCAL_COPY_OF_THESE_SOURCES_INTO): FALSE
+// Elapsed time: 20 seconds
+selectButton("FINISH", "Finish", "Add Sources"); // JButton (FINISH)
+// 'f' command handler elapsed time: 44 seconds
+dismissDialog("Add Sources"); // c (dialog6)
+// Tcl Message: current_project edit_adsb_decoder_v1_0 
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse {/home/cathyhu3/s965/pz2/lab8_adsb/hdl/axis_fir.sv /home/cathyhu3/s965/pz2/lab8_adsb/hdl/cordic.sv /home/cathyhu3/s965/pz2/lab8_adsb/hdl/top.sv /home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder.sv /home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder_wrapper.v /home/cathyhu3/s965/pz2/lab8_adsb/hdl/preamble_detector.sv} 
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 04m:18s
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 04m:20s
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 04m:22s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 04m:24s
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder_wrapper (adsb_decoder_wrapper.v)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 04m:26s
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder_wrapper (adsb_decoder_wrapper.v)]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 04m:28s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder_wrapper (adsb_decoder_wrapper.v)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder_wrapper (adsb_decoder_wrapper.v)]", 1, true, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click - Node
+selectCodeEditor("adsb_decoder_wrapper.v", 109, 347); // ae (adsb_decoder_wrapper.v)
+typeControlKey((HResource) null, "adsb_decoder_wrapper.v", 'c'); // ae (adsb_decoder_wrapper.v)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "adsb_decoder.v", 2); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectCodeEditor("adsb_decoder.v", 113, 355); // ae (adsb_decoder.v)
+typeControlKey((HResource) null, "adsb_decoder.v", 'v'); // ae (adsb_decoder.v)
+selectCodeEditor("adsb_decoder.v", 217, 36); // ae (adsb_decoder.v)
+selectCodeEditor("adsb_decoder.v", 242, 28); // ae (adsb_decoder.v)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 04m:52s
+// [Engine Memory]: 2,549 MB (+10554kb) [00:05:59]
+// TclEventType: DG_GRAPH_GENERATED
+// HMemoryUtils.trashcanNow. Engine heap size: 2,550 MB. GUI used memory: 114 MB. Current time: 11/3/25, 5:13:33 PM EST
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 04m:54s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder_wrapper (adsb_decoder_wrapper.v)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder_master_stream_v1_0_M00_AXIS (adsb_decoder_master_stream_v1_0_M00_AXIS.v)]", 3, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder_master_stream_v1_0_M00_AXIS (adsb_decoder_master_stream_v1_0_M00_AXIS.v)]", 3, false, false, false, false, true, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ap (RDIResourceCommand.RDICommands_DELETE, global_delete_menu)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+selectButton(RDIResource.BaseDialog_OK, "OK", "Remove Sources"); // f (RDIResource.BaseDialog_OK)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+dismissDialog("Remove Sources"); // V (dialog8)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  /home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_decoder_1_0/hdl/adsb_decoder_master_stream_v1_0_M00_AXIS.v 
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 05m:04s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder_slave_stream_v1_0_S00_AXIS (adsb_decoder_slave_stream_v1_0_S00_AXIS.v)]", 4, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder_slave_stream_v1_0_S00_AXIS (adsb_decoder_slave_stream_v1_0_S00_AXIS.v)]", 4, false, false, false, false, true, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Popup Trigger
+// TclEventType: DG_GRAPH_GENERATED
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ap (RDIResourceCommand.RDICommands_DELETE, global_delete_menu)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+selectButton(RDIResource.BaseDialog_OK, "OK", "Remove Sources"); // f (RDIResource.BaseDialog_OK)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+dismissDialog("Remove Sources"); // V (dialog9)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  /home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_decoder_1_0/hdl/adsb_decoder_slave_stream_v1_0_S00_AXIS.v 
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 05m:08s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,586 MB. GUI used memory: 114 MB. Current time: 11/3/25, 5:13:48 PM EST
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 05m:10s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder (adsb_decoder.v)]", 2, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder_wrapper (adsb_decoder_wrapper.v)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder_wrapper (adsb_decoder_wrapper.v)]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder_wrapper (adsb_decoder_wrapper.v), my_top : top (top.sv)]", 2, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder (adsb_decoder.v)]", 3, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder (adsb_decoder.v)]", 3, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder (adsb_decoder.v)]", 3, false, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder_wrapper (adsb_decoder_wrapper.v)]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder_wrapper (adsb_decoder_wrapper.v)]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder_wrapper (adsb_decoder_wrapper.v)]", 1, true, false, false, false, true, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Popup Trigger - Node
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ap (RDIResourceCommand.RDICommands_DELETE, global_delete_menu)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+selectButton(RDIResource.BaseDialog_OK, "OK", "Remove Sources"); // f (RDIResource.BaseDialog_OK)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+dismissDialog("Remove Sources"); // V (dialog10)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  /home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder_wrapper.v 
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 05m:30s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 05m:32s
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,614 MB. GUI used memory: 116 MB. Current time: 11/3/25, 5:14:13 PM EST
+selectRadioButton(PAResourceEtoH.FloatingTopDialog_SPECIFY_NEW_TOP_MODULE, "Specify a new top module:"); // a (PAResourceEtoH.FloatingTopDialog_SPECIFY_NEW_TOP_MODULE)
+selectMoreButton(PAResourceEtoH.FloatingTopDialog_SELECT_TOP_MODULE_OF_YOUR_DESIGN, (String) null, "Invalid Top Module"); // s (PAResourceEtoH.FloatingTopDialog_SELECT_TOP_MODULE_OF_YOUR_DESIGN)
+selectList(PAResourceQtoS.SelectTopModuleDialog_SELECT_TOP_MODULE, "adsb_decoder", 0); // M (PAResourceQtoS.SelectTopModuleDialog_SELECT_TOP_MODULE)
+selectList(PAResourceQtoS.SelectTopModuleDialog_SELECT_TOP_MODULE, "adsb_decoder", 0, false, false, false, false, true); // M (PAResourceQtoS.SelectTopModuleDialog_SELECT_TOP_MODULE) - Double Click
+dismissDialog("Select Top Module"); // L (dialog12)
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 05m:38s
+selectButton(RDIResource.BaseDialog_OK, "OK", "Invalid Top Module"); // f (RDIResource.BaseDialog_OK)
+dismissDialog("Invalid Top Module"); // s (dialog11)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 05m:40s
+selectButton(RDIResource.BaseDialog_OK, "OK", "Invalid Top Module"); // f (RDIResource.BaseDialog_OK)
+dismissDialog("Invalid Top Module"); // s (dialog13)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder (adsb_decoder.v)]", 1, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder (adsb_decoder.v)]", 1, false, false, false, false, true, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // am (PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, Hierarchy Update)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // am (PAResourceQtoS.SrcMenu_IP_HIERARCHY, IP Hierarchy)
+selectMenuItem(PAResourceCommand.PACommandNames_SET_AS_TOP, "Set as Top"); // ap (PAResourceCommand.PACommandNames_SET_AS_TOP, set_as_top_menu)
+// Run Command: PAResourceCommand.PACommandNames_SET_AS_TOP
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder (adsb_decoder.v)]", 1, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // C (PAResourceCommand.PACommandNames_ADD_SOURCES, Sources_add_sources)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectButton("NEXT", "Next", "Add Sources"); // JButton (NEXT)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_OR_CREATE_SOURCE_FILE, "Add", "Add Sources"); // C (PAResourceQtoS.SrcChooserPanel_ADD_OR_CREATE_SOURCE_FILE, Add)
+selectMenuItem(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files..."); // ap (PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, Add Files...)
+// Elapsed time: 10 seconds
+setFileChooser("/home/cathyhu3/s965/pz2/lab8_adsb/hdl/axis_fir.sv");
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files", "Add Sources"); // a (PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT)
+dismissFileChooser();
+setFileChooser("/home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder.sv");
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files", "Add Sources"); // a (PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT)
+String[] filenames16706 = {"/home/cathyhu3/s965/pz2/lab8_adsb/hdl/cordic.sv", "/home/cathyhu3/s965/pz2/lab8_adsb/hdl/preamble_detector.sv", "/home/cathyhu3/s965/pz2/lab8_adsb/hdl/top.sv"};
+setFileChooser(filenames16706);
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files", "Add Sources"); // a (PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT)
+dismissFileChooser();
+selectButton("FINISH", "Finish", "Add Sources"); // JButton (FINISH)
+// 'f' command handler elapsed time: 28 seconds
+dismissDialog("Add Sources"); // c (dialog14)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse -copy_to /home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_decoder_1_0/src {/home/cathyhu3/s965/pz2/lab8_adsb/hdl/axis_fir.sv /home/cathyhu3/s965/pz2/lab8_adsb/hdl/cordic.sv /home/cathyhu3/s965/pz2/lab8_adsb/hdl/top.sv /home/cathyhu3/s965/pz2/lab8_adsb/hdl/adsb_decoder.sv /home/cathyhu3/s965/pz2/lab8_adsb/hdl/preamble_detector.sv} 
+// [GUI Memory]: 202 MB (+6856kb) [00:07:31]
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 06m:26s
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 06m:28s
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,624 MB. GUI used memory: 116 MB. Current time: 11/3/25, 5:15:08 PM EST
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 06m:30s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 06m:32s
+// Elapsed time: 11 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder (adsb_decoder.sv)]", 2, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder (adsb_decoder.v)]", 1, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, axis_fir (axis_fir.sv)]", 3, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.sv)]", 6, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder (adsb_decoder.sv)]", 2, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder (adsb_decoder.v)]", 1, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder (adsb_decoder.v)]", 1, false, false, false, false, true, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // am (PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, Hierarchy Update)
+selectMenuItem(PAResourceQtoS.SrcMenu_REFRESH_HIERARCHY, "Refresh Hierarchy"); // ap (PAResourceQtoS.SrcMenu_REFRESH_HIERARCHY)
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 06m:48s
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed Time for: 'PAResourceItoN.MsgLongTask_MESSAGE_LONG_TASK/L.f': 06m:50s
+// Elapsed time: 22 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder (adsb_decoder.sv)]", 2, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, adsb_decoder (adsb_decoder.v)]", 1, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.sv)]", 6, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.sv)]", 6, false, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click
+// [Engine Memory]: 2,682 MB (+5361kb) [00:08:23]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,692 MB. GUI used memory: 117 MB. Current time: 11/3/25, 5:15:58 PM EST
+// Elapsed time: 11 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Package IP - adsb_decoder", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Identification", 0); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Compatibility", 1); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "File Groups", 2); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+selectButton(PAResourceItoN.MessageBanner_CHANGES_DETECTED_IN_VIVADO_PROJECT_THAT, "Merge changes from File Groups Wizard"); // h (PAResourceItoN.MessageBanner_CHANGES_DETECTED_IN_VIVADO_PROJECT_THAT)
+// TclEventType: PACKAGER_COMPONENT_RESET
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: ipx::merge_project_changes files [ipx::current_core] 
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Customization Parameters", 3); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+selectButton(PAResourceItoN.MessageBanner_CHANGES_DETECTED_IN_VIVADO_PROJECT_THAT, "Merge changes from Customization Parameters Wizard"); // h (PAResourceItoN.MessageBanner_CHANGES_DETECTED_IN_VIVADO_PROJECT_THAT)
+// TclEventType: PACKAGER_COMPONENT_RESET
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: ipx::merge_project_changes hdl_parameters [ipx::current_core] 
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Ports and Interfaces", 4); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Addressing and Memory", 5); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Customization GUI", 6); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+// Elapsed time: 12 seconds
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Review and Package", 7); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+selectButton(PAResourceItoN.MessageBanner_CHANGES_DETECTED_IN_IP_THAT_REQUIRE, "IP has been modified."); // h (PAResourceItoN.MessageBanner_CHANGES_DETECTED_IN_IP_THAT_REQUIRE)
+// Tcl Message: ipx::update_checksums [ipx::current_core] 
+// Tcl Message: ipx::save_core [ipx::current_core] 
+// TclEventType: FILE_SET_CHANGE
+selectButton(PAResourceQtoS.ReviewContentPanel_RE_PACKAGE_IP, "Re-Package IP"); // a (PAResourceQtoS.ReviewContentPanel_RE_PACKAGE_IP)
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: set_property core_revision 2 [ipx::current_core] 
+// Tcl Message: ipx::update_source_project_archive -component [ipx::current_core] 
+// Tcl Message: ipx::create_xgui_files [ipx::current_core] 
+// Tcl Message: ipx::update_checksums [ipx::current_core] 
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// Tcl Message: ipx::check_integrity [ipx::current_core] 
+// Tcl Message: INFO: [IP_Flow 19-2181] Payment is not required for this core. 
+// Tcl Message: INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed. 
+// Tcl Message: ipx::save_core [ipx::current_core] 
+// TclEventType: FILE_SET_CHANGE
+selectButton("OptionPane.button", "Yes", "Close Project"); // JButton (OptionPane.button)
+// Tcl Message: ipx::move_temp_component_back -component [ipx::current_core] 
+// TclEventType: PROJECT_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,659 MB. GUI used memory: 124 MB. Current time: 11/3/25, 5:16:39 PM EST
+// Tcl Message: close_project -delete 
+dismissDialog("Edit IP Parameter"); // Q (dialog4)
+dismissDialog("Package IP"); // bk (Package IP Progress)
+// TclEventType: CREATE_IP_CATALOG
+// Tcl Message: update_ip_catalog -rebuild -repo_path /home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_decoder_1_0 
+// Tcl Message: INFO: [IP_Flow 19-725] Reloaded user IP repository '/home/cathyhu3/s965/pz2/rfsoc/ip_repo/adsb_decoder_1_0' 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,318 MB. GUI used memory: 119 MB. Current time: 11/3/25, 5:46:43 PM EST
+// HMemoryUtils.trashcanNow. Engine heap size: 2,318 MB. GUI used memory: 118 MB. Current time: 11/3/25, 6:16:43 PM EST
